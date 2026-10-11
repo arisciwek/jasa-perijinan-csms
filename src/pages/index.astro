@@ -1,0 +1,255 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { siteConfig, siteUrl } from '../config/site.ts';
+
+const title = siteConfig.defaultTitle;
+const description = siteConfig.defaultDescription;
+const image = siteUrl('/images/home/home-hero.svg');
+---
+<PageLayout
+  title={title}
+  description={description}
+  image={image}
+  pageType="WebSite"
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl">
+        Solusi Digital Pembuatan Dokumen Keselamatan Kontraktor
+      </h1>
+      <p class="mt-6 text-center text-lg text-gray-600 max-w-2xl mx-auto">
+        Konsultan jasa pembuatan dokumen Sistem Manajemen Keselamatan Kontraktor (CSMS)
+        secara digital untuk memastikan keberhasilan proses verifikasi skor CSMS tertinggi
+        dari client di sektor hulu Migas, Tambang, Manufakturing, Konstruksi, Petrokimia
+        dan sektor industri lain dalam satu platform terpercaya.
+      </p>
+      <div class="mt-10 flex justify-center space-x-6">
+        <a
+          href="#services"
+          class="px-6 py-3 bg-primary-600 text-white font-medium rounded-lg shadow-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500"
+        >
+          Layanan Kami
+        </a>
+        <a
+          href={`https://wa.me/${siteConfig.whatsapp}`}
+          class="px-6 py-3 bg-green-600 text-white font-medium rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-green-500"
+        >
+          Konsultasi Gratis via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="text-center">
+        <p class="text-3xl font-bold text-primary-600">100%</p>
+        <p class="text-sm text-gray-500 mt-2">Tingkat Kelulusan CSMS</p>
+      </div>
+      <div class="text-center">
+        <p class="text-3xl font-bold text-primary-600">100+</p>
+        <p class="text-sm text-gray-500 mt-2">Kontraktor Terverifikasi Regional</p>
+      </div>
+      <div class="text-center">
+        <p class="text-3xl font-bold text-primary-600">0</p>
+        <p class="text-sm text-gray-500 mt-2">Komplain</p>
+      </div>
+      <div class="text-center">
+        <p class="text-3xl font-bold text-primary-600">24/7</p>
+        <p class="text-sm text-gray-500 mt-2">Konsultasi Pembangunan Real-time</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section id="services" class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">
+        Layanan Konsultasi CSMS
+      </h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Service Card 1 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Penyusunan Dokumen CSMS dari Nol</h3>
+            <p class="text-gray-600 mb-4">
+              Kami menyusun seluruh dokumen CSMS Anda dari awal secara profesional sesuai kebutuhan klien.
+            </p>
+            <p class="text-sm text-primary-600 font-medium">Cocok untuk: Perusahaan atau kontraktor yang belum memiliki dokumen K3LL.</p>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Review & Gap Analysis CSMS</h3>
+            <p class="text-gray-600 mb-4">
+              Evaluasi mendalam dokumen yang sudah ada untuk mengidentifikasi poin-poin yang perlu diperbaiki.
+            </p>
+            <p class="text-sm text-primary-600 font-medium">Cocok untuk: Kontraktor yang ingin memperbaharui atau meningkatkan skor CSMS.</p>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Pendampingan Verifikasi & Audit HSE</h3>
+            <p class="text-gray-600 mb-4">
+              Kami mendampingi proses verifikasi oleh auditor principal untuk memastikan kelulusan audit.
+            </p>
+            <p class="text-sm text-primary-600 font-medium">Cocok untuk: Perusahaan yang akan menghadapi audit verifikasi HSE principal.</p>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Digitalisasi & Standardisasi K3LL</h3>
+            <p class="text-gray-600 mb-4">
+              Transformasi dokumen fisik ke format digital terstandar agar lebih mudah dikelola dan diakses.
+            </p>
+            <p class="text-sm text-primary-600 font-medium">Cocok untuk: Kontraktor modern yang mengutamakan kerapihan data K3LL.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSMS Elements Preview -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">
+        9 Elemen Utama Contractor Safety Management System (CSMS)
+      </h2>
+      <div class="grid gap-6 sm:grid-cols-3">
+        <!-- Element 1 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #1</h3>
+            <p class="text-base font-medium text-primary-600 mb-3">Kepemimpinan & Komitmen</p>
+            <p class="text-sm text-gray-600">
+              Bagaimana para senior manajer terlibat secara pribadi dalam manajemen K3LL, sebagai contoh dalam menetapkan sasaran (objective) dan pengawasannya?
+            </p>
+          </div>
+        </div>
+
+        <!-- Element 2 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #2</h3>
+            <p class="text-base font-medium text-primary-600 mb-3">Kebijaksanaan dan Sasaran Strategis</p>
+            <p class="text-sm text-gray-600">
+              Bagaimana perusahaan Anda mempunyai dokumen kebijakan K3LL & Objective Target K3LL yang terintegrasi dengan operasi Perusahaan?
+            </p>
+          </div>
+        </div>
+
+        <!-- Element 3 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #3</h3>
+            <p class="text-base font-medium text-primary-600 mb-3">Organisasi, Tanggung Jawab</p>
+            <p class="text-sm text-gray-600">
+              Bagaimana struktur perusahaan Anda dibuat untuk mengelola dan mengkomunikasikan K3LL secara efektif?
+            </p>
+          </div>
+        </div>
+
+        <!-- Element 4 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #4</h3>
+            <p class="text-base font-medium text-primary-600 mb-3">Manajemen Resiko</p>
+            <p class="text-sm text-gray-600">
+              Bagaimana Perusahaan Anda mengidentifikasi bahaya, menilai risiko, mengendalikan dan memitigasi dampak, ke tingkat yang dapat diterima secara praktis (ALARP - as low as reasonably practicable).
+            </p>
+          </div>
+        </div>
+
+        <!-- Element 5 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #5</h3>
+            <p class="text-base font-medium text-primary-600 mb-3">Perencanaan dan Prosedur</p>
+            <p class="text-sm text-gray-600">
+              Apakah Perusahaan anda mempunyai dokumen panduan Operasi yang sesuai dengan aturan-aturan K3LL yang dijelaskan secara rinci dalam cara kerja K3LL dan aturan keselamatan yang disahkan oleh perusahaan?
+            </p>
+          </div>
+        </div>
+
+        <!-- Element 6 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #6</h3>
+            <p class="text-base font-medium text-primary-600 mb-3">Implementasi dan Pemantauan</p>
+            <p class="text-sm text-gray-600">
+              Pengaturan apa yang dipunyai perusahaan Anda untuk pengawasan dan pemantauan kinerja K3LL?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">
+        Testimoni Perusahaan
+      </h2>
+      <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
+        <!-- Testimonial 1 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden p-6">
+          <p class="text-gray-600 italic mb-4">
+            "Implementasi CSMS digital ini telah meningkatkan efisiensi verifikasi dokumen kami hingga 70%. Keamanan aset dan nyawa adalah prioritas utama kami."
+          </p>
+          <p class="text-sm font-medium text-gray-900">MITSUBISHI CHEMICAL - Sr. HSE supervisor</p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden p-6">
+          <p class="text-gray-600 italic mb-4">
+            "Satu-satunya solusi yang benar-benar memahami regulasi K3 di Indonesia. Dashboard analitiknya sangat membantu dalam pengambilan keputusan taktis."
+          </p>
+          <p class="text-sm font-medium text-gray-900">BAYU ADJI PERTIWI - Head of Safety Compliance</p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden p-6">
+          <p class="text-gray-600 italic mb-4">
+            "Transparansi dan audit trail yang disediakan sistem ini memberikan ketenangan bagi manajemen dalam mengelola ribuan kontraktor di lapangan."
+          </p>
+          <p class="text-sm font-medium text-gray-900">PRASADHA PAMUNAH LIMBAH INDUSTRI - HSE MANAJER</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-primary-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl font-bold text-primary-800 mb-6">
+        Butuh Konsultasi CSMS ?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Kami akan meninjau secara mendalam kebutuhan spesifik perusahaan Anda dan memberikan rekomendasi paket layanan yang paling efektif. Tim ahli kami siap membantu Anda memastikan kesiapan dokumen dan sistem K3LL perusahaan.
+      </p>
+      <div class="flex flex-col sm:flex-row sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <a
+          href="#contact"
+          class="px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500"
+        >
+          Ajukan Permintaan Konsultasi
+        </a>
+        <a
+          href={`https://wa.me/${siteConfig.whatsapp}`}
+          class="px-6 py-3 bg-white text-primary-600 font-medium border border-primary-300 rounded-lg hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500"
+        >
+          Chat Langsung via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

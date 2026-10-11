@@ -1,0 +1,39 @@
+---
+// Base layout for all pages
+import StructuredData from '../components/StructuredData.astro';
+import SEOMeta from '../components/SEOMeta.astro';
+import { siteConfig, siteUrl } from '../config/site.ts';
+
+const { title, description, image } = Astro.props;
+const defaultTitle = title || siteConfig.defaultTitle;
+const defaultDescription = description || siteConfig.defaultDescription;
+const fullUrl = siteUrl(Astro.url.pathname);
+---
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{defaultTitle}</title>
+    <meta name="description" content={defaultDescription} />
+
+    <!-- SEOMeta component handles Open Graph, Twitter Cards, etc -->
+    <SEOMeta
+      title={defaultTitle}
+      description={defaultDescription}
+      image={image}
+      url={fullUrl}
+    />
+
+    <!-- Structured Data / Schema.org JSON-LD -->
+    <StructuredData
+      pageType={Astro.props.pageType || 'WebPage'}
+      title={defaultTitle}
+      description={defaultDescription}
+      url={fullUrl}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

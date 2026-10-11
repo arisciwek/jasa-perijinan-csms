@@ -1,0 +1,164 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { 
+  title, 
+  description, 
+  image, 
+  pubDate, 
+  updatedDate, 
+  author = 'Tim Ahli K3LL', 
+  category = 'Artikel', 
+  tags = [], 
+  breadcrumbs = [] 
+} = Astro.props;
+
+const fullBreadcrumbs = [
+  { label: 'Artikel', href: '/articles' },
+  ...breadcrumbs,
+  { label: title, href: Astro.url.pathname }
+];
+
+const relatedArticles = [
+  {
+    title: 'Mengenal 9 Elemen Utama CSMS',
+    slug: 'mengenal-9-elemen-csms',
+    description: 'Bedah tuntas 9 elemen Contractor Safety Management System mulai dari kepemimpinan hingga pencapaian kinerja K3LL.'
+  },
+  {
+    title: 'Pentingnya Digitalisasi Dokumen K3LL',
+    slug: 'pentingnya-digitalisasi-k3ll',
+    description: 'Bagaimana transisi dari dokumen fisik ke sistem digital meningkatkan efisiensi audit dan pengelolaan keselamatan kerja.'
+  }
+];
+---
+<BaseLayout title={title} description={description} image={image} pageType="Article">
+  <div class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <Header />
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="bg-white border-b border-gray-200 py-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ol class="flex items-center space-x-2 text-sm text-gray-600">
+          <li>
+            <a href="/" class="hover:text-primary-600">Beranda</a>
+          </li>
+          {fullBreadcrumbs.map((crumb, index) => (
+            <li class="flex items-center space-x-2">
+              <span class="text-gray-400" aria-hidden="true">/</span>
+              {index === fullBreadcrumbs.length - 1 ? (
+                <span class="text-gray-900 font-medium truncate max-w-xs" aria-current="page">{crumb.label}</span>
+              ) : (
+                <a href={crumb.href} class="hover:text-primary-600">{crumb.label}</a>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-12 gap-8">
+      <!-- Sidebar (3 columns) -->
+      <aside class="col-span-12 lg:col-span-3 hidden lg:block space-y-6">
+        <!-- Table of Contents -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+          <h2 class="text-lg font-bold text-gray-900 mb-4">Daftar Isi</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#intro" class="text-primary-600 hover:underline">Pendahuluan</a></li>
+            <li><a href="#elemen1" class="hover:text-primary-600">Elemen #1: Kepemimpinan</a></li>
+            <li><a href="#elemen2" class="hover:text-primary-600">Elemen #2: Kebijaksanaan</a></li>
+            <li><a href="#elemen3" class="hover:text-primary-600">Elemen #3: Organisasi</a></li>
+            <li><a href="#elemen4" class="hover:text-primary-600">Elemen #4: Manajemen Risiko</a></li>
+            <li><a href="#elemen5" class="hover:text-primary-600">Elemen #5: Perencanaan</a></li>
+            <li><a href="#elemen6" class="hover:text-primary-600">Elemen #6: Implementasi</a></li>
+            <li><a href="#elemen7" class="hover:text-primary-600">Elemen #7: Audit</a></li>
+            <li><a href="#elemen8" class="hover:text-primary-600">Elemen #8: Pencapaian Kinerja</a></li>
+            <li><a href="#elemen9" class="hover:text-primary-600">Elemen #9: Pencapaian Lainnya</a></li>
+            <li><a href="#kesimpulan" class="hover:text-primary-600">Kesimpulan</a></li>
+          </ul>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+          <h2 class="text-lg font-bold text-gray-900 mb-4">Artikel Terkait</h2>
+          <div class="space-y-4">
+            {relatedArticles.map(article => (
+              <div class="border-t border-gray-200 pt-4">
+                <h3 class="font-medium text-gray-900 mb-1">
+                  <a href={`/articles/${article.slug}`} class="hover:text-primary-600">{article.title}</a>
+                </h3>
+                <p class="text-sm text-gray-600">{article.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Author Card -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+          <h2 class="text-lg font-bold text-gray-900 mb-4">Penulis</h2>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center">
+              <span class="text-primary-600 font-bold text-lg">K3</span>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900">{author}</p>
+              <p class="text-sm text-gray-600">Tim Ahli K3LL</p>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-gray-600">
+            Tim ahli K3LL dengan pengalaman lebih dari 15 tahun di sektor migas, tambang, dan konstruksi.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Main Article Content (9 columns) -->
+      <main class="col-span-12 lg:col-span-9">
+        <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+          <header class="mb-8">
+            <div class="flex items-center space-x-4 text-sm text-gray-500 mb-4">
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full font-medium">{category}</span>
+              {pubDate && (
+                <time datetime={pubDate}>
+                  {new Date(pubDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              )}
+              <span>Oleh {author}</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-4">
+              {title}
+            </h1>
+            {description && (
+              <p class="text-xl text-gray-600 leading-relaxed">
+                {description}
+              </p>
+            )}
+          </header>
+
+          <!-- Article Content -->
+          <div class="prose prose-blue max-w-none text-gray-700 leading-relaxed space-y-6">
+            <slot />
+          </div>
+
+          <!-- Tags & Share -->
+          {tags.length > 0 && (
+            <footer class="mt-12 pt-6 border-t border-gray-100 flex flex-wrap items-center gap-2">
+              <span class="text-sm font-medium text-gray-500 mr-2">Tags:</span>
+              {tags.map(tag => (
+                <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-md">
+                  #{tag}
+                </span>
+              ))}
+            </footer>
+          )}
+        </article>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <Footer />
+  </div>
+</BaseLayout>

@@ -1,0 +1,79 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { siteConfig, siteUrl } from '../../config/site.ts';
+
+const title = `Artikel & Panduan K3LL — ${siteConfig.siteName}`;
+const description = 'Kumpulan artikel, panduan, dan wawasan terbaru seputar Contractor Safety Management System (CSMS), SMK3, ISO 45001, dan perizinan korporasi di Indonesia.';
+const image = siteUrl('/images/articles/articles.svg');
+
+const articles = [
+  {
+    slug: 'panduan-sukses-audit-csms-migas',
+    title: 'Panduan Sukses Menghadapi Audit Verifikasi CSMS di Sektor Migas',
+    description: 'Strategi dan persiapan matang yang wajib dilakukan kontraktor untuk meraih skor tinggi dalam verifikasi CSMS hulu migas.',
+    pubDate: '2026-10-11T08:30:00Z',
+    category: 'Panduan Teknis',
+    readTime: '5 menit'
+  },
+  {
+    slug: 'mengenal-9-elemen-csms',
+    title: 'Mengenal 9 Elemen Utama CSMS dan Kunci Kelulusannya',
+    description: 'Bedah tuntas 9 elemen Contractor Safety Management System mulai dari kepemimpinan hingga pencapaian kinerja K3LL.',
+    pubDate: '2026-10-10T10:00:00Z',
+    category: 'Regulasi K3',
+    readTime: '4 menit'
+  },
+  {
+    slug: 'pentingnya-digitalisasi-k3ll',
+    title: 'Pentingnya Digitalisasi Dokumen K3LL bagi Kontraktor Modern',
+    description: 'Bagaimana transisi dari dokumen fisik ke sistem digital meningkatkan efisiensi audit dan pengelolaan keselamatan kerja.',
+    pubDate: '2026-10-09T14:15:00Z',
+    category: 'Digitalisasi',
+    readTime: '3 menit'
+  }
+];
+---
+<PageLayout
+  title={title}
+  description={description}
+  image={image}
+  breadcrumbs={[{ label: 'Artikel', href: '/articles' }]}
+>
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-4">
+        Artikel & Wawasan K3LL
+      </h1>
+      <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-16">
+        Informasi, panduan, dan artikel seputar standar keselamatan kerja dan perizinan bisnis untuk kontraktor profesional.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {articles.map(art => (
+          <article class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow flex flex-col justify-between p-6">
+            <div>
+              <div class="flex items-center justify-between text-xs text-gray-500 mb-3">
+                <span class="bg-primary-100 text-primary-800 font-medium px-2.5 py-0.5 rounded">{art.category}</span>
+                <span>{art.readTime} baca</span>
+              </div>
+              <h2 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
+                <a href={`/articles/${art.slug}`}>{art.title}</a>
+              </h2>
+              <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                {art.description}
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-200 flex items-center justify-between text-sm">
+              <time datetime={art.pubDate} class="text-gray-500">
+                {new Date(art.pubDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </time>
+              <a href={`/articles/${art.slug}`} class="text-primary-600 font-medium hover:underline">
+                Baca Selengkapnya →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

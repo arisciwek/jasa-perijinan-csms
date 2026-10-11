@@ -1,0 +1,46 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { siteConfig, siteUrl } from '../../config/site.ts';
+
+const title = 'Panduan Sukses Menghadapi Audit Verifikasi CSMS di Sektor Migas';
+const description = 'Strategi dan persiapan matang yang wajib dilakukan kontraktor untuk meraih skor tinggi dalam verifikasi CSMS hulu migas.';
+const pubDate = '2026-10-11T08:30:00Z';
+const category = 'Panduan Teknis';
+const author = 'Tim Ahli K3LL';
+const tags = ['CSMS', 'Migas', 'Audit K3LL', 'Sertifikasi'];
+const image = siteUrl('/images/articles/audit-csms-migas.svg');
+---
+<ArticleLayout
+  title={title}
+  description={description}
+  image={image}
+  pubDate={pubDate}
+  category={category}
+  author={author}
+  tags={tags}
+  breadcrumbs={[{ label: title, href: '/articles/panduan-sukses-audit-csms-migas' }]}
+>
+  <p>
+    Verifikasi Sistem Manajemen Keselamatan Kontraktor (CSMS) merupakan gerbang utama bagi setiap kontraktor yang ingin berpartisipasi dalam proyek di sektor hulu Migas, tambang, dan energi skala besar. Kegagalan dalam verifikasi ini berarti tertutupnya peluang tender bernilai tinggi.
+  </p>
+
+  <h2>1. Memahami Standar Penilaian Principal</h2>
+  <p>
+    Setiap perusahaan operator (principal) seperti Pertamina, Chevron, Medco, atau perusahaan multinasional lainnya memiliki standar penilaian yang mengacu pada 9 Elemen CSMS. Langkah awal yang krusial adalah memahami pembobotan dan kriteria spesifik yang ditetapkan oleh tim verifikator principal.
+  </p>
+
+  <h2>2. Kelengkapan 9 Elemen CSMS</h2>
+  <p>
+    Dokumen tidak boleh hanya ada di atas kertas, tetapi harus dapat dibuktikan implementasinya di lapangan. Mulai dari Kepemimpinan & Komitmen Manajemen (Elemen 1) hingga Pencapaian Kinerja K3LL (Elemen 8), seluruh bukti kerja (evidence) harus terdokumentasi rapi.
+  </p>
+
+  <h2>3. Simulasi Audit & Gap Analysis</h2>
+  <p>
+    Sebelum audit resmi dilakukan, lakukan <em>Gap Analysis</em> secara mendalam. Simulasi tanya jawab dengan auditor internal atau konsultan independen akan membantu tim Anda terbiasa menjawab pertanyaan verifikator dengan percaya diri dan akurat.
+  </p>
+
+  <h2>Kesimpulan</h2>
+  <p>
+    Dengan persiapan yang terstruktur dan pendampingan dari konsultan berpengalaman, peluang kelulusan 100% dengan skor tertinggi dapat tercapai dengan lebih mudah. Hubungi tim kami untuk konsultasi awal penyusunan dokumen CSMS Anda.
+  </p>
+</ArticleLayout>

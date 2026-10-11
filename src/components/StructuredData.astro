@@ -1,0 +1,156 @@
+---
+// Structured Data / Schema.org JSON-LD component
+// Generates appropriate JSON-LD based on page type.
+import { siteConfig, siteUrl } from '../config/site.ts';
+
+const { pageType, title, description, url } = Astro.props;
+
+const fullUrl = url || siteUrl();
+const logoUrl = siteUrl(siteConfig.logo);
+const orgId = `${siteUrl()}#localbusiness`;
+
+// Organization / LocalBusiness data from config
+const organizationData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": orgId,
+  "name": siteConfig.siteName,
+  "image": logoUrl,
+  "url": siteUrl(),
+  "telephone": siteConfig.phone,
+  "priceRange": siteConfig.priceRange,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": siteConfig.address.street,
+    "addressLocality": siteConfig.address.locality,
+    "addressRegion": siteConfig.address.region,
+    "postalCode": siteConfig.address.postalCode,
+    "addressCountry": siteConfig.address.country,
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": siteConfig.geo.latitude,
+    "longitude": siteConfig.geo.longitude,
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": siteConfig.openingHours.days,
+      "opens": siteConfig.openingHours.opens,
+      "closes": siteConfig.openingHours.closes,
+    },
+  ],
+  "sameAs": [
+    siteConfig.social.facebook,
+    siteConfig.social.instagram,
+    siteConfig.social.youtube,
+    siteConfig.social.x,
+    siteConfig.social.linkedin,
+    siteConfig.social.tiktok,
+  ],
+};
+
+// Page-specific structured data
+let pageData = {};
+
+switch (pageType) {
+  case 'WebSite':
+    pageData = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${fullUrl}#website`,
+      "url": fullUrl,
+      "name": title,
+      "description": description,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "url-template": `${fullUrl}?s={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    };
+    break;
+
+  case 'AboutPage':
+    pageData = {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "@id": `${fullUrl}#aboutpage`,
+      "url": fullUrl,
+      "name": title,
+      "description": description,
+    };
+    break;
+
+  case 'ContactPage':
+    pageData = {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "@id": `${fullUrl}#contactpage`,
+      "url": fullUrl,
+      "name": title,
+      "description": description,
+    };
+    break;
+
+  case 'Service':
+    pageData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${fullUrl}#service`,
+      "url": fullUrl,
+      "name": title,
+      "description": description,
+      "areaServed": {
+        "@type": "Place",
+        "@id": "#placeholder",
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceLocation": {
+          "@type": "Place",
+          "@id": "#placeholder",
+        },
+      },
+    };
+    break;
+
+  case 'FAQPage':
+    pageData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${fullUrl}#faqpage`,
+      "url": fullUrl,
+      "name": title,
+      "description": description,
+    };
+    break;
+
+  default:
+    pageData = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${fullUrl}#webpage`,
+      "url": fullUrl,
+      "name": title,
+      "description": description,
+      "isPartOf": {
+        "@id": `${siteUrl()}#website`,
+      },
+      "about": {
+        "@id": orgId,
+      },
+    };
+}
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [organizationData, pageData],
+};
+---
+
+<script type="application/ld+json">
+  {JSON.stringify(structuredData, null, 2)}
+</script>

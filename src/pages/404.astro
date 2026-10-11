@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig, siteUrl } from '../config/site.ts';
+
+const title = 'Halaman Tidak Ditemukan - Konsultan CSMS';
+const description = 'Maaf, halaman yang Anda cari tidak dapat ditemukan.';
+const image = siteUrl(siteConfig.ogImage);
+---
+<BaseLayout 
+  title={title} 
+  description={description} 
+  image={image}
+  pageType="WebPage"
+>
+  <section class="min-h-[calc(100vh-64px)] flex flex-col items-center justify-center px-4 py-12 sm:py-20">
+    <div class="text-center">
+      <h1 class="text-5xl font-bold text-gray-900 mb-6">404</h1>
+      <p class="text-2xl font-semibold text-gray-700 mb-6">Halaman Tidak Ditemukan</p>
+      <p class="text-lg text-gray-600 mb-8 max-w-xl">
+        Maaf, halaman yang Anda cari tidak dapat ditemukan. 
+        Halaman mungkin telah dipindah, dihapus, atau Anda mungkin mengetikkan URL yang salah.
+      </p>
+      <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center">
+        <a 
+          href="/" 
+          class="px-6 py-3 bg-primary-600 text-white font-medium rounded-lg shadow-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500"
+        >
+          Kembali ke Beranda
+        </a>
+        <a 
+          href="/contact" 
+          class="px-6 py-3 bg-white text-primary-600 font-medium border border-primary-300 rounded-lg shadow-md hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500"
+        >
+          Hubungi Kami
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
