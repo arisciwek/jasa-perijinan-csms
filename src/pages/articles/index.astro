@@ -5,6 +5,7 @@ import { siteConfig, siteUrl } from '../../config/site.ts';
 const title = `Artikel & Panduan K3LL — ${siteConfig.siteName}`;
 const description = 'Kumpulan artikel, panduan, dan wawasan terbaru seputar Contractor Safety Management System (CSMS), SMK3, ISO 45001, dan perizinan korporasi di Indonesia.';
 const image = siteUrl('/images/articles/articles.svg');
+const seoImage = siteUrl('/images/articles/articles.svg', true);
 
 const articles = [
   {
@@ -36,7 +37,7 @@ const articles = [
 <PageLayout
   title={title}
   description={description}
-  image={image}
+  image={seoImage}
   breadcrumbs={[{ label: 'Artikel', href: '/articles' }]}
 >
   <section class="py-16 bg-white">

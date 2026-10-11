@@ -5,6 +5,7 @@ import { siteConfig, siteUrl } from '../config/site.ts';
 const title = `9 Elemen Utama CSMS — ${siteConfig.siteName}`;
 const description = 'Penjelasan mendalam 9 elemen Contractor Safety Management System (CSMS): Kepemimpinan, Kebijakan, Organisasi, Manajemen Risiko, Prosedur, dan lainnya.';
 const image = siteUrl('/images/csms-elements/csms-elements.svg');
+const seoImage = siteUrl('/images/csms-elements/csms-elements.svg', true);
 
 const elements = [
   { id: 1, title: 'Kepemimpinan & Komitmen', desc: 'Bagaimana manajer senior terlibat langsung dalam manajemen K3LL dan menetapkan teladan keselamatan.' },
@@ -21,7 +22,7 @@ const elements = [
 <PageLayout
   title={title}
   description={description}
-  image={image}
+  image={seoImage}
   breadcrumbs={[{ label: 'Elemen CSMS', href: '/csms-elements' }]}
 >
   <section class="py-16 bg-white">

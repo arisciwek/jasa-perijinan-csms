@@ -70,8 +70,12 @@ export const siteConfig = {
 };
 
 // Helper: bangun URL lengkap dari path
-// Menggunakan SITE_URL environment variable jika ada, atau fallback ke domain production
-export function siteUrl(path = ''): string {
+// Untuk UI/assets di halaman (<img>, dll), gunakan relative path agar selalu aman di .lan, Vercel, dan custom domain.
+// Untuk SEO (og:image, canonical, sitemap), gunakan absolute URL dari SITE_URL atau domain.
+export function siteUrl(path = '', absolute = false): string {
+  if (!absolute) {
+    return path ? (path.startsWith('/') ? path : '/' + path) : '/';
+  }
   const base = process.env.SITE_URL || `https://www.${siteConfig.domain}`;
   return path ? `${base.replace(/\/$/, '')}${path.startsWith('/') ? path : '/' + path}` : base;
 }

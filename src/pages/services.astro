@@ -5,11 +5,12 @@ import { siteConfig, siteUrl } from '../config/site.ts';
 const title = `Layanan Konsultasi CSMS & Perizinan — ${siteConfig.siteName}`;
 const description = 'Layanan lengkap penyusunan dokumen CSMS, gap analysis, pendampingan audit verifikasi HSE, digitalisasi K3LL, dan perizinan legalitas korporasi.';
 const image = siteUrl('/images/services/services-csms.svg');
+const seoImage = siteUrl('/images/services/services-csms.svg', true);
 ---
 <PageLayout
   title={title}
   description={description}
-  image={image}
+  image={seoImage}
   breadcrumbs={[{ label: 'Layanan', href: '/services' }]}
 >
   <section class="py-16 bg-white services-section">

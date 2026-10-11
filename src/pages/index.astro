@@ -5,11 +5,12 @@ import { siteConfig, siteUrl } from '../config/site.ts';
 const title = siteConfig.defaultTitle;
 const description = siteConfig.defaultDescription;
 const image = siteUrl('/images/home/home-hero.svg');
+const seoImage = siteUrl('/images/home/home-hero.svg', true);
 ---
 <PageLayout
   title={title}
   description={description}
-  image={image}
+  image={seoImage}
   pageType="WebSite"
 >
   <!-- Hero Section -->
