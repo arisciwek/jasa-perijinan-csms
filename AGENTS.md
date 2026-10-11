@@ -29,6 +29,7 @@ docs/            # PRD.md (arsitektur), PLAN.md (spesifik situs)
 - **UI Assets (`<img>`, links)**: Gunakan relative path (`/images/...`) agar kompatibel di `.lan`, Vercel `.app`, dan production.
 - **SEO Metadata (Canonical, Open Graph, Sitemap)**: Gunakan helper `siteUrl(path, true)` yang membaca `process.env.SITE_URL` untuk absolute URL.
 - **Config**: `astro.config.mjs` membaca `SITE_URL` dengan fallback ke `http://jasa-perijinan-csms.lan`.
+- **Semantic Classes**: Gunakan kelas semantik (`section`, `article`, `header`, `footer`, dan kelas deskriptif seperti `service-card`, `service-content`, `service-media`) pada struktur halaman utama agar mudah dimodifikasi dan penempatan aset/gambar tertata rapi.
 - Bahasa Indonesia untuk semua konten pengguna.
 - Relatif URL (`/slug/`) untuk internal link.
 - Metadata SEO: title, description, Open Graph, Twitter Card, JSON-LD.
