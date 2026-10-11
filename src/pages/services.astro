@@ -24,7 +24,7 @@ const image = siteUrl('/images/services/services-csms.svg');
       <div class="space-y-16">
         <!-- Service 1 -->
         <div id="penyusunan" class="bg-gray-50 p-8 sm:p-12 rounded-2xl border border-gray-200 grid md:grid-cols-2 gap-8 items-center">
-          <div>
+          <div class="order-2 md:order-1">
             <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Layanan Utama #1</span>
             <h2 class="text-2xl font-bold text-gray-900 mt-1 mb-4">Penyusunan Dokumen CSMS dari Nol</h2>
             <p class="text-gray-600 leading-relaxed mb-6">
@@ -39,9 +39,8 @@ const image = siteUrl('/images/services/services-csms.svg');
               Pesan Layanan Ini
             </a>
           </div>
-          <div class="bg-primary-50 p-8 rounded-xl border border-primary-100">
-            <h3 class="font-bold text-primary-900 mb-2">Target Klien:</h3>
-            <p class="text-sm text-primary-800">Kontraktor baru yang ingin mengikuti tender di perusahaan minyak, gas, tambang, dan manufaktur besar yang mensyaratkan prakualifikasi CSMS.</p>
+          <div class="order-1 md:order-2 flex justify-center">
+            <img src={image} alt="Ilustrasi Penyusunan Dokumen CSMS dari Nol" class="w-full max-w-md h-auto rounded-xl shadow-md border border-gray-100" />
           </div>
         </div>
 
