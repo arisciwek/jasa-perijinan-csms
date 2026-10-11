@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2">
+    <path d="M0 100 H1200 M0 200 H1200 M0 300 H1200 M0 400 H1200 M0 500 H1200"/>
+    <path d="M200 0 V630 M400 0 V630 M600 0 V630 M800 0 V630 M1000 0 V630"/>
+  </g>
+  <circle cx="600" cy="315" r="220" fill="none" stroke="#60a5fa" stroke-width="4" stroke-opacity="0.3"/>
+  <circle cx="600" cy="315" r="160" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="10 5" stroke-opacity="0.4"/>
+  <g fill="#ffffff" text-anchor="middle" font-family="system-ui, sans-serif">
+    <text x="600" y="275" font-size="48" font-weight="bold" letter-spacing="2">KONSULTAN CSMS</text>
+    <text x="600" y="340" font-size="24" fill="#93c5fd" font-weight="500">Sistem Manajemen Keselamatan &amp; Perizinan Korporasi</text>
+    <text x="600" y="400" font-size="18" fill="#bfdbfe">100% Kelulusan Verifikasi Principal Migas &amp; Tambang</text>
+  </g>
+  <rect x="500" y="450" width="200" height="48" rx="8" fill="#10b981"/>
+  <text x="600" y="481" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui, sans-serif">Terpercaya &amp; Resmi</text>
+</svg>

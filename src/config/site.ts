@@ -70,7 +70,8 @@ export const siteConfig = {
 };
 
 // Helper: bangun URL lengkap dari path
+// Menggunakan SITE_URL environment variable jika ada, atau fallback ke domain production
 export function siteUrl(path = ''): string {
-  const base = `https://www.${siteConfig.domain}`;
-  return path ? `${base}${path.startsWith('/') ? path : '/' + path}` : base;
+  const base = process.env.SITE_URL || `https://www.${siteConfig.domain}`;
+  return path ? `${base.replace(/\/$/, '')}${path.startsWith('/') ? path : '/' + path}` : base;
 }

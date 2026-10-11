@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2">
+    <path d="M100 0 V630 M300 0 V630 M500 0 V630 M700 0 V630 M900 0 V630 M1100 0 V630"/>
+  </g>
+  <rect x="150" y="150" width="900" height="330" rx="16" fill="#ffffff" fill-opacity="0.1" stroke="#ffffff" stroke-opacity="0.2"/>
+  <text x="600" y="270" fill="#ffffff" font-size="44" font-weight="bold" text-anchor="middle" font-family="system-ui, sans-serif">LAYANAN KONSULTASI CSMS &amp; PERIZINAN</text>
+  <text x="600" y="340" fill="#93c5fd" font-size="22" text-anchor="middle" font-family="system-ui, sans-serif">Penyusunan Dokumen, Gap Analysis, Pendampingan Audit &amp; Digitalisasi K3LL</text>
+  <rect x="450" y="400" width="300" height="40" rx="6" fill="#10b981"/>
+  <text x="600" y="426" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui, sans-serif">Solusi End-to-End Korporasi</text>
+</svg>

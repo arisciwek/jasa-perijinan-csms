@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="600" y="220" fill="#ffffff" font-size="44" font-weight="bold" text-anchor="middle" font-family="system-ui, sans-serif">9 ELEMEN UTAMA CSMS</text>
+  <text x="600" y="280" fill="#38bdf8" font-size="22" text-anchor="middle" font-family="system-ui, sans-serif">Standar Penilaian Kinerja Keselamatan Kontraktor</text>
+  <g transform="translate(200, 340)">
+    <rect x="0" y="0" width="240" height="80" rx="8" fill="#1e40af" stroke="#60a5fa" stroke-width="2"/>
+    <text x="120" y="45" fill="#ffffff" font-size="18" font-weight="bold" text-anchor="middle">1. Kepemimpinan</text>
+    
+    <rect x="280" y="0" width="240" height="80" rx="8" fill="#1e40af" stroke="#60a5fa" stroke-width="2"/>
+    <text x="400" y="45" fill="#ffffff" font-size="18" font-weight="bold" text-anchor="middle">2. Kebijakan</text>
+    
+    <rect x="560" y="0" width="240" height="80" rx="8" fill="#1e40af" stroke="#60a5fa" stroke-width="2"/>
+    <text x="680" y="45" fill="#ffffff" font-size="18" font-weight="bold" text-anchor="middle">3. Organisasi</text>
+  </g>
+</svg>
