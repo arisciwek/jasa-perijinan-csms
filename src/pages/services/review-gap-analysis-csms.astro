@@ -1,0 +1,105 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { siteConfig, siteUrl } from '../../config/site.ts';
+
+const title = `Review & Gap Analysis CSMS — ${siteConfig.siteName}`;
+const description = 'Evaluasi mendalam dokumen CSMS existing untuk identifikasi gap ketidaksesuaian dengan standar verifikasi terbaru. Laporan gap analysis & rekomendasi perbaikan terarah untuk optimalisasi skor prakualifikasi.';
+const image = siteUrl('/images/services/service-2-review.svg');
+const seoImage = siteUrl('/images/services/service-2-review.svg', true);
+
+const breadcrumbs = [
+  { label: 'Layanan', href: '/services' },
+  { label: 'Review & Gap Analysis CSMS', href: '/services/review-gap-analysis-csms' }
+];
+---
+<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Service">
+  <section class="py-16 bg-white service-detail-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 service-detail-container">
+      <header class="service-detail-header text-center mb-16">
+        <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">Layanan Utama #2</span>
+        <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Review & Gap Analysis CSMS</h1>
+        <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-8">Audit dokumen existing, identifikasi gap, rekomendasi perbaikan, optimalisasi skor verifikasi.</p>
+        <div class="service-detail-header-media flex justify-center">
+          <img src={image} alt="Review & Gap Analysis CSMS" class="w-full max-w-2xl h-auto rounded-xl shadow-md border border-gray-100" />
+        </div>
+      </header>
+
+      <div class="service-detail-content grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 service-detail-main space-y-10">
+          <article class="service-detail-article bg-gray-50 p-8 rounded-xl border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Deskripsi Layanan</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Banyak kontraktor sudah memiliki dokumen CSMS tapi **gagal verifikasi** atau **skor rendah** di prakualifikasi. Penyebab utamanya: dokumen outdated, tidak sesuai standar principal terbaru, gap antara dokumen & implementasi lapangan, atau kurangnya evidence pendukung. Layanan ini melakukan evaluasi mendalam (deep-dive) terhadap seluruh dokumen existing Anda.
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Kami tidak hanya mencatat "apa yang kurang", tapi memberikan **rekomendasi perbaikan terprioritaskan** berdasarkan bobot penilaian verifikasi, sehingga investasi perbaikan Anda efisien dan skor verifikasi naik signifikan.
+            </p>
+          </article>
+
+          <article class="service-detail-article bg-gray-50 p-8 rounded-xl border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Metodologi Review</h2>
+            <ol class="space-y-3 text-gray-700 list-decimal list-inside">
+              <li><strong>Kumpulkan Dokumen:</strong> 9 Elemen CSMS, Manual K3LL, POS/SWP, Register HIRA/JSA, Form, Evidence 12-24 bln terakhir</li>
+              <li><strong>Mapping ke Standar:</strong> Cocokkan tiap klausul ke syarat principal target (Pertamina, Shell, BP, Medco, dll) & regulasi (PP 50/2012, ISO 45001)</li>
+              <li><strong>Identifikasi Gap:</strong> Klasifikasi: Critical (NC Major), High (NC Minor), Medium (OFI), Low (Admin)</li>
+              <li><strong>Scoring Impact:</strong> Hitung kontribusi tiap gap ke skor total verifikasi</li>
+              <li><strong>Rekomendasi Terprioritaskan:</strong> Quick wins dulu, lalu structural fix</li>
+              <li><strong>Workshop Hasil:</strong> Presentasi ke manajemen & tim HSE klien</li>
+            </ol>
+          </article>
+
+          <article class="service-detail-article bg-gray-50 p-8 rounded-xl border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Deliverable</h2>
+            <ul class="space-y-2 text-gray-700 list-disc list-inside">
+              <li><strong>Gap Analysis Report:</strong> Matriks gap per elemen + per klausul (Excel + PDF)</li>
+              <li><strong>Heatmap Prioritas:</strong> Visualisasi gap vs impact skor (Critical → Low)</li>
+              <li><strong>Rekomendasi Perbaikan:</strong> Detail per item: apa, kenapa, bagaimana, PIC, timeline, estimasi effort</li>
+              <li><strong>Roadmap Perbaikan:</strong> Gantt chart 3-6 bulan dengan milestone</li>
+              <li><strong>Template Evidence:</strong> Contoh evidence yang diterima auditor untuk tiap gap</li>
+              <li><strong>Follow-up Review (opsional):</strong> Review ulang setelah perbaikan (1x inclu.)</li>
+            </ul>
+          </article>
+
+          <article class="service-detail-article bg-primary-50 p-8 rounded-xl border border-primary-200">
+            <h2 class="text-2xl font-bold text-primary-900 mb-4">Kapan Butuh Layanan Ini?</h2>
+            <ul class="space-y-2 text-primary-800 list-disc list-inside">
+              <li>Pernah gagal verifikasi / skor di bawah passing grade</li>
+              <li>Dokumen CSMS > 2 tahun tidak di-update</li>
+              <li>Ganti principal / syarat verifikasi berubah</li>
+              <li>Ingin naik level dari "Conditional Pass" ke "Full Pass"</li>
+              <li>Persiapan re-verifikasi berkala (annual surveillance)</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="service-detail-sidebar space-y-6">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="font-bold text-gray-900 mb-4">Navigasi Layanan</h3>
+            <nav class="space-y-2">
+              <a href="/services/penyusunan-dokumen-csms" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Penyusunan Dokumen CSMS dari Nol</a>
+              <a href="/services/review-gap-analysis-csms" class="block bg-primary-50 text-primary-800 p-3 rounded-lg font-medium border border-primary-200">→ Review & Gap Analysis CSMS</a>
+              <a href="/services/pendampingan-verifikasi-audit-hse" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Pendampingan Verifikasi & Audit HSE</a>
+              <a href="/services/digitalisasi-standardisasi-k3ll" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Digitalisasi & Standardisasi K3LL</a>
+            </nav>
+          </div>
+
+          <div class="bg-primary-600 text-white p-6 rounded-xl">
+            <h3 class="font-bold text-lg mb-3">Dokumen CSMS Sudah Ada Tapi Gagal Verifikasi?</h3>
+            <p class="text-primary-100 mb-4 text-sm">Kami temukan gap-nya, prioritaskan perbaikan, bantu naikkan skor verifikasi Anda.</p>
+            <a href="/contact" class="inline-block bg-white text-primary-600 font-medium px-5 py-2 rounded-lg hover:bg-primary-50 transition-colors text-sm">Konsultasi Gratis</a>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <h3 class="font-bold text-gray-900 mb-3">Timeline Cepat</h3>
+            <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
+              <li>Kick-off: 1 hari</li>
+              <li>Review dokumen: 1-2 minggu</li>
+              <li>Laporan & Workshop: 1 minggu</li>
+              <li><strong>Total: 2-4 minggu</strong></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</PageLayout>

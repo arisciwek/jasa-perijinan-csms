@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#eff6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgGrad)" />
+  <!-- Gap analysis visualization -->
+  <g transform="translate(50, 40)">
+    <text x="0" y="0" font-size="14" font-weight="bold" fill="#1e293b">Gap Analysis Matrix</text>
+    <g transform="translate(0, 25)">
+      <!-- Table header -->
+      <rect x="0" y="0" width="300" height="30" rx="0" fill="#3b82f6"/>
+      <text x="50" y="20" text-anchor="middle" font-size="9" font-weight="bold" fill="#fff">Elemen CSMS</text>
+      <text x="130" y="20" text-anchor="middle" font-size="9" font-weight="bold" fill="#fff">Status</text>
+      <text x="210" y="20" text-anchor="middle" font-size="9" font-weight="bold" fill="#fff">Gap Level</text>
+      <text x="270" y="20" text-anchor="middle" font-size="9" font-weight="bold" fill="#fff">Priority</text>
+      <!-- Rows -->
+      <g font-size="8" fill="#1e293b">
+        <g transform="translate(0, 35)">
+          <rect x="0" y="0" width="300" height="25" fill="#fff" stroke="#dbeafe" stroke-width="1"/>
+          <text x="50" y="17" text-anchor="middle">#1 Kepemimpinan</text>
+          <text x="130" y="17" text-anchor="middle" fill="#f59e0b">Partial</text>
+          <rect x="195" y="5" width="30" height="15" rx="3" fill="#fef3c7"/>
+          <text x="210" y="17" text-anchor="middle" font-size="7" fill="#d97706">Medium</text>
+          <text x="270" y="17" text-anchor="middle" fill="#f59e0b">P2</text>
+        </g>
+        <g transform="translate(0, 62)">
+          <rect x="0" y="0" width="300" height="25" fill="#f8fafc" stroke="#dbeafe" stroke-width="1"/>
+          <text x="50" y="17" text-anchor="middle">#2 Kebijaksanaan</text>
+          <text x="130" y="17" text-anchor="middle" fill="#dc2626">Missing</text>
+          <rect x="195" y="5" width="30" height="15" rx="3" fill="#fee2e2"/>
+          <text x="210" y="17" text-anchor="middle" font-size="7" fill="#dc2626">Critical</text>
+          <text x="270" y="17" text-anchor="middle" fill="#dc2626">P1</text>
+        </g>
+        <g transform="translate(0, 89)">
+          <rect x="0" y="0" width="300" height="25" fill="#fff" stroke="#dbeafe" stroke-width="1"/>
+          <text x="50" y="17" text-anchor="middle">#3 Organisasi</text>
+          <text x="130" y="17" text-anchor="middle" fill="#10b981">Compliant</text>
+          <rect x="195" y="5" width="30" height="15" rx="3" fill="#dcfce7"/>
+          <text x="210" y="17" text-anchor="middle" font-size="7" fill="#16a34a">None</text>
+          <text x="270" y="17" text-anchor="middle" fill="#10b981">—</text>
+        </g>
+        <g transform="translate(0, 116)">
+          <rect x="0" y="0" width="300" height="25" fill="#f8fafc" stroke="#dbeafe" stroke-width="1"/>
+          <text x="50" y="17" text-anchor="middle">#4 Manajemen Risiko</text>
+          <text x="130" y="17" text-anchor="middle" fill="#f59e0b">Partial</text>
+          <rect x="195" y="5" width="30" height="15" rx="3" fill="#fef3c7"/>
+          <text x="210" y="17" text-anchor="middle" font-size="7" fill="#d97706">Medium</text>
+          <text x="270" y="17" text-anchor="middle" fill="#f59e0b">P2</text>
+        </g>
+        <g transform="translate(0, 143)">
+          <rect x="0" y="0" width="300" height="25" fill="#fff" stroke="#dbeafe" stroke-width="1"/>
+          <text x="50" y="17" text-anchor="middle">#5 Perencanaan</text>
+          <text x="130" y="17" text-anchor="middle" fill="#dc2626">Missing</text>
+          <rect x="195" y="5" width="30" height="15" rx="3" fill="#fee2e2"/>
+          <text x="210" y="17" text-anchor="middle" font-size="7" fill="#dc2626">Critical</text>
+          <text x="270" y="17" text-anchor="middle" fill="#dc2626">P1</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <!-- Priority heatmap -->
+  <g transform="translate(50, 220)">
+    <text x="0" y="0" font-size="12" font-weight="bold" fill="#1e293b">Priority Heatmap</text>
+    <g transform="translate(0, 20)">
+      <g font-size="9" fill="#1e293b">
+        <rect x="0" y="0" width="50" height="20" rx="3" fill="#fee2e2"/>
+        <text x="25" y="14" text-anchor="middle" font-size="8" fill="#dc2626">P1: Critical</text>
+        <text x="60" y="14">2 items</text>
+        <rect x="130" y="0" width="50" height="20" rx="3" fill="#fef3c7"/>
+        <text x="155" y="14" text-anchor="middle" font-size="8" fill="#d97706">P2: High</text>
+        <text x="190" y="14">3 items</text>
+        <rect x="240" y="0" width="50" height="20" rx="3" fill="#dbeafe"/>
+        <text x="265" y="14" text-anchor="middle" font-size="8" fill="#3b82f6">P3: Medium</text>
+        <text x="300" y="14">4 items</text>
+      </g>
+    </g>
+  </g>
+  <!-- Report icon -->
+  <g transform="translate(280, 40)">
+    <rect x="0" y="0" width="70" height="90" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="8" y="8" width="54" height="8" rx="2" fill="#3b82f6"/>
+    <rect x="8" y="20" width="40" height="5" rx="2" fill="#93c5fd"/>
+    <rect x="8" y="30" width="50" height="5" rx="2" fill="#dbeafe"/>
+    <rect x="8" y="40" width="30" height="5" rx="2" fill="#dbeafe"/>
+    <rect x="8" y="50" width="54" height="5" rx="2" fill="#dbeafe"/>
+    <rect x="8" y="60" width="45" height="5" rx="2" fill="#dbeafe"/>
+    <rect x="8" y="70" width="35" height="5" rx="2" fill="#dbeafe"/>
+    <text x="35" y="110" text-anchor="middle" font-size="9" fill="#64748b">Gap Report</text>
+  </g>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#eff6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgGrad)" />
+  <!-- Before/After comparison -->
+  <g transform="translate(50, 30)">
+    <text x="0" y="0" font-size="14" font-weight="bold" fill="#1e293b">Before → After Digitalisasi</text>
+    <g transform="translate(0, 25)">
+      <!-- Before -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="140" height="160" rx="8" fill="#fff" stroke="#fca5a5" stroke-width="2"/>
+        <rect x="8" y="8" width="124" height="18" rx="4" fill="#fef2f2"/>
+        <text x="70" y="20" text-anchor="middle" font-size="9" font-weight="bold" fill="#dc2626">BEFORE (Manual)</text>
+        <g transform="translate(10, 35)" font-size="8" fill="#1e293b">
+          <rect x="0" y="0" width="120" height="25" rx="3" fill="#fee2e2"/>
+          <text x="5" y="17">📁 Arsip Fisik (Rak Penuh)</text>
+          <rect x="0" y="30" width="120" height="25" rx="3" fill="#fee2e2"/>
+          <text x="5" y="47">📊 Excel Tersebar (Versi Multiple)</text>
+          <rect x="0" y="60" width="120" height="25" rx="3" fill="#fee2e2"/>
+          <text x="5" y="77">💬 WhatsApp Group (Tidak Terstruktur)</text>
+          <rect x="0" y="90" width="120" height="25" rx="3" fill="#fee2e2"/>
+          <text x="5" y="107">🔍 Cari Dokumen: Jam-Hari</text>
+          <rect x="0" y="120" width="120" height="25" rx="3" fill="#fecaca"/>
+          <text x="5" y="137" fill="#dc2626">⚠ Risiko Hilang/Rusak Tinggi</text>
+        </g>
+      </g>
+      <!-- Arrow -->
+      <g transform="translate(150, 70)">
+        <path d="M0,0 L30,0" stroke="#3b82f6" stroke-width="3" fill="none"/>
+        <path d="M25,-5 L35,0 L25,5" fill="#3b82f6"/>
+        <text x="15" y="-12" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">DIGITALISASI</text>
+      </g>
+      <!-- After -->
+      <g transform="translate(190, 0)">
+        <rect x="0" y="0" width="140" height="160" rx="8" fill="#fff" stroke="#86efac" stroke-width="2"/>
+        <rect x="8" y="8" width="124" height="18" rx="4" fill="#f0fdf4"/>
+        <text x="70" y="20" text-anchor="middle" font-size="9" font-weight="bold" fill="#16a34a">AFTER (Digital)</text>
+        <g transform="translate(10, 35)" font-size="8" fill="#1e293b">
+          <rect x="0" y="0" width="120" height="25" rx="3" fill="#dcfce7"/>
+          <text x="5" y="17">☁️ Cloud Repository (Terstruktur)</text>
+          <rect x="0" y="30" width="120" height="25" rx="3" fill="#dcfce7"/>
+          <text x="5" y="47">📋 Template Standar (Konsisten)</text>
+          <rect x="0" y="60" width="120" height="25" rx="3" fill="#dcfce7"/>
+          <text x="5" y="77">📱 Mobile App (Input Lapangan)</text>
+          <rect x="0" y="90" width="120" height="25" rx="3" fill="#dcfce7"/>
+          <text x="5" y="107">⚡ Cari Dokumen: Detik</text>
+          <rect x="0" y="120" width="120" height="25" rx="3" fill="#bbf7d0"/>
+          <text x="5" y="137" fill="#16a34a">✅ Backup Otomatis + Versioning</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <!-- Features -->
+  <g transform="translate(50, 225)">
+    <text x="0" y="0" font-size="12" font-weight="bold" fill="#1e293b">Fitur Utama Platform</text>
+    <g transform="translate(0, 20)">
+      <g font-size="9" fill="#1e293b">
+        <rect x="0" y="0" width="70" height="40" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1"/>
+        <text x="35" y="15" text-anchor="middle" font-weight="bold" fill="#3b82f6">Repo</text>
+        <text x="35" y="28" text-anchor="middle" font-size="7">Search & Version</text>
+      </g>
+      <g transform="translate(80, 0)">
+        <rect x="0" y="0" width="70" height="40" rx="5" fill="#fff" stroke="#10b981" stroke-width="1"/>
+        <text x="35" y="15" text-anchor="middle" font-weight="bold" fill="#10b981">Forms</text>
+        <text x="35" y="28" text-anchor="middle" font-size="7">Template Standar</text>
+      </g>
+      <g transform="translate(160, 0)">
+        <rect x="0" y="0" width="70" height="40" rx="5" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+        <text x="35" y="15" text-anchor="middle" font-weight="bold" fill="#f59e0b">Dashboard</text>
+        <text x="35" y="28" text-anchor="middle" font-size="7">KPI Real-time</text>
+      </g>
+      <g transform="translate(240, 0)">
+        <rect x="0" y="0" width="70" height="40" rx="5" fill="#fff" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="35" y="15" text-anchor="middle" font-weight="bold" fill="#8b5cf6">Workflow</text>
+        <text x="35" y="28" text-anchor="middle" font-size="7">Approval Digital</text>
+      </g>
+    </g>
+  </g>
+  <!-- ROI -->
+  <g transform="translate(280, 30)">
+    <rect x="0" y="0" width="70" height="100" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="35" y="20" text-anchor="middle" font-size="9" font-weight="bold" fill="#3b82f6">ROI</text>
+    <g transform="translate(10, 30)" font-size="8" fill="#1e293b">
+      <text x="0" y="0">🔍 Cari: -90%</text>
+      <text x="0" y="15">📋 Audit: -70%</text>
+      <text x="0" y="30">⏰ Lapor: -80%</text>
+      <text x="0" y="45">💾 Hilang: 0%</text>
+      <text x="0" y="60" fill="#16a34a">Efisiensi ↑↑↑</text>
+    </g>
+  </g>
+</svg>

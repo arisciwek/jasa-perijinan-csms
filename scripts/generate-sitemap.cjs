@@ -7,6 +7,10 @@ const baseUrl = siteUrl.replace(/\/+$/, '');
 const routes = [
   { url: '/', changefreq: 'weekly', priority: 1.0 },
   { url: '/services/', changefreq: 'monthly', priority: 0.8 },
+  { url: '/services/penyusunan-dokumen-csms/', changefreq: 'monthly', priority: 0.7 },
+  { url: '/services/review-gap-analysis-csms/', changefreq: 'monthly', priority: 0.7 },
+  { url: '/services/pendampingan-verifikasi-audit-hse/', changefreq: 'monthly', priority: 0.7 },
+  { url: '/services/digitalisasi-standardisasi-k3ll/', changefreq: 'monthly', priority: 0.7 },
   { url: '/csms-elements/', changefreq: 'monthly', priority: 0.8 },
   { url: '/csms-elements/kepemimpinan-komitmen/', changefreq: 'monthly', priority: 0.7 },
   { url: '/csms-elements/kebijaksanaan-sasaran/', changefreq: 'monthly', priority: 0.7 },

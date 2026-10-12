@@ -6,6 +6,65 @@ const title = `Layanan Konsultasi CSMS & Perizinan — ${siteConfig.siteName}`;
 const description = 'Layanan lengkap penyusunan dokumen CSMS, gap analysis, pendampingan audit verifikasi HSE, digitalisasi K3LL, dan perizinan legalitas korporasi.';
 const image = siteUrl('/images/services/services-csms.svg');
 const seoImage = siteUrl('/images/services/services-csms.svg', true);
+
+const services = [
+  { 
+    id: 'penyusunan', 
+    href: '/services/penyusunan-dokumen-csms',
+    badge: 'Layanan Utama #1',
+    title: 'Penyusunan Dokumen CSMS dari Nol',
+    description: 'Bagi perusahaan atau kontraktor yang belum memiliki dokumentasi Sistem Manajemen Keselamatan Kerja dan Lingkungan (K3LL). Kami menyusun seluruh manual, prosedur, safe work practices, dan form pendukung sesuai standar industri migas, tambang, dan konstruksi.',
+    features: [
+      'Penyusunan 9 Elemen CSMS lengkap',
+      'Manual K3LL & Prosedur Operasional Standar (POS)',
+      'Jaminan kesesuaian dengan standar principal'
+    ],
+    cta: 'Pesan Layanan Ini',
+    target: 'Kontraktor baru yang ingin mengikuti tender di perusahaan minyak, gas, tambang, dan manufaktur besar yang mensyaratkan prakualifikasi CSMS.'
+  },
+  { 
+    id: 'review', 
+    href: '/services/review-gap-analysis-csms',
+    badge: 'Layanan Utama #2',
+    title: 'Review & Gap Analysis CSMS',
+    description: 'Evaluasi mendalam terhadap dokumen CSMS eksisting Anda untuk menemukan celah (gap) ketidaksesuaian dengan standar verifikasi terbaru. Kami memberikan rekomendasi perbaikan terarah agar skor verifikasi Anda meningkat drastis.',
+    features: [
+      'Audit dokumen existing secara menyeluruh',
+      'Laporan Gap Analysis & rekomendasi perbaikan',
+      'Optimalisasi skor penilaian prakualifikasi'
+    ],
+    cta: 'Pesan Layanan Ini',
+    target: 'Kontraktor yang pernah gagal dalam verifikasi CSMS atau ingin memperbarui dokumen lama agar lolos tender berikutnya.'
+  },
+  { 
+    id: 'audit', 
+    href: '/services/pendampingan-verifikasi-audit-hse',
+    badge: 'Layanan Utama #3',
+    title: 'Pendampingan Verifikasi & Audit HSE',
+    description: 'Pendampingan intensif saat auditor principal atau verifikator independen melakukan audit lapangan maupun verifikasi dokumen. Tim kami mendampingi dari sesi pembukaan hingga penutupan audit untuk memastikan kelancaran proses.',
+    features: [
+      'Simulasi & persiapan audit verifikasi',
+      'Pendampingan langsung saat audit principal',
+      'Penanganan temuan audit (Corrective Action Plan)'
+    ],
+    cta: 'Pesan Layanan Ini',
+    target: 'Perusahaan yang akan menghadapi jadwal verifikasi audit lapangan atau verifikasi meja (desk evaluation) oleh principal.'
+  },
+  { 
+    id: 'digitalisasi', 
+    href: '/services/digitalisasi-standardisasi-k3ll',
+    badge: 'Layanan Utama #4',
+    title: 'Digitalisasi & Standardisasi K3LL',
+    description: 'Transformasi dokumen fisik K3LL menjadi sistem digital terstandar yang mudah diakses, diperbarui, dan diverifikasi oleh manajemen maupun auditor kapan pun dan di mana pun.',
+    features: [
+      'Konversi arsip fisik ke format digital terstruktur',
+      'Implementasi template pelaporan K3LL',
+      'Pelatihan pengoperasian sistem bagi tim internal'
+    ],
+    cta: 'Pesan Layanan Ini',
+    target: 'Kontraktor modern yang ingin meninggalkan cara manual dan mengadopsi pengelolaan data K3LL berbasis digital.'
+  }
+];
 ---
 <PageLayout
   title={title}
@@ -28,97 +87,27 @@ const seoImage = siteUrl('/images/services/services-csms.svg', true);
       </header>
 
       <div class="services-list space-y-16">
-        <!-- Service 1 -->
-        <article id="penyusunan" class="service-card bg-gray-50 p-8 sm:p-12 rounded-2xl border border-gray-200 grid md:grid-cols-2 gap-8 items-center">
-          <div class="service-content">
-            <span class="service-badge text-primary-600 font-semibold text-sm uppercase tracking-wider">Layanan Utama #1</span>
-            <h2 class="service-title text-2xl font-bold text-gray-900 mt-1 mb-4">Penyusunan Dokumen CSMS dari Nol</h2>
-            <p class="service-description text-gray-600 leading-relaxed mb-6">
-              Bagi perusahaan atau kontraktor yang belum memiliki dokumentasi Sistem Manajemen Keselamatan Kerja dan Lingkungan (K3LL). Kami menyusun seluruh manual, prosedur, safe work practices, dan form pendukung sesuai standar industri migas, tambang, dan konstruksi.
-            </p>
-            <ul class="service-features space-y-2 text-sm text-gray-700 mb-6">
-              <li>✓ Penyusunan 9 Elemen CSMS lengkap</li>
-              <li>✓ Manual K3LL & Prosedur Operasional Standar (POS)</li>
-              <li>✓ Jaminan kesesuaian dengan standar principal</li>
-            </ul>
-            <a href="/contact" class="service-cta inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
-              Pesan Layanan Ini
-            </a>
-          </div>
-          <div class="service-target bg-primary-50 p-8 rounded-xl border border-primary-100">
-            <h3 class="font-bold text-primary-900 mb-2">Target Klien:</h3>
-            <p class="text-sm text-primary-800">Kontraktor baru yang ingin mengikuti tender di perusahaan minyak, gas, tambang, dan manufaktur besar yang mensyaratkan prakualifikasi CSMS.</p>
-          </div>
-        </article>
-
-        <!-- Service 2 -->
-        <article id="review" class="service-card bg-gray-50 p-8 sm:p-12 rounded-2xl border border-gray-200 grid md:grid-cols-2 gap-8 items-center">
-          <div class="service-content">
-            <span class="service-badge text-primary-600 font-semibold text-sm uppercase tracking-wider">Layanan Utama #2</span>
-            <h2 class="service-title text-2xl font-bold text-gray-900 mt-1 mb-4">Review & Gap Analysis CSMS</h2>
-            <p class="service-description text-gray-600 leading-relaxed mb-6">
-              Evaluasi mendalam terhadap dokumen CSMS eksisting Anda untuk menemukan celah (gap) ketidaksesuaian dengan standar verifikasi terbaru. Kami memberikan rekomendasi perbaikan terarah agar skor verifikasi Anda meningkat drastis.
-            </p>
-            <ul class="service-features space-y-2 text-sm text-gray-700 mb-6">
-              <li>✓ Audit dokumen existing secara menyeluruh</li>
-              <li>✓ Laporan Gap Analysis & rekomendasi perbaikan</li>
-              <li>✓ Optimalisasi skor penilaian prakualifikasi</li>
-            </ul>
-            <a href="/contact" class="service-cta inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
-              Pesan Layanan Ini
-            </a>
-          </div>
-          <div class="service-target bg-primary-50 p-8 rounded-xl border border-primary-100">
-            <h3 class="font-bold text-primary-900 mb-2">Target Klien:</h3>
-            <p class="text-sm text-primary-800">Kontraktor yang pernah gagal dalam verifikasi CSMS atau ingin memperbarui dokumen lama agar lolos tender berikutnya.</p>
-          </div>
-        </article>
-
-        <!-- Service 3 -->
-        <article id="audit" class="service-card bg-gray-50 p-8 sm:p-12 rounded-2xl border border-gray-200 grid md:grid-cols-2 gap-8 items-center">
-          <div class="service-content">
-            <span class="service-badge text-primary-600 font-semibold text-sm uppercase tracking-wider">Layanan Utama #3</span>
-            <h2 class="service-title text-2xl font-bold text-gray-900 mt-1 mb-4">Pendampingan Verifikasi & Audit HSE</h2>
-            <p class="service-description text-gray-600 leading-relaxed mb-6">
-              Pendampingan intensif saat auditor principal atau verifikator independen melakukan audit lapangan maupun verifikasi dokumen. Tim kami mendampingi dari sesi pembukaan hingga penutupan audit untuk memastikan kelancaran proses.
-            </p>
-            <ul class="service-features space-y-2 text-sm text-gray-700 mb-6">
-              <li>✓ Simulasi & persiapan audit verifikasi</li>
-              <li>✓ Pendampingan langsung saat audit principal</li>
-              <li>✓ Penanganan temuan audit (Corrective Action Plan)</li>
-            </ul>
-            <a href="/contact" class="service-cta inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
-              Pesan Layanan Ini
-            </a>
-          </div>
-          <div class="service-target bg-primary-50 p-8 rounded-xl border border-primary-100">
-            <h3 class="font-bold text-primary-900 mb-2">Target Klien:</h3>
-            <p class="text-sm text-primary-800">Perusahaan yang akan menghadapi jadwal verifikasi audit lapangan atau verifikasi meja (desk evaluation) oleh principal.</p>
-          </div>
-        </article>
-
-        <!-- Service 4 -->
-        <article id="digitalisasi" class="service-card bg-gray-50 p-8 sm:p-12 rounded-2xl border border-gray-200 grid md:grid-cols-2 gap-8 items-center">
-          <div class="service-content">
-            <span class="service-badge text-primary-600 font-semibold text-sm uppercase tracking-wider">Layanan Utama #4</span>
-            <h2 class="service-title text-2xl font-bold text-gray-900 mt-1 mb-4">Digitalisasi & Standardisasi K3LL</h2>
-            <p class="service-description text-gray-600 leading-relaxed mb-6">
-              Transformasi dokumen fisik K3LL menjadi sistem digital terstandar yang mudah diakses, diperbarui, dan diverifikasi oleh manajemen maupun auditor kapan pun dan di mana pun.
-            </p>
-            <ul class="service-features space-y-2 text-sm text-gray-700 mb-6">
-              <li>✓ Konversi arsip fisik ke format digital terstruktur</li>
-              <li>✓ Implementasi template pelaporan K3LL</li>
-              <li>✓ Pelatihan pengoperasian sistem bagi tim internal</li>
-            </ul>
-            <a href="/contact" class="service-cta inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
-              Pesan Layanan Ini
-            </a>
-          </div>
-          <div class="service-target bg-primary-50 p-8 rounded-xl border border-primary-100">
-            <h3 class="font-bold text-primary-900 mb-2">Target Klien:</h3>
-            <p class="text-sm text-primary-800">Kontraktor modern yang ingin meninggalkan cara manual dan mengadopsi pengelolaan data K3LL berbasis digital.</p>
-          </div>
-        </article>
+        {services.map(svc => (
+          <article id={svc.id} class="service-card bg-gray-50 p-8 sm:p-12 rounded-2xl border border-gray-200 grid md:grid-cols-2 gap-8 items-center">
+            <div class="service-content">
+              <span class="service-badge text-primary-600 font-semibold text-sm uppercase tracking-wider">{svc.badge}</span>
+              <h2 class="service-title text-2xl font-bold text-gray-900 mt-1 mb-4">{svc.title}</h2>
+              <p class="service-description text-gray-600 leading-relaxed mb-6">
+                {svc.description}
+              </p>
+              <ul class="service-features space-y-2 text-sm text-gray-700 mb-6">
+                {svc.features.map(f => <li>✓ {f}</li>)}
+              </ul>
+              <a href={svc.href} class="service-cta inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
+                {svc.cta}
+              </a>
+            </div>
+            <div class="service-target bg-primary-50 p-8 rounded-xl border border-primary-100">
+              <h3 class="font-bold text-primary-900 mb-2">Target Klien:</h3>
+              <p class="text-sm text-primary-800">{svc.target}</p>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
