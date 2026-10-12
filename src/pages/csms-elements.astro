@@ -8,15 +8,15 @@ const image = siteUrl('/images/csms-elements/csms-elements.svg');
 const seoImage = siteUrl('/images/csms-elements/csms-elements.svg', true);
 
 const elements = [
-  { id: 1, title: 'Kepemimpinan & Komitmen', desc: 'Bagaimana manajer senior terlibat langsung dalam manajemen K3LL dan menetapkan teladan keselamatan.' },
-  { id: 2, title: 'Kebijaksanaan & Sasaran Strategis', desc: 'Dokumen kebijakan K3LL yang terintegrasi dengan tujuan strategis operasional perusahaan.' },
-  { id: 3, title: 'Organisasi & Tanggung Jawab', desc: 'Struktur organisasi yang jelas untuk mengelola dan mengomunikasikan aspek K3LL.' },
-  { id: 4, title: 'Manajemen Risiko', desc: 'Identifikasi bahaya, penilaian risiko, dan pengendalian hingga tingkat ALARP (As Low As Reasonably Practicable).' },
-  { id: 5, title: 'Perencanaan & Prosedur', desc: 'Dokumen panduan operasi dan safe work practices yang disahkan perusahaan.' },
-  { id: 6, title: 'Implementasi & Pemantauan', desc: 'Sistem pengawasan dan pemantauan kinerja K3LL secara berkala di lapangan.' },
-  { id: 7, title: 'Audit & Tinjauan Pelaksanaan K3LL', desc: 'Evaluasi berkala dan audit independen untuk memastikan efektivitas sistem.' },
-  { id: 8, title: 'Pencapaian Kinerja K3LL', desc: 'Pencatatan statistik keselamatan, insiden, dan perbaikan berkelanjutan.' },
-  { id: 9, title: 'Pencapaian Lainnya', desc: 'Penghargaan, sertifikasi pendukung, dan inovasi khusus dalam program K3LL.' },
+  { id: 1, title: 'Kepemimpinan & Komitmen', desc: 'Bagaimana manajer senior terlibat langsung dalam manajemen K3LL dan menetapkan teladan keselamatan.', href: '/csms-elements/kepemimpinan-komitmen' },
+  { id: 2, title: 'Kebijaksanaan & Sasaran Strategis', desc: 'Dokumen kebijakan K3LL yang terintegrasi dengan tujuan strategis operasional perusahaan.', href: '/csms-elements/kebijaksanaan-sasaran' },
+  { id: 3, title: 'Organisasi & Tanggung Jawab', desc: 'Struktur organisasi yang jelas untuk mengelola dan mengomunikasikan aspek K3LL.', href: '/csms-elements/organisasi-tanggungjawab' },
+  { id: 4, title: 'Manajemen Risiko', desc: 'Identifikasi bahaya, penilaian risiko, dan pengendalian hingga tingkat ALARP (As Low As Reasonably Practicable).', href: '/csms-elements/manajemen-risiko' },
+  { id: 5, title: 'Perencanaan & Prosedur', desc: 'Dokumen panduan operasi dan safe work practices yang disahkan perusahaan.', href: '/csms-elements/perencanaan-prosedur' },
+  { id: 6, title: 'Implementasi & Pemantauan', desc: 'Sistem pengawasan dan pemantauan kinerja K3LL secara berkala di lapangan.', href: '/csms-elements/implementasi-pemantauan' },
+  { id: 7, title: 'Audit & Tinjauan Pelaksanaan K3LL', desc: 'Evaluasi berkala dan audit independen untuk memastikan efektivitas sistem.', href: '/csms-elements/audit-tinjauan' },
+  { id: 8, title: 'Pencapaian Kinerja K3LL', desc: 'Pencatatan statistik keselamatan, insiden, dan perbaikan berkelanjutan.', href: '/csms-elements/pencapaian-kinerja' },
+  { id: 9, title: 'Pencapaian Lainnya', desc: 'Penghargaan, sertifikasi pendukung, dan inovasi khusus dalam program K3LL.', href: '/csms-elements/pencapaian-lainnya' },
 ];
 ---
 <PageLayout
@@ -36,13 +36,13 @@ const elements = [
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {elements.map(el => (
-          <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
+          <a href={el.href} class="block bg-gray-50 p-8 rounded-xl border border-gray-200 hover:shadow-md hover:border-primary-200 transition-all">
             <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">
               Elemen #{el.id}
             </span>
             <h2 class="text-xl font-bold text-gray-900 mb-3">{el.title}</h2>
             <p class="text-gray-600 text-sm leading-relaxed">{el.desc}</p>
-          </div>
+          </a>
         ))}
       </div>
     </div>

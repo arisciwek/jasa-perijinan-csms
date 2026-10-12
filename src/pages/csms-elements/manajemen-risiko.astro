@@ -1,0 +1,99 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { siteConfig, siteUrl } from '../../config/site.ts';
+
+const title = `Elemen #4: Manajemen Risiko — ${siteConfig.siteName}`;
+const description = 'Identifikasi bahaya (HIRA), penilaian risiko, dan pengendalian hingga tingkat ALARP. JSA per pekerjaan kritis dan hierarki pengendalian (Eliminasi → Substitusi → Engineering → Administratif → PPE).';
+const image = siteUrl('/images/csms-elements/elemen-4-manajemen-risiko.svg');
+const seoImage = siteUrl('/images/csms-elements/elemen-4-manajemen-risiko.svg', true);
+
+const breadcrumbs = [
+  { label: 'Elemen CSMS', href: '/csms-elements' },
+  { label: 'Manajemen Risiko', href: '/csms-elements/manajemen-risiko' }
+];
+---
+<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Article">
+  <section class="py-16 bg-white elemen-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 elemen-container">
+      <header class="elemen-header text-center mb-16">
+        <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">Elemen #4</span>
+        <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Manajemen Risiko</h1>
+        <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-8">HIRA lengkap, JSA per pekerjaan kritis, hierarki pengendalian (Eliminasi → PPE), prinsip ALARP.</p>
+        <div class="elemen-header-media flex justify-center">
+          <img src={image} alt="Ilustrasi Manajemen Risiko CSMS" class="w-full max-w-2xl h-auto rounded-xl shadow-md border border-gray-100" />
+        </div>
+      </header>
+
+      <div class="elemen-content grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 elemen-main space-y-10">
+          <article class="elemen-article bg-gray-50 p-8 rounded-xl border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Deskripsi Elemen</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Inti dari elemen ini adalah sistematis: Identifikasi Bahaya → Penilaian Risiko → Pengendalian Risiko. Harus mencakup seluruh aktivitas, area, dan pekerjaan. Metode standar: HIRA (Hazard Identification Risk Assessment) untuk risiko umum, JSA (Job Safety Analysis) untuk pekerjaan kritis/non-rutin.
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Pengendalian wajib mengikuti hierarki: 1) Eliminasi, 2) Substitusi, 3) Engineering Control, 4) Administrative Control, 5) PPE. Prinsip ALARP (As Low As Reasonably Practicable) diterapkan — risiko harus ditekan sekecil mungkin dengan pertimbangan teknis, finansial, dan operasional.
+            </p>
+          </article>
+
+          <article class="elemen-article bg-gray-50 p-8 rounded-xl border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Mengapa Elemen Ini Penting?</h2>
+            <ul class="space-y-3 text-gray-700 list-disc list-inside">
+              <li><strong>Preventif, bukan reaktif:</strong> Risiko dikelola sebelum jadi insiden.</li>
+              <li><strong>Bukti verifikasi utama:</strong> HIRA & JSA adalah dokumen paling diperiksa auditor.</li>
+              <li><strong>Hierarki pengendalian:</strong> Memaksa solusi teknis (eliminasi/engineering) sebelum andalkan PPE.</li>
+              <li><strong>ALARP:</strong> Menunjukkan usaha "sebaik-baiknya" bukan hanya compliance minimal.</li>
+            </ul>
+          </article>
+
+          <article class="elemen-article bg-gray-50 p-8 rounded-xl border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Deliverable Umum (Bukti Verifikasi)</h2>
+            <ul class="space-y-2 text-gray-700 list-disc list-inside">
+              <li>Register HIRA per unit/area/pekerjaan (terupdate, divalidasi)</li>
+              <li>JSA untuk pekerjaan kritis: tinggi, confined space, hot work, lifting, dll</li>
+              <li>Dokumentasi hierarki pengendalian per risiko signifikan</li>
+              <li>Analisis ALARP untuk risiko tinggi/residual</li>
+              <li>Register bahaya kimia (SDS, labeling, ventilasi)</li>
+              <li>Risk register proyek/operasional dengan review berkala</li>
+              <li>Bukti komunikasi hasil HIRA/JSA ke pekerja (toolbox talk)</li>
+            </ul>
+          </article>
+
+          <article class="elemen-article bg-primary-50 p-8 rounded-xl border border-primary-200">
+            <h2 class="text-2xl font-bold text-primary-900 mb-4">Bagaimana Kami Membantu</h2>
+            <ul class="space-y-2 text-primary-800 list-disc list-inside">
+              <li>Menyusun <strong>HIRA Master</strong> lengkap seluruh aktivitas perusahaan</li>
+              <li>Membuat <strong>JSA per pekerjaan kritis</strong> custom proyek</li>
+              <li>Mengembangkan <strong>Risk Register</strong> dengan hierarki pengendalian & ALARP</li>
+              <li>Pelatihan <strong>HIRA/JSA methodology</strong> untuk tim HSE & Supervisor</li>
+              <li>Review & update berkala sesuai perubahan kondisi lapangan</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="elemen-sidebar space-y-6">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="font-bold text-gray-900 mb-4">Navigasi 9 Elemen</h3>
+            <nav class="space-y-2">
+              <a href="/csms-elements/kepemimpinan-komitmen" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #1: Kepemimpinan & Komitmen</a>
+              <a href="/csms-elements/kebijaksanaan-sasaran" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #2: Kebijaksanaan & Sasaran</a>
+              <a href="/csms-elements/organisasi-tanggungjawab" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #3: Organisasi & Tanggung Jawab</a>
+              <a href="/csms-elements/manajemen-risiko" class="block bg-primary-50 text-primary-800 p-3 rounded-lg font-medium border border-primary-200">→ Elemen #4: Manajemen Risiko</a>
+              <a href="/csms-elements/perencanaan-prosedur" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #5: Perencanaan & Prosedur</a>
+              <a href="/csms-elements/implementasi-pemantauan" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #6: Implementasi & Pemantauan</a>
+              <a href="/csms-elements/audit-tinjauan" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #7: Audit & Tinjauan</a>
+              <a href="/csms-elements/pencapaian-kinerja" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #8: Pencapaian Kinerja</a>
+              <a href="/csms-elements/pencapaian-lainnya" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #9: Pencapaian Lainnya</a>
+            </nav>
+          </div>
+
+          <div class="bg-primary-600 text-white p-6 rounded-xl">
+            <h3 class="font-bold text-lg mb-3">Butuh Bantuan Elemen #4?</h3>
+            <p class="text-primary-100 mb-4 text-sm">Kami bantu HIRA Master, JSA pekerjaan kritis, risk register ALARP, dan pelatihan metodologi.</p>
+            <a href="/contact" class="inline-block bg-white text-primary-600 font-medium px-5 py-2 rounded-lg hover:bg-primary-50 transition-colors text-sm">Konsultasi Gratis</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</PageLayout>

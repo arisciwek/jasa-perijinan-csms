@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#eff6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgGrad)" />
+  <!-- Certifications & Awards -->
+  <g transform="translate(50, 40)">
+    <text x="0" y="0" font-size="14" font-weight="bold" fill="#1e293b">Certifications & Awards</text>
+    <g transform="translate(0, 25)">
+      <!-- ISO 45001 -->
+      <rect x="0" y="0" width="140" height="80" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+      <rect x="10" y="10" width="120" height="12" rx="3" fill="#3b82f6"/>
+      <text x="70" y="35" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">ISO 45001</text>
+      <text x="70" y="50" text-anchor="middle" font-size="9" fill="#64748b">OHSMS Certified</text>
+      <text x="70" y="65" text-anchor="middle" font-size="8" fill="#10b981">Valid: 2024-2027</text>
+      <!-- SMK3 -->
+      <g transform="translate(160, 0)">
+        <rect x="0" y="0" width="140" height="80" rx="8" fill="#fff" stroke="#10b981" stroke-width="2"/>
+        <rect x="10" y="10" width="120" height="12" rx="3" fill="#10b981"/>
+        <text x="70" y="35" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">SMK3</text>
+        <text x="70" y="50" text-anchor="middle" font-size="9" fill="#64748b">PP 50/2012</text>
+        <text x="70" y="65" text-anchor="middle" font-size="8" fill="#10b981">Valid: 2024-2026</text>
+      </g>
+      <!-- Zero Accident Award -->
+      <g transform="translate(0, 100)">
+        <rect x="0" y="0" width="140" height="80" rx="8" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+        <rect x="10" y="10" width="120" height="12" rx="3" fill="#f59e0b"/>
+        <text x="70" y="35" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Zero Accident</text>
+        <text x="70" y="50" text-anchor="middle" font-size="9" fill="#64748b">Award 2023</text>
+        <text x="70" y="65" text-anchor="middle" font-size="8" fill="#f59e0b">Principal: PT XXX</text>
+      </g>
+      <!-- Best HSE Performance -->
+      <g transform="translate(160, 100)">
+        <rect x="0" y="0" width="140" height="80" rx="8" fill="#fff" stroke="#8b5cf6" stroke-width="2"/>
+        <rect x="10" y="10" width="120" height="12" rx="3" fill="#8b5cf6"/>
+        <text x="70" y="35" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Best HSE</text>
+        <text x="70" y="50" text-anchor="middle" font-size="9" fill="#64748b">Performance 2022</text>
+        <text x="70" y="65" text-anchor="middle" font-size="8" fill="#8b5cf6">Regional Winner</text>
+      </g>
+    </g>
+  </g>
+  <!-- Innovation & Forum -->
+  <g transform="translate(50, 240)">
+    <text x="0" y="0" font-size="12" font-weight="bold" fill="#1e293b">Innovation & Industry Participation</text>
+    <g transform="translate(0, 20)" font-size="9" fill="#1e293b">
+      <text x="0" y="0">▸ Digital Permit System (In-house)</text>
+      <text x="0" y="18">▸ BBS Mobile App for Observation</text>
+      <text x="0" y="36">▸ IKK Member - Active Committee</text>
+      <text x="0" y="54">▸ HSE Forum Speaker 2023-2024</text>
+      <text x="0" y="72">▸ CSR: K3 Education to 5 Schools</text>
+    </g>
+  </g>
+</svg>

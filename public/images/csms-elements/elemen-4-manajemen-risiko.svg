@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#eff6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgGrad)" />
+  <!-- HIRA/JSA risk matrix -->
+  <g transform="translate(50, 40)">
+    <text x="0" y="0" font-size="14" font-weight="bold" fill="#1e293b">Risk Assessment Matrix</text>
+    <g transform="translate(0, 25)">
+      <!-- Grid -->
+      <g stroke="#dbeafe" stroke-width="1">
+        <line x1="0" y1="0" x2="300" y2="0"/>
+        <line x1="0" y1="60" x2="300" y2="60"/>
+        <line x1="0" y1="120" x2="300" y2="120"/>
+        <line x1="0" y1="180" x2="300" y2="180"/>
+        <line x1="0" y1="0" x2="0" y2="180"/>
+        <line x1="75" y1="0" x2="75" y2="180"/>
+        <line x1="150" y1="0" x2="150" y2="180"/>
+        <line x1="225" y1="0" x2="225" y2="180"/>
+        <line x1="300" y1="0" x2="300" y2="180"/>
+      </g>
+      <!-- Labels -->
+      <text x="-20" y="30" text-anchor="end" font-size="8" fill="#64748b">Critical</text>
+      <text x="-20" y="90" text-anchor="end" font-size="8" fill="#64748b">High</text>
+      <text x="-20" y="150" text-anchor="end" font-size="8" fill="#64748b">Medium</text>
+      <text x="-20" y="180" text-anchor="end" font-size="8" fill="#64748b">Low</text>
+      <text x="37" y="195" text-anchor="middle" font-size="8" fill="#64748b">Rare</text>
+      <text x="112" y="195" text-anchor="middle" font-size="8" fill="#64748b">Unlikely</text>
+      <text x="187" y="195" text-anchor="middle" font-size="8" fill="#64748b">Possible</text>
+      <text x="262" y="195" text-anchor="middle" font-size="8" fill="#64748b">Likely</text>
+      <text x="337" y="195" text-anchor="middle" font-size="8" fill="#64748b">Almost Certain</text>
+      <!-- Risk cells -->
+      <rect x="225" y="0" width="75" height="60" fill="#fee2e2"/>
+      <text x="262" y="30" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">E</text>
+      <rect x="150" y="0" width="75" height="60" fill="#fee2e2"/>
+      <text x="187" y="30" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">E</text>
+      <rect x="225" y="60" width="75" height="60" fill="#fee2e2"/>
+      <text x="262" y="90" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">E</text>
+      <rect x="75" y="0" width="75" height="60" fill="#fef3c7"/>
+      <text x="112" y="30" text-anchor="middle" font-size="10" font-weight="bold" fill="#d97706">H</text>
+      <rect x="150" y="60" width="75" height="60" fill="#fef3c7"/>
+      <text x="187" y="90" text-anchor="middle" font-size="10" font-weight="bold" fill="#d97706">H</text>
+      <rect x="225" y="120" width="75" height="60" fill="#fef3c7"/>
+      <text x="262" y="150" text-anchor="middle" font-size="10" font-weight="bold" fill="#d97706">H</text>
+      <rect x="0" y="0" width="75" height="60" fill="#dcfce7"/>
+      <text x="37" y="30" text-anchor="middle" font-size="10" font-weight="bold" fill="#16a34a">M</text>
+      <rect x="75" y="60" width="75" height="60" fill="#dcfce7"/>
+      <text x="112" y="90" text-anchor="middle" font-size="10" font-weight="bold" fill="#16a34a">M</text>
+      <rect x="150" y="120" width="75" height="60" fill="#dcfce7"/>
+      <text x="187" y="150" text-anchor="middle" font-size="10" font-weight="bold" fill="#16a34a">M</text>
+      <rect x="0" y="60" width="75" height="60" fill="#dbeafe"/>
+      <text x="37" y="90" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">L</text>
+      <rect x="0" y="120" width="75" height="60" fill="#dbeafe"/>
+      <text x="37" y="150" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">L</text>
+      <rect x="0" y="180" width="75" height="60" fill="#dbeafe"/>
+      <rect x="75" y="180" width="75" height="60" fill="#dbeafe"/>
+      <rect x="150" y="180" width="75" height="60" fill="#dbeafe"/>
+      <rect x="225" y="180" width="75" height="60" fill="#dbeafe"/>
+    </g>
+  </g>
+  <!-- Hierarchy of controls -->
+  <g transform="translate(50, 240)">
+    <text x="0" y="0" font-size="12" font-weight="bold" fill="#1e293b">Hierarchy of Controls</text>
+    <g transform="translate(0, 20)">
+      <g font-size="10" fill="#1e293b">
+        <text x="0" y="0">▸ Eliminasi</text>
+        <text x="0" y="18">▸ Substitusi</text>
+        <text x="0" y="36">▸ Engineering</text>
+      </g>
+      <g transform="translate(150, 0)" font-size="10" fill="#1e293b">
+        <text x="0" y="0">▸ Administratif</text>
+        <text x="0" y="18">▸ PPE</text>
+      </g>
+    </g>
+  </g>
+  <!-- ALARP badge -->
+  <g transform="translate(280, 20)">
+    <path d="M0,-15 L25,-5 L25,20 L0,30 L-25,20 L-25,-5 Z" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="0" y="5" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">ALARP</text>
+  </g>
+</svg>
