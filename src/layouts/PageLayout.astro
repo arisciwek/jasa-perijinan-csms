@@ -4,16 +4,10 @@ import StructuredData from '../components/StructuredData.astro';
 import SEOMeta from '../components/SEOMeta.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import RelatedArticles from '../components/RelatedArticles.astro';
-import { getCollection } from 'astro:content';
 import { siteConfig, siteUrl } from '../config/site.ts';
-import { pickRelatedArticles } from '../utils/related.ts';
 
-const { title, description, image, pageType = 'WebPage', breadcrumbs = [], serviceId } = Astro.props;
+const { title, description, image, pageType = 'WebPage', breadcrumbs = [] } = Astro.props;
 
-const relatedArticles = serviceId
-  ? pickRelatedArticles(await getCollection('articles'), { serviceId, limit: 3 })
-  : [];
 const defaultTitle = title || siteConfig.defaultTitle;
 const defaultDescription = description || siteConfig.defaultDescription;
 const fullUrl = siteUrl(Astro.url.pathname);
@@ -74,9 +68,6 @@ const fullUrl = siteUrl(Astro.url.pathname);
       <section class="py-16 bg-white service-detail-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 service-detail-container">
           <slot />
-          {relatedArticles.length > 0 && (
-            <RelatedArticles articles={relatedArticles} title="Artikel Terkait Layanan Ini" />
-          )}
         </div>
       </section>
     </main>

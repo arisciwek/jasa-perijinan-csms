@@ -1,6 +1,12 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { getCollection } from 'astro:content';
 import { siteConfig, siteUrl } from '../../config/site.ts';
+import { pickRelatedArticles } from '../../utils/related.ts';
+
+const serviceId = 3;
+const relatedArticles = pickRelatedArticles(await getCollection('articles'), { serviceId, limit: 3 });
 
 const title = `Pendampingan Verifikasi & Audit HSE — ${siteConfig.siteName}`;
 const description = 'Pendampingan intensif saat auditor principal/verifikator independen melakukan audit lapangan maupun verifikasi dokumen. Dari simulasi persiapan hingga penutupan audit & Corrective Action Plan.';
@@ -12,7 +18,7 @@ const breadcrumbs = [
   { label: 'Pendampingan Verifikasi & Audit HSE', href: '/services/pendampingan-verifikasi-audit-hse' }
 ];
 ---
-<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Service" serviceId={3}>
+<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Service">
   <header class="service-detail-header text-center mb-16">
     <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">Layanan Utama #3</span>
     <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Pendampingan Verifikasi & Audit HSE</h1>
@@ -74,6 +80,10 @@ const breadcrumbs = [
           <li><strong>CAP Success Rate:</strong> 95%+ temuan tertutup dalam 30 hari pasca-audit</li>
         </ul>
       </article>
+
+      {relatedArticles.length > 0 && (
+        <RelatedArticles articles={relatedArticles} title="Artikel Terkait Layanan Ini" />
+      )}
     </div>
 
     <aside class="service-detail-sidebar space-y-6">

@@ -1,6 +1,12 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { getCollection } from 'astro:content';
 import { siteConfig, siteUrl } from '../../config/site.ts';
+import { pickRelatedArticles } from '../../utils/related.ts';
+
+const serviceId = 1;
+const relatedArticles = pickRelatedArticles(await getCollection('articles'), { serviceId, limit: 3 });
 
 const title = `Penyusunan Dokumen CSMS dari Nol — ${siteConfig.siteName}`;
 const description = 'Layanan penyusunan lengkap 9 Elemen CSMS, Manual K3LL, POS, dan form pendukung untuk kontraktor baru yang ingin lolos prakualifikasi principal migas, tambang, konstruksi.';
@@ -12,7 +18,7 @@ const breadcrumbs = [
   { label: 'Penyusunan Dokumen CSMS', href: '/services/penyusunan-dokumen-csms' }
 ];
 ---
-<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Service" serviceId={1}>
+<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Service">
   <header class="service-detail-header text-center mb-16">
     <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">Layanan Utama #1</span>
     <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Penyusunan Dokumen CSMS dari Nol</h1>
@@ -78,6 +84,10 @@ const breadcrumbs = [
           <li><strong>Tim Ahli:</strong> Konsultan bersertifikat AK3 Umum, berpengalaman 15+ tahun</li>
         </ul>
       </article>
+
+      {relatedArticles.length > 0 && (
+        <RelatedArticles articles={relatedArticles} title="Artikel Terkait Layanan Ini" />
+      )}
     </div>
 
     <aside class="service-detail-sidebar space-y-6">

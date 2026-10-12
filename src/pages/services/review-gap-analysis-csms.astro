@@ -1,6 +1,12 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { getCollection } from 'astro:content';
 import { siteConfig, siteUrl } from '../../config/site.ts';
+import { pickRelatedArticles } from '../../utils/related.ts';
+
+const serviceId = 2;
+const relatedArticles = pickRelatedArticles(await getCollection('articles'), { serviceId, limit: 3 });
 
 const title = `Review & Gap Analysis CSMS — ${siteConfig.siteName}`;
 const description = 'Evaluasi mendalam dokumen CSMS existing untuk identifikasi gap ketidaksesuaian dengan standar verifikasi terbaru. Laporan gap analysis & rekomendasi perbaikan terarah untuk optimalisasi skor prakualifikasi.';
@@ -12,7 +18,7 @@ const breadcrumbs = [
   { label: 'Review & Gap Analysis CSMS', href: '/services/review-gap-analysis-csms' }
 ];
 ---
-<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Service" serviceId={2}>
+<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Service">
   <header class="service-detail-header text-center mb-16">
     <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">Layanan Utama #2</span>
     <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Review & Gap Analysis CSMS</h1>
@@ -68,6 +74,10 @@ const breadcrumbs = [
           <li>Persiapan re-verifikasi berkala (annual surveillance)</li>
         </ul>
       </article>
+
+      {relatedArticles.length > 0 && (
+        <RelatedArticles articles={relatedArticles} title="Artikel Terkait Layanan Ini" />
+      )}
     </div>
 
     <aside class="service-detail-sidebar space-y-6">
