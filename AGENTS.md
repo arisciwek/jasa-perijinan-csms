@@ -48,6 +48,7 @@ docs/            # PRD.md (arsitektur), PLAN.md (spesifik situs)
 - `docs/PLAN.md` = spesifik situs CSMS — acuan utama untuk halaman & konten.
 - Konten statis: home, about, services, csms-elements, contact, 404.
 - Tambah halaman baru: file .astro di `src/pages/`, gunakan BaseLayout, atur SEO.
+- **Setiap konten baru (page, article, csms-element, service) WAJIB ditambahkan ke `scripts/generate-sitemap.cjs` agar terindeks di sitemap.xml.**
 
 ## Principles
 - Minimal & tuntas. YAGNI. Tidak ada boilerplate untuk fitur yang belum ada.

@@ -1,11 +1,11 @@
 ---
-id: 1
-ulid: "01J9Z8Y7X6W5V4U3T2S1R0Q9P1"
+id: 4
+ulid: "01J9Z8Y7X6W5V4U3T2S1R0Q9P4"
 type: "article"
 title: "Dokumen CSMS Adalah: Pengertian, Fungsi, dan Manfaatnya bagi Kontraktor"
 description: "Penjelasan lengkap mengenai pengertian, fungsi, dan manfaat dokumen CSMS bagi perusahaan kontraktor dalam memenuhi persyaratan keselamatan dan tender."
-pubDate: "2026-10-12T00:00:00Z"
-updatedDate: "2026-10-12T00:00:00Z"
+pubDate: "2026-10-12T12:29:25Z"
+updatedDate: "2026-10-12T12:29:25Z"
 author: "Tim Konsultan CSMS"
 category: "Panduan CSMS"
 tags: ["CSMS", "Dokumen CSMS", "Kontraktor", "Manajemen Keselamatan", "K3LL"]
