@@ -37,6 +37,10 @@ const routes = [
   { url: '/articles/mengenal-9-elemen-csms/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('mengenal-9-elemen-csms') },
   { url: '/articles/pentingnya-digitalisasi-k3ll/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('pentingnya-digitalisasi-k3ll') },
   { url: '/articles/dokumen-csms-adalah-pengertian-fungsi-manfaat-bagi-kontraktor/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('dokumen-csms-adalah-pengertian-fungsi-manfaat-bagi-kontraktor') },
+  { url: '/articles/9-elemen-csms-dan-dokumen-yang-harus-disiapkan-perusahaan-kontraktor/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('9-elemen-csms-dan-dokumen-yang-harus-disiapkan-perusahaan-kontraktor') },
+  { url: '/articles/persyaratan-csms-untuk-mengikuti-tender-di-perusahaan-migas-dan-pertambangan/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('persyaratan-csms-untuk-mengikuti-tender-di-perusahaan-migas-dan-pertambangan') },
+  { url: '/articles/cara-membuat-dokumen-csms-dari-nol-untuk-perusahaan-yang-baru-mengikuti-tender/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('cara-membuat-dokumen-csms-dari-nol-untuk-perusahaan-yang-baru-mengikuti-tender') },
+  { url: '/articles/manual-k3ll-sop-k3-dan-safe-work-practices-apa-perbedaan-dan-fungsinya/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('manual-k3ll-sop-k3-dan-safe-work-practices-apa-perbedaan-dan-fungsinya') },
   { url: '/about/', changefreq: 'monthly', priority: 0.6, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
   { url: '/contact/', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
 ];
