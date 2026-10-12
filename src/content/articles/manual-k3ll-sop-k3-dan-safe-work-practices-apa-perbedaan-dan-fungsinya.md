@@ -11,7 +11,7 @@ category: "Panduan CSMS"
 tags: ["Manual K3LL", "SOP K3", "Safe Work Practices", "Dokumen CSMS", "K3LL"]
 draft: false
 image: "/images/articles/manual-k3ll-sop.svg"
-relatedService: "penyusunan"
+relatedService: 1
 ---
 
 # Manual K3LL, SOP K3, dan Safe Work Practices: Apa Perbedaan dan Fungsinya?

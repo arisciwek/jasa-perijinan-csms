@@ -11,7 +11,7 @@ category: "Panduan CSMS"
 tags: ["CSMS", "Dokumen CSMS", "Kontraktor", "Manajemen Keselamatan", "K3LL"]
 draft: false
 image: "/images/articles/dokumen-csms.svg"
-relatedService: "penyusunan"
+relatedService: 1
 ---
 
 # Dokumen CSMS Adalah: Pengertian, Fungsi, dan Manfaatnya bagi Kontraktor

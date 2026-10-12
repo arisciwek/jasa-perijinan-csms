@@ -11,7 +11,7 @@ category: "Panduan CSMS"
 tags: ["CSMS", "Tender", "Prakualifikasi", "Migas", "Pertambangan", "K3LL"]
 draft: false
 image: "/images/articles/persyaratan-csms-tender.svg"
-relatedService: "penyusunan"
+relatedService: 1
 ---
 
 # Persyaratan CSMS untuk Mengikuti Tender di Perusahaan Migas dan Pertambangan

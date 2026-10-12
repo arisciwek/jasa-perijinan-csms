@@ -11,7 +11,7 @@ category: "Review & Gap Analysis CSMS"
 tags: ["CSMS", "Checklist Review", "Prakualifikasi", "Vendor", "Dokumen K3LL", "K3LL"]
 draft: false
 image: "/images/articles/checklist-review-csms.svg"
-relatedService: "review"
+relatedService: 2
 ---
 
 # Checklist Review Dokumen CSMS untuk Mempersiapkan Prakualifikasi Vendor

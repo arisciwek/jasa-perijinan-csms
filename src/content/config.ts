@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { serviceIds } from '../config/site.ts';
 
 const articleSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -13,7 +14,14 @@ const articleSchema = z.object({
   tags: z.array(z.string()).default([]),
   draft: z.boolean().default(false),
   image: z.string().optional(),
-  relatedService: z.string().optional(),
+  relatedService: z
+    .number()
+    .int()
+    .positive()
+    .refine(id => serviceIds.includes(id), {
+      message: 'relatedService harus berupa id layanan yang valid (lihat services di src/config/site.ts)',
+    })
+    .optional(),
 });
 
 const pageSchema = z.object({

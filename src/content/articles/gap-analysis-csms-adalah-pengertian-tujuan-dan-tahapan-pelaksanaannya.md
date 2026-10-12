@@ -11,7 +11,7 @@ category: "Review & Gap Analysis CSMS"
 tags: ["CSMS", "Gap Analysis", "Review Dokumen", "Verifikasi", "Prakualifikasi", "K3LL"]
 draft: false
 image: "/images/articles/gap-analysis-csms.svg"
-relatedService: "review"
+relatedService: 2
 ---
 
 # Gap Analysis CSMS Adalah: Pengertian, Tujuan, dan Tahapan Pelaksanaannya

@@ -11,7 +11,7 @@ category: "Review & Gap Analysis CSMS"
 tags: ["CSMS", "Gagal Verifikasi", "Perbaikan Dokumen", "Verifikasi CSMS", "Prakualifikasi", "K3LL"]
 draft: false
 image: "/images/articles/penyebab-gagal-verifikasi.svg"
-relatedService: "review"
+relatedService: 2
 ---
 
 # Penyebab Dokumen CSMS Tidak Memenuhi Persyaratan Verifikasi dan Cara Memperbaikinya

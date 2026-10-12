@@ -11,7 +11,7 @@ category: "Panduan CSMS"
 tags: ["CSMS", "9 Elemen", "K3LL", "Manajemen Keselamatan", "Kontraktor"]
 draft: false
 image: "/images/articles/9-elemen-csms.svg"
-relatedService: "penyusunan"
+relatedService: 1
 ---
 
 # Mengenal 9 Elemen Utama CSMS dan Kunci Kelulusannya

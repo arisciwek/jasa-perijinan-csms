@@ -11,7 +11,7 @@ category: "Review & Gap Analysis CSMS"
 tags: ["CSMS", "Evaluasi Dokumen", "Tender", "Prakualifikasi", "Kelengkapan Dokumen", "K3LL"]
 draft: false
 image: "/images/articles/evaluasi-dokumen-csms.svg"
-relatedService: "review"
+relatedService: 2
 ---
 
 # Cara Mengevaluasi Kelengkapan Dokumen CSMS Sebelum Mengikuti Tender

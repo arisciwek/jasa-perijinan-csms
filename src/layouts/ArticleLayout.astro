@@ -3,17 +3,25 @@ import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const { 
-  title, 
-  description, 
-  image, 
-  pubDate, 
-  updatedDate, 
-  author = 'Tim Ahli K3LL', 
-  category = 'Artikel', 
-  tags = [], 
+interface TocHeading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  pubDate,
+  updatedDate,
+  author = 'Tim Ahli K3LL',
+  category = 'Artikel',
+  tags = [],
   breadcrumbs = [],
-  relatedService = null
+  service = null,
+  relatedArticles = [],
+  headings = [],
 } = Astro.props;
 
 const fullBreadcrumbs = [
@@ -22,28 +30,7 @@ const fullBreadcrumbs = [
   { label: title, href: Astro.url.pathname }
 ];
 
-const relatedArticles = [
-  {
-    title: 'Mengenal 9 Elemen Utama CSMS',
-    slug: 'mengenal-9-elemen-csms',
-    description: 'Bedah tuntas 9 elemen Contractor Safety Management System mulai dari kepemimpinan hingga pencapaian kinerja K3LL.'
-  },
-  {
-    title: 'Pentingnya Digitalisasi Dokumen K3LL',
-    slug: 'pentingnya-digitalisasi-k3ll',
-    description: 'Bagaimana transisi dari dokumen fisik ke sistem digital meningkatkan efisiensi audit dan pengelolaan keselamatan kerja.'
-  }
-];
-
-const servicesMap = {
-  penyusunan: { title: 'Penyusunan Dokumen CSMS dari Nol', href: '/services/penyusunan-dokumen-csms' },
-  review: { title: 'Review & Gap Analysis CSMS', href: '/services/review-gap-analysis-csms' },
-  audit: { title: 'Pendampingan Verifikasi & Audit HSE', href: '/services/pendampingan-verifikasi-audit-hse' },
-  digitalisasi: { title: 'Digitalisasi & Standardisasi K3LL', href: '/services/digitalisasi-standardisasi-k3ll' }
-};
-
-const hasRelatedService = relatedService && servicesMap[relatedService];
-const relatedServiceData = hasRelatedService ? servicesMap[relatedService] : null;
+const toc: TocHeading[] = headings.filter((h: TocHeading) => h.depth === 2 || h.depth === 3);
 ---
 <BaseLayout title={title} description={description} image={image} pageType="Article">
   <div class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
@@ -76,48 +63,46 @@ const relatedServiceData = hasRelatedService ? servicesMap[relatedService] : nul
       <!-- Sidebar (3 columns) -->
       <aside class="col-span-12 lg:col-span-3 hidden lg:block space-y-6">
         <!-- Table of Contents -->
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-          <h2 class="text-lg font-bold text-gray-900 mb-4">Daftar Isi</h2>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#intro" class="text-primary-600 hover:underline">Pendahuluan</a></li>
-            <li><a href="#elemen1" class="hover:text-primary-600">Elemen #1: Kepemimpinan</a></li>
-            <li><a href="#elemen2" class="hover:text-primary-600">Elemen #2: Kebijaksanaan</a></li>
-            <li><a href="#elemen3" class="hover:text-primary-600">Elemen #3: Organisasi</a></li>
-            <li><a href="#elemen4" class="hover:text-primary-600">Elemen #4: Manajemen Risiko</a></li>
-            <li><a href="#elemen5" class="hover:text-primary-600">Elemen #5: Perencanaan</a></li>
-            <li><a href="#elemen6" class="hover:text-primary-600">Elemen #6: Implementasi</a></li>
-            <li><a href="#elemen7" class="hover:text-primary-600">Elemen #7: Audit</a></li>
-            <li><a href="#elemen8" class="hover:text-primary-600">Elemen #8: Pencapaian Kinerja</a></li>
-            <li><a href="#elemen9" class="hover:text-primary-600">Elemen #9: Pencapaian Lainnya</a></li>
-            <li><a href="#kesimpulan" class="hover:text-primary-600">Kesimpulan</a></li>
-          </ul>
-        </div>
+        {toc.length > 0 && (
+          <nav aria-label="Daftar Isi" class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <h2 class="text-lg font-bold text-gray-900 mb-4">Daftar Isi</h2>
+            <ul class="space-y-2 text-sm">
+              {toc.map(h => (
+                <li class={h.depth === 3 ? 'pl-4' : ''}>
+                  <a href={`#${h.slug}`} class="hover:text-primary-600">{h.text}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
 
         <!-- Related Articles -->
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-          <h2 class="text-lg font-bold text-gray-900 mb-4">Artikel Terkait</h2>
-          <div class="space-y-4">
-            {relatedArticles.map(article => (
-              <div class="border-t border-gray-200 pt-4">
-                <h3 class="font-medium text-gray-900 mb-1">
-                  <a href={`/articles/${article.slug}`} class="hover:text-primary-600">{article.title}</a>
-                </h3>
-                <p class="text-sm text-gray-600">{article.description}</p>
-              </div>
-            ))}
+        {relatedArticles.length > 0 && (
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <h2 class="text-lg font-bold text-gray-900 mb-4">Artikel Terkait</h2>
+            <div class="space-y-4">
+              {relatedArticles.map(article => (
+                <div class="border-t border-gray-200 pt-4">
+                  <h3 class="font-medium text-gray-900 mb-1">
+                    <a href={`/articles/${article.slug}`} class="hover:text-primary-600">{article.data.title}</a>
+                  </h3>
+                  <p class="text-sm text-gray-600">{article.data.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <!-- Related Service -->
-        {hasRelatedService && (
+        {service && (
           <div class="bg-primary-50 p-6 rounded-xl shadow-sm border border-primary-200">
             <h2 class="text-lg font-bold text-primary-900 mb-4">Layanan Terkait</h2>
             <div class="space-y-3">
               <h3 class="font-medium text-primary-900">
-                <a href={relatedServiceData.href} class="hover:underline">{relatedServiceData.title}</a>
+                <a href={service.href} class="hover:underline">{service.title}</a>
               </h3>
               <p class="text-sm text-primary-800">Lihat detail layanan ini untuk bantuan profesional.</p>
-              <a href={relatedServiceData.href} class="inline-block mt-3 px-4 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm">
+              <a href={service.href} class="inline-block mt-3 px-4 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm">
                 Lihat Layanan →
               </a>
             </div>

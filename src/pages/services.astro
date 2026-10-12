@@ -1,70 +1,11 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import { siteConfig, siteUrl } from '../config/site.ts';
+import { siteConfig, siteUrl, services } from '../config/site.ts';
 
 const title = `Layanan Konsultasi CSMS & Perizinan — ${siteConfig.siteName}`;
 const description = 'Layanan lengkap penyusunan dokumen CSMS, gap analysis, pendampingan audit verifikasi HSE, digitalisasi K3LL, dan perizinan legalitas korporasi.';
 const image = siteUrl('/images/services/services-csms.svg');
 const seoImage = siteUrl('/images/services/services-csms.svg', true);
-
-const services = [
-  { 
-    id: 'penyusunan', 
-    href: '/services/penyusunan-dokumen-csms',
-    badge: 'Layanan Utama #1',
-    title: 'Penyusunan Dokumen CSMS dari Nol',
-    description: 'Bagi perusahaan atau kontraktor yang belum memiliki dokumentasi Sistem Manajemen Keselamatan Kerja dan Lingkungan (K3LL). Kami menyusun seluruh manual, prosedur, safe work practices, dan form pendukung sesuai standar industri migas, tambang, dan konstruksi.',
-    features: [
-      'Penyusunan 9 Elemen CSMS lengkap',
-      'Manual K3LL & Prosedur Operasional Standar (POS)',
-      'Jaminan kesesuaian dengan standar principal'
-    ],
-    cta: 'Pesan Layanan Ini',
-    target: 'Kontraktor baru yang ingin mengikuti tender di perusahaan minyak, gas, tambang, dan manufaktur besar yang mensyaratkan prakualifikasi CSMS.'
-  },
-  { 
-    id: 'review', 
-    href: '/services/review-gap-analysis-csms',
-    badge: 'Layanan Utama #2',
-    title: 'Review & Gap Analysis CSMS',
-    description: 'Evaluasi mendalam terhadap dokumen CSMS eksisting Anda untuk menemukan celah (gap) ketidaksesuaian dengan standar verifikasi terbaru. Kami memberikan rekomendasi perbaikan terarah agar skor verifikasi Anda meningkat drastis.',
-    features: [
-      'Audit dokumen existing secara menyeluruh',
-      'Laporan Gap Analysis & rekomendasi perbaikan',
-      'Optimalisasi skor penilaian prakualifikasi'
-    ],
-    cta: 'Pesan Layanan Ini',
-    target: 'Kontraktor yang pernah gagal dalam verifikasi CSMS atau ingin memperbarui dokumen lama agar lolos tender berikutnya.'
-  },
-  { 
-    id: 'audit', 
-    href: '/services/pendampingan-verifikasi-audit-hse',
-    badge: 'Layanan Utama #3',
-    title: 'Pendampingan Verifikasi & Audit HSE',
-    description: 'Pendampingan intensif saat auditor principal atau verifikator independen melakukan audit lapangan maupun verifikasi dokumen. Tim kami mendampingi dari sesi pembukaan hingga penutupan audit untuk memastikan kelancaran proses.',
-    features: [
-      'Simulasi & persiapan audit verifikasi',
-      'Pendampingan langsung saat audit principal',
-      'Penanganan temuan audit (Corrective Action Plan)'
-    ],
-    cta: 'Pesan Layanan Ini',
-    target: 'Perusahaan yang akan menghadapi jadwal verifikasi audit lapangan atau verifikasi meja (desk evaluation) oleh principal.'
-  },
-  { 
-    id: 'digitalisasi', 
-    href: '/services/digitalisasi-standardisasi-k3ll',
-    badge: 'Layanan Utama #4',
-    title: 'Digitalisasi & Standardisasi K3LL',
-    description: 'Transformasi dokumen fisik K3LL menjadi sistem digital terstandar yang mudah diakses, diperbarui, dan diverifikasi oleh manajemen maupun auditor kapan pun dan di mana pun.',
-    features: [
-      'Konversi arsip fisik ke format digital terstruktur',
-      'Implementasi template pelaporan K3LL',
-      'Pelatihan pengoperasian sistem bagi tim internal'
-    ],
-    cta: 'Pesan Layanan Ini',
-    target: 'Kontraktor modern yang ingin meninggalkan cara manual dan mengadopsi pengelolaan data K3LL berbasis digital.'
-  }
-];
 ---
 <PageLayout
   title={title}
@@ -88,7 +29,7 @@ const services = [
 
       <div class="services-list space-y-16">
         {services.map(svc => (
-          <article id={svc.id} class="service-card bg-gray-50 p-8 sm:p-12 rounded-2xl border border-gray-200 grid md:grid-cols-2 gap-8 items-center">
+          <article id={svc.slug} class="service-card bg-gray-50 p-8 sm:p-12 rounded-2xl border border-gray-200 grid md:grid-cols-2 gap-8 items-center">
             <div class="service-content">
               <span class="service-badge text-primary-600 font-semibold text-sm uppercase tracking-wider">{svc.badge}</span>
               <h2 class="service-title text-2xl font-bold text-gray-900 mt-1 mb-4">{svc.title}</h2>

@@ -11,7 +11,7 @@ category: "Panduan CSMS"
 tags: ["CSMS", "Dokumen CSMS", "Penyusunan", "Kontraktor", "Tender", "K3LL"]
 draft: false
 image: "/images/articles/membuat-dokumen-csms.svg"
-relatedService: "penyusunan"
+relatedService: 1
 ---
 
 # Cara Membuat Dokumen CSMS dari Nol untuk Perusahaan yang Baru Mengikuti Tender

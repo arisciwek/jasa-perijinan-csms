@@ -11,7 +11,7 @@ category: "Panduan CSMS"
 tags: ["CSMS", "9 Elemen", "Dokumen CSMS", "Kontraktor", "K3LL"]
 draft: false
 image: "/images/articles/9-elemen-csms.svg"
-relatedService: "penyusunan"
+relatedService: 1
 ---
 
 # 9 Elemen CSMS dan Dokumen yang Harus Disiapkan Perusahaan Kontraktor

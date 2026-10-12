@@ -1,7 +1,8 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { getCollection } from 'astro:content';
-import { siteConfig, siteUrl } from '../../config/site.ts';
+import { siteConfig, siteUrl, getService } from '../../config/site.ts';
+import { pickRelatedArticles } from '../../utils/related.ts';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -16,13 +17,18 @@ export async function getStaticPaths() {
 const { article } = Astro.props;
 const { title, description, pubDate, updatedDate, author, category, tags, image, relatedService } = article.data;
 const seoImage = image ? siteUrl(image, true) : siteUrl('/images/articles/articles.svg', true);
-const formattedPubDate = new Date(pubDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
-const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) : null;
-const tagsList = tags || [];
 const categoryLabel = category || 'Artikel';
 const authorName = author || 'Tim Konsultan CSMS';
 
-const { Content } = await article.render();
+const { Content, headings } = await article.render();
+const allArticles = await getCollection('articles');
+const service = getService(relatedService);
+const relatedArticles = pickRelatedArticles(allArticles, {
+  currentSlug: article.slug,
+  serviceId: relatedService,
+  category,
+  limit: 3,
+});
 ---
 <ArticleLayout
   title={title}
@@ -31,8 +37,10 @@ const { Content } = await article.render();
   pubDate={pubDate}
   category={categoryLabel}
   author={authorName}
-  tags={tagsList}
+  tags={tags || []}
   breadcrumbs={[{ label: 'Artikel', href: '/articles' }, { label: title, href: `/articles/${article.slug}` }]}
-  relatedService={relatedService}>
+  service={service}
+  relatedArticles={relatedArticles}
+  headings={headings}>
   <Content />
 </ArticleLayout>

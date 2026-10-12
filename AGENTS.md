@@ -50,6 +50,13 @@ docs/            # PRD.md (arsitektur), PLAN.md (spesifik situs)
 - Tambah halaman baru: file .astro di `src/pages/`, gunakan BaseLayout, atur SEO.
 - **Setiap konten baru (page, article, csms-element, service) WAJIB ditambahkan ke `scripts/generate-sitemap.cjs` agar terindeks di sitemap.xml.**
 
+## Related Content (Artikel ↔ Layanan)
+- Registry layanan (ID, slug, href, judul) berada di `src/config/site.ts` → `services`. ID **stabil** — jangan diubah/dipakai ulang.
+- Artikel menghubungkan diri ke layanan lewat frontmatter: `relatedService: <id>` (angka, contoh `1`). Nilai divalidasi schema — ID salah membuat build gagal.
+- Tambah layanan baru: tambahkan entry di `services` (ID = terbesar + 1), buat halaman `src/pages/services/<slug>.astro` dengan prop `serviceId={<id>}`, tambahkan ke sitemap.
+- Kartu "Layanan Terkait" (halaman artikel) dan "Artikel Terkait" (halaman layanan) dihitung otomatis dari `relatedService` — jangan hardcoded daftar artikel.
+- Artikel terkait diprioritaskan: satu layanan → satu kategori → terbaru (maks 3), via `src/utils/related.ts`.
+
 ## Principles
 - Minimal & tuntas. YAGNI. Tidak ada boilerplate untuk fitur yang belum ada.
 - Edit non-destruktif. Jangan commit tanpa build success.

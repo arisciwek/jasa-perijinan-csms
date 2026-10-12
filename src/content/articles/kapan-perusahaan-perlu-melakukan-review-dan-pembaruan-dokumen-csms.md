@@ -11,7 +11,7 @@ category: "Review & Gap Analysis CSMS"
 tags: ["CSMS", "Review Dokumen", "Pembaruan Dokumen", "Prakualifikasi", "Verifikasi", "K3LL"]
 draft: false
 image: "/images/articles/kapan-review-csms.svg"
-relatedService: "review"
+relatedService: 2
 ---
 
 # Kapan Perusahaan Perlu Melakukan Review dan Pembaruan Dokumen CSMS?

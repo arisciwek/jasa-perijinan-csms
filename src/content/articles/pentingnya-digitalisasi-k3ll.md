@@ -11,7 +11,7 @@ category: "Digitalisasi K3LL"
 tags: ["CSMS", "Digitalisasi", "K3LL", "Monitoring", "Audit"]
 draft: false
 image: "/images/articles/pentingnya-digitalisasi-k3ll.svg"
-relatedService: "digitalisasi"
+relatedService: 4
 ---
 
 # Pentingnya Digitalisasi Dokumen K3LL bagi Kontraktor Modern

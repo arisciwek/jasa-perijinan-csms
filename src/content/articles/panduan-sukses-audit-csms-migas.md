@@ -11,7 +11,7 @@ category: "Audit & Verifikasi CSMS"
 tags: ["CSMS", "Audit", "Verifikasi", "Migas", "Pertamina", "K3LL"]
 draft: false
 image: "/images/articles/panduan-sukses-audit-csms-migas.svg"
-relatedService: "audit"
+relatedService: 3
 ---
 
 # Panduan Sukses Menghadapi Audit Verifikasi CSMS di Sektor Migas
