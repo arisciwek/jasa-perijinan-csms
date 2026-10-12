@@ -12,7 +12,7 @@
         <circle cx="0" cy="0" r="25" fill="#3b82f6"/>
         <text x="0" y="4" font-size="12" font-weight="bold" fill="#fff">1</text>
         <text x="0" y="40" font-size="8">Kick-off</text>
-        <text x="0" y="50" font-size="8">& Survey</text>
+        <text x="0" y="50" font-size="8">Survey</text>
       </g>
       <g transform="translate(0, 0)">
         <path d="M15,0 L35,0" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" fill="none"/>
@@ -30,7 +30,7 @@
         <circle cx="0" cy="0" r="25" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
         <text x="0" y="4" font-size="12" font-weight="bold" fill="#3b82f6">3</text>
         <text x="0" y="40" font-size="8">Review</text>
-        <text x="0" y="50" font-size="8">& Revisi</text>
+        <text x="0" y="50" font-size="8">Revisi</text>
       </g>
       <g transform="translate(220, 0)">
         <path d="M-40,-5 L-30,0 L-40,5" fill="#3b82f6"/>
@@ -63,7 +63,7 @@
     <g transform="translate(-40, 60)">
       <rect x="0" y="0" width="140" height="80" rx="6" fill="#fff" stroke="#8b5cf6" stroke-width="2"/>
       <rect x="10" y="8" width="120" height="12" rx="3" fill="#8b5cf6"/>
-      <text x="70" y="32" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Forms & Register</text>
+      <text x="70" y="32" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Forms Register</text>
     </g>
   </g>
   <g transform="translate(320, 40)">
