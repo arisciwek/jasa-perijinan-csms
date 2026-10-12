@@ -13,105 +13,101 @@ const breadcrumbs = [
 ];
 ---
 <PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Service" relatedService="digitalisasi">
-  <section class="py-16 bg-white service-detail-section">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 service-detail-container">
-      <header class="service-detail-header text-center mb-16">
-        <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">Layanan Utama #4</span>
-        <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Digitalisasi & Standardisasi K3LL</h1>
-        <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-8">Dari arsip fisik ke sistem digital terstandar: akses kapan saja, monitoring real-time, siap audit instan.</p>
-        <div class="service-detail-header-media flex justify-center">
-          <img src={image} alt="Digitalisasi & Standardisasi K3LL" class="w-full max-w-2xl h-auto rounded-xl shadow-md border border-gray-100" />
-        </div>
-      </header>
-
-      <div class="service-detail-content grid lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2 service-detail-main space-y-10">
-          <article class="service-detail-article bg-gray-50 p-8 rounded-xl border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Deskripsi Layanan</h2>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Banyak kontraktor masih mengelola K3LL dengan **arsip fisik, Excel tersebar, WhatsApp group, dan hardcopy** yang sulit dilacak, rusak, atau hilang. Saat audit tiba, tim HSE sibuk "mencari dokumen" bukan "menjawab pertanyaan". Layanan ini mentransformasikan pengelolaan K3LL ke platform digital terpusat, terstandar, dan mudah diakses.
-            </p>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Kami tidak hanya "scan dokumen", tapi membangun **ekosistem digital K3LL**: repository terstruktur, template pelaporan standar, dashboard KPI real-time, workflow approval, notifikasi otomatis, dan audit trail lengkap. Hasilnya: efisiensi naik, risiko kehilangan data nol, siap audit kapan saja.
-            </p>
-          </article>
-
-          <article class="service-detail-article bg-gray-50 p-8 rounded-xl border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Solusi Digital yang Disediakan</h2>
-            <ul class="space-y-3 text-gray-700 list-disc list-inside">
-              <li><strong>Digital Repository:</strong> Cloud storage terstruktur per elemen/proyek/tahun, full-text search, version control, akses berbasis role</li>
-              <li><strong>Standardized Forms:</strong> Template digital HIRA, JSA, Inspection, Incident, Training, PTW, Meeting MoM — semua konsisten format</li>
-              <li><strong>Dashboard K3LL:</strong> LTIFR, TRIR, Near Miss, Training Hours, Inspection Compliance, CAP Status — real-time, exportable</li>
-              <li><strong>Workflow Approval:</strong> Digital signature, routing otomatis (Creator → Reviewer → Approver), audit trail lengkap</li>
-              <li><strong>Automated Reminders:</strong> Expired sertifikat, overdue inspeksi, CAP deadline, training refresh, document review date</li>
-              <li><strong>Mobile Access:</strong> Input observation/inspeksi/insiden langsung dari HP di lapangan (offline sync)</li>
-            </ul>
-          </article>
-
-          <article class="service-detail-article bg-gray-50 p-8 rounded-xl border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Fase Implementasi</h2>
-            <div class="overflow-x-auto">
-              <table class="w-full text-sm text-left">
-                <thead class="bg-primary-50 text-primary-900">
-                  <tr>
-                    <th class="p-3 font-semibold">Fase</th>
-                    <th class="p-3 font-semibold">Aktivitas</th>
-                    <th class="p-3 font-semibold">Output</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-200">
-                  <tr class="hover:bg-gray-50"><td class="p-3 font-medium">1. Assessment</td><td class="p-3">Audit arsip existing, interview tim, definisi kebutuhan</td><td class="p-3">Laporan Assessment & Arsitektur Sistem</td></tr>
-                  <tr class="hover:bg-gray-50"><td class="p-3 font-medium">2. Setup Platform</td><td class="p-3">Konfigurasi repository, template, dashboard, workflow, user management</td><td class="p-3">Sistem Siap Pakai (UAT)</td></tr>
-                  <tr class="hover:bg-gray-50"><td class="p-3 font-medium">3. Migrasi Data</td><td class="p-3">Scan & OCR arsip fisik, import data Excel, mapping ke struktur baru</td><td class="p-3">Arsip Digital Lengkap (12-24 bln)</td></tr>
-                  <tr class="hover:bg-gray-50"><td class="p-3 font-medium">4. Training & Go-Live</td><td class="p-3">Pelatihan Admin/User, simulasi workflow, cut-over, hypercare 2 minggu</td><td class="p-3">Tim Operational & Sistem Live</td></tr>
-                  <tr class="hover:bg-gray-50"><td class="p-3 font-medium">5. Support</td><td class="p-3">Maintenance, update template, user support, periodic review</td><td class="p-3">SLA Support Bulanan/Tahunan</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
-
-          <article class="service-detail-article bg-primary-50 p-8 rounded-xl border border-primary-200">
-            <h2 class="text-2xl font-bold text-primary-900 mb-4">ROI Digitalisasi K3LL</h2>
-            <ul class="space-y-2 text-primary-800 list-disc list-inside">
-              <li><strong>Waktu cari dokumen:</strong> -90% (dari jam → detik)</li>
-              <li><strong>Persiapan audit:</strong> -70% effort (dokumen siap klik)</li>
-              <li><strong>Keterlambatan pelaporan:</strong> -80% (notifikasi otomatis)</li>
-              <li><strong>Kehilangan evidence:</strong> 0% (cloud backup + versioning)</li>
-              <li><strong>Komunikasi tim:</strong> Terpusat, transparan, auditable</li>
-            </ul>
-          </article>
-        </div>
-
-        <aside class="service-detail-sidebar space-y-6">
-          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-            <h3 class="font-bold text-gray-900 mb-4">Navigasi Layanan</h3>
-            <nav class="space-y-2">
-              <a href="/services/penyusunan-dokumen-csms" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Penyusunan Dokumen CSMS dari Nol</a>
-              <a href="/services/review-gap-analysis-csms" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Review & Gap Analysis CSMS</a>
-              <a href="/services/pendampingan-verifikasi-audit-hse" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Pendampingan Verifikasi & Audit HSE</a>
-              <a href="/services/digitalisasi-standardisasi-k3ll" class="block bg-primary-50 text-primary-800 p-3 rounded-lg font-medium border border-primary-200">→ Digitalisasi & Standardisasi K3LL</a>
-            </nav>
-          </div>
-
-          <div class="bg-primary-600 text-white p-6 rounded-xl">
-            <h3 class="font-bold text-lg mb-3">Masih Kelola K3LL Manual/Excel?</h3>
-            <p class="text-primary-100 mb-4 text-sm">Upgrade ke sistem digital. Akses kapan saja, siap audit instan, efisiensi naik drastis.</p>
-            <a href="/contact" class="inline-block bg-white text-primary-600 font-medium px-5 py-2 rounded-lg hover:bg-primary-50 transition-colors text-sm">Konsultasi Gratis</a>
-          </div>
-
-          <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-            <h3 class="font-bold text-gray-900 mb-3">Platform Options</h3>
-            <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
-              <li>SharePoint/Teams (Microsoft 365)</li>
-              <li>Google Workspace (Drive/Sheets/Forms)</li>
-              <li>Notion / Confluence</li>
-              <li>Custom Low-Code (Retool, Budibase)</li>
-              <li>Dedicated HSE Software (Intelex, Cority, dll)</li>
-            </ul>
-            <p class="mt-3 text-xs text-gray-500">Kami agnostik platform — pilih yang fit budget & ekosistem IT Anda.</p>
-          </div>
-        </aside>
-      </div>
+  <header class="service-detail-header text-center mb-16">
+    <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">Layanan Utama #4</span>
+    <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Digitalisasi & Standardisasi K3LL</h1>
+    <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-8">Dari arsip fisik ke sistem digital terstandar: akses kapan saja, monitoring real-time, siap audit instan.</p>
+    <div class="service-detail-header-media flex justify-center">
+      <img src={image} alt="Digitalisasi & Standardisasi K3LL" class="w-full max-w-2xl h-auto rounded-xl shadow-md border border-gray-100" />
     </div>
-  </section>
+  </header>
+
+  <div class="service-detail-content grid lg:grid-cols-3 gap-8">
+    <div class="lg:col-span-2 service-detail-main space-y-10">
+      <article class="service-detail-article bg-gray-50 p-8 rounded-xl border border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Deskripsi Layanan</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Banyak kontraktor masih mengelola K3LL dengan **arsip fisik, Excel tersebar, WhatsApp group, dan hardcopy** yang sulit dilacak, rusak, atau hilang. Saat audit tiba, tim HSE sibuk \"mencari dokumen\" bukan \"menjawab pertanyaan\". Layanan ini mentransformasikan pengelolaan K3LL ke platform digital terpusat, terstandar, dan mudah diakses.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Kami tidak hanya \"scan dokumen\", tapi membangun **ekosistem digital K3LL**: repository terstruktur, template pelaporan standar, dashboard KPI real-time, workflow approval, notifikasi otomatis, dan audit trail lengkap. Hasilnya: efisiensi naik, risiko kehilangan data nol, siap audit kapan saja.
+        </p>
+      </article>
+
+      <article class="service-detail-article bg-gray-50 p-8 rounded-xl border border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Solusi Digital yang Disediakan</h2>
+        <ul class="space-y-3 text-gray-700 list-disc list-inside">
+          <li><strong>Digital Repository:</strong> Cloud storage terstruktur per elemen/proyek/tahun, full-text search, version control, akses berbasis role</li>
+          <li><strong>Standardized Forms:</strong> Template digital HIRA, JSA, Inspection, Incident, Training, PTW, Meeting MoM — semua konsisten format</li>
+          <li><strong>Dashboard K3LL:</strong> LTIFR, TRIR, Near Miss, Training Hours, Inspection Compliance, CAP Status — real-time, exportable</li>
+          <li><strong>Workflow Approval:</strong> Digital signature, routing otomatis (Creator → Reviewer → Approver), audit trail lengkap</li>
+          <li><strong>Automated Reminders:</strong> Expired sertifikat, overdue inspeksi, CAP deadline, training refresh, document review date</li>
+          <li><strong>Mobile Access:</strong> Input observation/inspeksi/insiden langsung dari HP di lapangan (offline sync)</li>
+        </ul>
+      </article>
+
+      <article class="service-detail-article bg-gray-50 p-8 rounded-xl border border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fase Implementasi</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-primary-50 text-primary-900">
+              <tr>
+                <th class="p-3 font-semibold">Fase</th>
+                <th class="p-3 font-semibold">Aktivitas</th>
+                <th class="p-3 font-semibold">Output</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="hover:bg-gray-50"><td class="p-3 font-medium">1. Assessment</td><td class="p-3">Audit arsip existing, interview tim, definisi kebutuhan</td><td class="p-3">Laporan Assessment & Arsitektur Sistem</td></tr>
+              <tr class="hover:bg-gray-50"><td class="p-3 font-medium">2. Setup Platform</td><td class="p-3">Konfigurasi repository, template, dashboard, workflow, user management</td><td class="p-3">Sistem Siap Pakai (UAT)</td></tr>
+              <tr class="hover:bg-gray-50"><td class="p-3 font-medium">3. Migrasi Data</td><td class="p-3">Scan & OCR arsip fisik, import data Excel, mapping ke struktur baru</td><td class="p-3">Arsip Digital Lengkap (12-24 bln)</td></tr>
+              <tr class="hover:bg-gray-50"><td class="p-3 font-medium">4. Training & Go-Live</td><td class="p-3">Pelatihan Admin/User, simulasi workflow, cut-over, hypercare 2 minggu</td><td class="p-3">Tim Operational & Sistem Live</td></tr>
+              <tr class="hover:bg-gray-50"><td class="p-3 font-medium">5. Support</td><td class="p-3">Maintenance, update template, user support, periodic review</td><td class="p-3">SLA Support Bulanan/Tahunan</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="service-detail-article bg-primary-50 p-8 rounded-xl border border-primary-200">
+        <h2 class="text-2xl font-bold text-primary-900 mb-4">ROI Digitalisasi K3LL</h2>
+        <ul class="space-y-2 text-primary-800 list-disc list-inside">
+          <li><strong>Waktu cari dokumen:</strong> -90% (dari jam → detik)</li>
+          <li><strong>Persiapan audit:</strong> -70% effort (dokumen siap klik)</li>
+          <li><strong>Keterlambatan pelaporan:</strong> -80% (notifikasi otomatis)</li>
+          <li><strong>Kehilangan evidence:</strong> 0% (cloud backup + versioning)</li>
+          <li><strong>Komunikasi tim:</strong> Terpusat, transparan, auditable</li>
+        </ul>
+      </article>
+    </div>
+
+    <aside class="service-detail-sidebar space-y-6">
+      <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+        <h3 class="font-bold text-gray-900 mb-4">Navigasi Layanan</h3>
+        <nav class="space-y-2">
+          <a href="/services/penyusunan-dokumen-csms" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg font-medium border border-primary-200">→ Penyusunan Dokumen CSMS dari Nol</a>
+          <a href="/services/review-gap-analysis-csms" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Review & Gap Analysis CSMS</a>
+          <a href="/services/pendampingan-verifikasi-audit-hse" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Pendampingan Verifikasi & Audit HSE</a>
+          <a href="/services/digitalisasi-standardisasi-k3ll" class="block bg-primary-50 text-primary-800 p-3 rounded-lg font-medium border border-primary-200">→ Digitalisasi & Standardisasi K3LL</a>
+        </nav>
+      </div>
+
+      <div class="bg-primary-600 text-white p-6 rounded-xl">
+        <h3 class="font-bold text-lg mb-3">Masih Kelola K3LL Manual/Excel?</h3>
+        <p class="text-primary-100 mb-4 text-sm">Upgrade ke sistem digital. Akses kapan saja, siap audit instan, efisiensi naik drastis.</p>
+        <a href="/contact" class="inline-block bg-white text-primary-600 font-medium px-5 py-2 rounded-lg hover:bg-primary-50 transition-colors text-sm">Konsultasi Gratis</a>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="font-bold text-gray-900 mb-3">Platform Options</h3>
+        <ul class="space-y-2 text-sm text-gray-700 list-disc list-inside">
+          <li>SharePoint/Teams (Microsoft 365)</li>
+          <li>Google Workspace (Drive/Sheets/Forms)</li>
+          <li>Notion / Confluence</li>
+          <li>Custom Low-Code (Retool, Budibase)</li>
+          <li>Dedicated HSE Software (Intelex, Cority, dll)</li>
+        </ul>
+        <p class="mt-3 text-xs text-gray-500">Kami agnostik platform — pilih yang fit budget & ekosistem IT Anda.</p>
+      </div>
+    </aside>
+  </div>
 </PageLayout>

@@ -1,18 +1,12 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+// Base layout for all pages
+import StructuredData from '../components/StructuredData.astro';
+import SEOMeta from '../components/SEOMeta.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import { getCollection } from 'astro:content';
+import { siteConfig, siteUrl } from '../config/site.ts';
 
-const { 
-  title, 
-  description, 
-  image, 
-  pageType = 'WebPage', 
-  breadcrumbs = [],
-  relatedService 
-} = Astro.props;
+const { title, description, image, pageType = 'WebPage', breadcrumbs = [], relatedService } = Astro.props;
 
 let relatedArticles = [];
 if (relatedService) {
@@ -25,11 +19,39 @@ if (relatedService) {
     })
     .slice(0, 3);
 }
+const defaultTitle = title || siteConfig.defaultTitle;
+const defaultDescription = description || siteConfig.defaultDescription;
+const fullUrl = siteUrl(Astro.url.pathname);
 ---
-<BaseLayout title={title} description={description} image={image} pageType={pageType}>
-  <div class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{defaultTitle}</title>
+    <meta name="description" content={defaultDescription} />
+
+    <!-- SEOMeta component handles Open Graph, Twitter Cards, etc -->
+    <SEOMeta
+      title={defaultTitle}
+      description={defaultDescription}
+      image={image}
+      url={fullUrl}
+    />
+
+    <!-- Structured Data / Schema.org JSON-LD -->
+    <StructuredData
+      pageType={pageType}
+      title={defaultTitle}
+      description={defaultDescription}
+      url={fullUrl}
+    />
+  </head>
+  <body>
     <!-- Header -->
-    <Header />
+    <header>
+      <slot name="header" />
+    </header>
 
     <!-- Breadcrumb per PRD 6.3 -->
     {breadcrumbs.length > 0 && (
@@ -56,13 +78,19 @@ if (relatedService) {
 
     <!-- Main Content Area -->
     <main class="main-content flex-grow">
-      <slot />
-      {relatedArticles.length > 0 && (
-        <RelatedArticles articles={relatedArticles} title="Artikel Terkait Layanan Ini" />
-      )}
+      <section class="py-16 bg-white service-detail-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 service-detail-container">
+          <slot />
+          {relatedArticles.length > 0 && (
+            <RelatedArticles articles={relatedArticles} title="Artikel Terkait Layanan Ini" />
+          )}
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
-    <Footer />
-  </div>
-</BaseLayout>
+    <footer>
+      <slot name="footer" />
+    </footer>
+  </body>
+</html>
