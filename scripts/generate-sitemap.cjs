@@ -25,6 +25,7 @@ const routes = [
   { url: '/articles/panduan-sukses-audit-csms-migas/', changefreq: 'monthly', priority: 0.7 },
   { url: '/articles/mengenal-9-elemen-csms/', changefreq: 'monthly', priority: 0.7 },
   { url: '/articles/pentingnya-digitalisasi-k3ll/', changefreq: 'monthly', priority: 0.7 },
+  { url: '/articles/dokumen-csms-adalah-pengertian-fungsi-manfaat-bagi-kontraktor/', changefreq: 'monthly', priority: 0.7 },
   { url: '/about/', changefreq: 'monthly', priority: 0.6 },
   { url: '/contact/', changefreq: 'monthly', priority: 0.9 },
 ];
