@@ -76,23 +76,6 @@ const toc: TocHeading[] = headings.filter((h: TocHeading) => h.depth === 2 || h.
           </nav>
         )}
 
-        <!-- Related Articles -->
-        {relatedArticles.length > 0 && (
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-            <h2 class="text-lg font-bold text-gray-900 mb-4">Artikel Terkait</h2>
-            <div class="space-y-4">
-              {relatedArticles.map(article => (
-                <div class="border-t border-gray-200 pt-4">
-                  <h3 class="font-medium text-gray-900 mb-1">
-                    <a href={`/articles/${article.slug}`} class="hover:text-primary-600">{article.data.title}</a>
-                  </h3>
-                  <p class="text-sm text-gray-600">{article.data.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
         <!-- Related Service -->
         {service && (
           <div class="bg-primary-50 p-6 rounded-xl shadow-sm border border-primary-200">
@@ -154,6 +137,23 @@ const toc: TocHeading[] = headings.filter((h: TocHeading) => h.depth === 2 || h.
           <div class="prose prose-blue max-w-none text-gray-700 leading-relaxed space-y-6">
             <slot />
           </div>
+
+          <!-- Related Articles -->
+          {relatedArticles.length > 0 && (
+            <div class="mt-12 pt-6 border-t border-gray-100">
+              <h2 class="text-xl font-bold text-gray-900 mb-6">Artikel Terkait</h2>
+              <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {relatedArticles.map(article => (
+                  <article class="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+                    <h3 class="font-medium text-gray-900 mb-2">
+                      <a href={`/articles/${article.slug}`} class="hover:text-primary-600">{article.data.title}</a>
+                    </h3>
+                    <p class="text-sm text-gray-600">{article.data.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
 
           <!-- Tags & Share -->
           {tags.length > 0 && (
