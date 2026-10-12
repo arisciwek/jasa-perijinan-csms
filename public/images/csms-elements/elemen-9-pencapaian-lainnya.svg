@@ -8,7 +8,7 @@
   <rect width="400" height="300" fill="url(#bgGrad)" />
   <!-- Certifications & Awards -->
   <g transform="translate(50, 40)">
-    <text x="0" y="0" font-size="14" font-weight="bold" fill="#1e293b">Certifications & Awards</text>
+    <text x="0" y="0" font-size="14" font-weight="bold" fill="#1e293b">Certifications + Awards</text>
     <g transform="translate(0, 25)">
       <!-- ISO 45001 -->
       <rect x="0" y="0" width="140" height="80" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
@@ -44,7 +44,7 @@
   </g>
   <!-- Innovation & Forum -->
   <g transform="translate(50, 240)">
-    <text x="0" y="0" font-size="12" font-weight="bold" fill="#1e293b">Innovation & Industry Participation</text>
+    <text x="0" y="0" font-size="12" font-weight="bold" fill="#1e293b">Innovation + Industry Participation</text>
     <g transform="translate(0, 20)" font-size="9" fill="#1e293b">
       <text x="0" y="0">▸ Digital Permit System (In-house)</text>
       <text x="0" y="18">▸ BBS Mobile App for Observation</text>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -61,7 +62,7 @@
       <g font-size="9" fill="#1e293b">
         <rect x="0" y="0" width="70" height="40" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1"/>
         <text x="35" y="15" text-anchor="middle" font-weight="bold" fill="#3b82f6">Repo</text>
-        <text x="35" y="28" text-anchor="middle" font-size="7">Search & Version</text>
+        <text x="35" y="28" text-anchor="middle" font-size="7">Search &amp; Version</text>
       </g>
       <g transform="translate(80, 0)">
         <rect x="0" y="0" width="70" height="40" rx="5" fill="#fff" stroke="#10b981" stroke-width="1"/>
