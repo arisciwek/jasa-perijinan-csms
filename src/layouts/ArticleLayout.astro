@@ -24,11 +24,7 @@ const {
   headings = [],
 } = Astro.props;
 
-const fullBreadcrumbs = [
-  { label: 'Artikel', href: '/articles' },
-  ...breadcrumbs,
-  { label: title, href: Astro.url.pathname }
-];
+const fullBreadcrumbs = breadcrumbs;
 
 const toc: TocHeading[] = headings.filter((h: TocHeading) => h.depth === 2 || h.depth === 3);
 ---
