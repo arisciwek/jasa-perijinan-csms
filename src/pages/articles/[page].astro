@@ -1,14 +1,14 @@
 ---
-import PageLayout from '../../layouts/PageLayout.astro';
+import CollectionLayout from '../../layouts/CollectionLayout.astro';
 import { siteConfig, siteUrl } from '../../config/site.ts';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
+  const ITEMS_PER_PAGE = 9;
   const allArticles = (await getCollection('articles'))
     .filter(a => !a.data.draft)
     .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 
-  const ITEMS_PER_PAGE = 9;
   const totalPages = Math.ceil(allArticles.length / ITEMS_PER_PAGE);
 
   // Start from page 2, page 1 is handled by index.astro
@@ -30,75 +30,24 @@ const description = 'Kumpulan artikel, panduan, dan wawasan terbaru seputar Cont
 const image = siteUrl('/images/articles/articles.svg');
 const seoImage = siteUrl('/images/articles/articles.svg', true);
 
-const hasPrev = currentPage > 1;
-const hasNext = currentPage < totalPages;
-const prevUrl = hasPrev ? (currentPage === 2 ? '/articles/' : `/articles/${currentPage - 1}/`) : null;
-const nextUrl = hasNext ? `/articles/${currentPage + 1}/` : null;
-
 const pageTitle = totalPages > 1 ? `${title} — Halaman ${currentPage}` : title;
 const pageDescription = totalPages > 1 ? `${description} (Halaman ${currentPage} dari ${totalPages})` : description;
 ---
-<PageLayout
+<CollectionLayout
   title={pageTitle}
   description={pageDescription}
   image={seoImage}
   breadcrumbs={[{ label: 'Artikel', href: '/articles' }]}
+  articles={articles}
+  currentPage={currentPage}
+  totalPages={totalPages}
 >
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <header class="mb-16">
-        <h1 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-4">
-          Artikel & Wawasan K3LL
-        </h1>
-        <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto">
-          Informasi, panduan, dan artikel seputar standar keselamatan kerja dan perizinan bisnis untuk kontraktor profesional.
-        </p>
-      </header>
-
-      <div class="articles-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {articles.map(art => (
-          <article class="article-card bg-gray-50 rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow flex flex-col justify-between p-6">
-            <div class="article-content">
-              <div class="article-meta flex items-center justify-between text-xs text-gray-500 mb-3">
-                <span class="article-category bg-primary-100 text-primary-800 font-medium px-2.5 py-0.5 rounded">{art.data.category}</span>
-                <span class="article-read-time">{Math.ceil(art.body.length / 1000)} menit baca</span>
-              </div>
-              <h2 class="article-title text-xl font-bold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
-                <a href={`/articles/${art.slug}`}>{art.data.title}</a>
-              </h2>
-              <p class="article-excerpt text-gray-600 text-sm leading-relaxed mb-6">
-                {art.data.description}
-              </p>
-            </div>
-            <div class="article-footer pt-4 border-t border-gray-200 flex items-center justify-between text-sm">
-              <time class="article-date text-gray-500" datetime={art.data.pubDate}>
-                {new Date(art.data.pubDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric' })}
-              </time>
-              <a href={`/articles/${art.slug}`} class="article-read-more text-primary-600 font-medium hover:underline">
-                Baca Selengkapnya →
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      {totalPages > 1 && (
-        <nav class="articles-pagination mt-12 flex items-center justify-center gap-4" aria-label="Pagination">
-          {hasPrev && (
-            <a href={prevUrl} class="pagination-link px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors font-medium">
-              ← Sebelumnya
-            </a>
-          )}
-          <span class="pagination-info text-sm text-gray-600">
-            Halaman {currentPage} dari {totalPages}
-          </span>
-          {hasNext && (
-            <a href={nextUrl} class="pagination-link px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium">
-              Selanjutnya →
-            </a>
-          )}
-        </nav>
-      )}
-    </div>
-  </section>
-</PageLayout>
+  <header slot="header" class="mb-16">
+    <h1 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-4">
+      Artikel & Wawasan K3LL
+    </h1>
+    <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto">
+      Informasi, panduan, dan artikel seputar standar keselamatan kerja dan perizinan bisnis untuk kontraktor profesional.
+    </p>
+  </header>
+</CollectionLayout>
