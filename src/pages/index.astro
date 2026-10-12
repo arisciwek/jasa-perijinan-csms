@@ -14,18 +14,20 @@ const seoImage = siteUrl('/images/home/home-hero.svg', true);
   pageType="WebSite"
 >
   <!-- Hero Section -->
-  <section class="bg-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl">
-        Solusi Digital Pembuatan Dokumen Keselamatan Kontraktor
-      </h1>
-      <p class="mt-6 text-center text-lg text-gray-600 max-w-2xl mx-auto">
-        Konsultan jasa pembuatan dokumen Sistem Manajemen Keselamatan Kontraktor (CSMS)
-        secara digital untuk memastikan keberhasilan proses verifikasi skor CSMS tertinggi
-        dari client di sektor hulu Migas, Tambang, Manufakturing, Konstruksi, Petrokimia
-        dan sektor industri lain dalam satu platform terpercaya.
-      </p>
-      <div class="mt-10 flex justify-center space-x-6">
+  <section class="py-16 bg-white hero-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-container">
+      <header class="hero-header text-center mb-12">
+        <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+          Solusi Digital Pembuatan Dokumen Keselamatan Kontraktor
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Konsultan jasa pembuatan dokumen Sistem Manajemen Keselamatan Kontraktor (CSMS)
+          secara digital untuk memastikan keberhasilan proses verifikasi skor CSMS tertinggi
+          dari client di sektor hulu Migas, Tambang, Manufakturing, Konstruksi, Petrokimia
+          dan sektor industri lain dalam satu platform terpercaya.
+        </p>
+      </header>
+      <div class="hero-actions mt-10 flex justify-center space-x-6">
         <a
           href="#services"
           class="px-6 py-3 bg-primary-600 text-white font-medium rounded-lg shadow-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500"
@@ -43,21 +45,21 @@ const seoImage = siteUrl('/images/home/home-hero.svg', true);
   </section>
 
   <!-- Stats Section -->
-  <section class="bg-gray-50 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="text-center">
+  <section class="py-12 bg-gray-50 stats-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 stats-container grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="stat-card text-center">
         <p class="text-3xl font-bold text-primary-600">100%</p>
         <p class="text-sm text-gray-500 mt-2">Tingkat Kelulusan CSMS</p>
       </div>
-      <div class="text-center">
+      <div class="stat-card text-center">
         <p class="text-3xl font-bold text-primary-600">100+</p>
         <p class="text-sm text-gray-500 mt-2">Kontraktor Terverifikasi Regional</p>
       </div>
-      <div class="text-center">
+      <div class="stat-card text-center">
         <p class="text-3xl font-bold text-primary-600">0</p>
         <p class="text-sm text-gray-500 mt-2">Komplain</p>
       </div>
-      <div class="text-center">
+      <div class="stat-card text-center">
         <p class="text-3xl font-bold text-primary-600">24/7</p>
         <p class="text-sm text-gray-500 mt-2">Konsultasi Pembangunan Real-time</p>
       </div>
@@ -65,55 +67,57 @@ const seoImage = siteUrl('/images/home/home-hero.svg', true);
   </section>
 
   <!-- Services Preview -->
-  <section id="services" class="py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">
-        Layanan Konsultasi CSMS
-      </h2>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+  <section id="services" class="py-12 services-preview-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 services-preview-container">
+      <header class="services-preview-header text-center mb-8">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Layanan Konsultasi CSMS
+        </h2>
+      </header>
+      <div class="services-preview-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <!-- Service Card 1 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="p-6">
+        <article class="service-preview-card bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="service-preview-content p-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">Penyusunan Dokumen CSMS dari Nol</h3>
             <p class="text-gray-600 mb-4">
               Kami menyusun seluruh dokumen CSMS Anda dari awal secara profesional sesuai kebutuhan klien.
             </p>
             <p class="text-sm text-primary-600 font-medium">Cocok untuk: Perusahaan atau kontraktor yang belum memiliki dokumen K3LL.</p>
           </div>
-        </div>
+        </article>
 
         <!-- Service Card 2 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="p-6">
+        <article class="service-preview-card bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="service-preview-content p-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">Review & Gap Analysis CSMS</h3>
             <p class="text-gray-600 mb-4">
               Evaluasi mendalam dokumen yang sudah ada untuk mengidentifikasi poin-poin yang perlu diperbaiki.
             </p>
             <p class="text-sm text-primary-600 font-medium">Cocok untuk: Kontraktor yang ingin memperbaharui atau meningkatkan skor CSMS.</p>
           </div>
-        </div>
+        </article>
 
         <!-- Service Card 3 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="p-6">
+        <article class="service-preview-card bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="service-preview-content p-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">Pendampingan Verifikasi & Audit HSE</h3>
             <p class="text-gray-600 mb-4">
               Kami mendampingi proses verifikasi oleh auditor principal untuk memastikan kelulusan audit.
             </p>
             <p class="text-sm text-primary-600 font-medium">Cocok untuk: Perusahaan yang akan menghadapi audit verifikasi HSE principal.</p>
           </div>
-        </div>
+        </article>
 
         <!-- Service Card 4 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="p-6">
+        <article class="service-preview-card bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div class="service-preview-content p-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">Digitalisasi & Standardisasi K3LL</h3>
             <p class="text-gray-600 mb-4">
               Transformasi dokumen fisik ke format digital terstandar agar lebih mudah dikelola dan diakses.
             </p>
             <p class="text-sm text-primary-600 font-medium">Cocok untuk: Kontraktor modern yang mengutamakan kerapihan data K3LL.</p>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
