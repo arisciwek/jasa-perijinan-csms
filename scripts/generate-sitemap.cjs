@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const siteUrl = process.env.SITE_URL || 'http://jasa-perijinan-csms.lan';
+const siteUrl = process.env.SITE_URL || process.env.VERCEL_URL || 'http://jasa-perijinan-csms.lan';
 const baseUrl = siteUrl.replace(/\/+$/, '');
 
 const routes = [
@@ -36,9 +36,7 @@ const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
   </sitemap>
 </sitemapindex>`;
 
-const robots = `User-agent: *
-Allow: /
-Sitemap: ${baseUrl}/sitemap.xml`;
+const robots = `User-agent: *\nDisallow: /\nSitemap: ${baseUrl}/sitemap.xml`;
 
 const distDir = path.join(__dirname, '../dist');
 fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap);
