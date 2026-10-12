@@ -12,7 +12,8 @@ const {
   author = 'Tim Ahli K3LL', 
   category = 'Artikel', 
   tags = [], 
-  breadcrumbs = [] 
+  breadcrumbs = [],
+  relatedService = null
 } = Astro.props;
 
 const fullBreadcrumbs = [
@@ -33,6 +34,16 @@ const relatedArticles = [
     description: 'Bagaimana transisi dari dokumen fisik ke sistem digital meningkatkan efisiensi audit dan pengelolaan keselamatan kerja.'
   }
 ];
+
+const servicesMap = {
+  penyusunan: { title: 'Penyusunan Dokumen CSMS dari Nol', href: '/services/penyusunan-dokumen-csms' },
+  review: { title: 'Review & Gap Analysis CSMS', href: '/services/review-gap-analysis-csms' },
+  audit: { title: 'Pendampingan Verifikasi & Audit HSE', href: '/services/pendampingan-verifikasi-audit-hse' },
+  digitalisasi: { title: 'Digitalisasi & Standardisasi K3LL', href: '/services/digitalisasi-standardisasi-k3ll' }
+};
+
+const hasRelatedService = relatedService && servicesMap[relatedService];
+const relatedServiceData = hasRelatedService ? servicesMap[relatedService] : null;
 ---
 <BaseLayout title={title} description={description} image={image} pageType="Article">
   <div class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
@@ -96,6 +107,22 @@ const relatedArticles = [
             ))}
           </div>
         </div>
+
+        <!-- Related Service -->
+        {hasRelatedService && (
+          <div class="bg-primary-50 p-6 rounded-xl shadow-sm border border-primary-200">
+            <h2 class="text-lg font-bold text-primary-900 mb-4">Layanan Terkait</h2>
+            <div class="space-y-3">
+              <h3 class="font-medium text-primary-900">
+                <a href={relatedServiceData.href} class="hover:underline">{relatedServiceData.title}</a>
+              </h3>
+              <p class="text-sm text-primary-800">Lihat detail layanan ini untuk bantuan profesional.</p>
+              <a href={relatedServiceData.href} class="inline-block mt-3 px-4 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors text-sm">
+                Lihat Layanan →
+              </a>
+            </div>
+          </div>
+        )}
 
         <!-- Author Card -->
         <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">

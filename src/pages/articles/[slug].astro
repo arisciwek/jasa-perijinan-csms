@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props;
-const { title, description, pubDate, updatedDate, author, category, tags, image } = article.data;
+const { title, description, pubDate, updatedDate, author, category, tags, image, relatedService } = article.data;
 const seoImage = image ? siteUrl(image, true) : siteUrl('/images/articles/articles.svg', true);
 const formattedPubDate = new Date(pubDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
 const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) : null;
@@ -32,6 +32,7 @@ const { Content } = await article.render();
   category={categoryLabel}
   author={authorName}
   tags={tagsList}
-  breadcrumbs={[{ label: 'Artikel', href: '/articles' }, { label: title, href: `/articles/${article.slug}` }]}>
+  breadcrumbs={[{ label: 'Artikel', href: '/articles' }, { label: title, href: `/articles/${article.slug}` }]}
+  relatedService={relatedService}>
   <Content />
 </ArticleLayout>

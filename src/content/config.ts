@@ -13,6 +13,7 @@ const articleSchema = z.object({
   tags: z.array(z.string()).default([]),
   draft: z.boolean().default(false),
   image: z.string().optional(),
+  relatedService: z.string().optional(),
 });
 
 const pageSchema = z.object({
