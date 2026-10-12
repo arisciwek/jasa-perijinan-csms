@@ -2,8 +2,29 @@
 import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import { getCollection } from 'astro:content';
 
-const { title, description, image, pageType = 'WebPage', breadcrumbs = [] } = Astro.props;
+const { 
+  title, 
+  description, 
+  image, 
+  pageType = 'WebPage', 
+  breadcrumbs = [],
+  relatedService 
+} = Astro.props;
+
+let relatedArticles = [];
+if (relatedService) {
+  relatedArticles = (await getCollection('articles'))
+    .filter(a => !a.data.draft && a.data.relatedService === relatedService)
+    .sort((a, b) => {
+      const dateA = a.data.updatedDate || a.data.pubDate;
+      const dateB = b.data.updatedDate || b.data.pubDate;
+      return new Date(dateB).valueOf() - new Date(dateA).valueOf();
+    })
+    .slice(0, 3);
+}
 ---
 <BaseLayout title={title} description={description} image={image} pageType={pageType}>
   <div class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
@@ -34,8 +55,11 @@ const { title, description, image, pageType = 'WebPage', breadcrumbs = [] } = As
     )}
 
     <!-- Main Content Area -->
-    <main class="flex-grow">
+    <main class="main-content flex-grow">
       <slot />
+      {relatedArticles.length > 0 && (
+        <RelatedArticles articles={relatedArticles} title="Artikel Terkait Layanan Ini" />
+      )}
     </main>
 
     <!-- Footer -->

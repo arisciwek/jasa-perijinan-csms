@@ -1,7 +1,5 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import RelatedArticles from '../../components/RelatedArticles.astro';
-import { getCollection } from 'astro:content';
 import { siteConfig, siteUrl } from '../../config/site.ts';
 
 const title = `Penyusunan Dokumen CSMS dari Nol — ${siteConfig.siteName}`;
@@ -13,12 +11,8 @@ const breadcrumbs = [
   { label: 'Layanan', href: '/services' },
   { label: 'Penyusunan Dokumen CSMS', href: '/services/penyusunan-dokumen-csms' }
 ];
-
-const articles = (await getCollection('articles'))
-  .filter(a => !a.data.draft && a.data.relatedService === 'penyusunan')
-  .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 ---
-<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Service">
+<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Service" relatedService="penyusunan">
   <section class="py-16 bg-white service-detail-section">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 service-detail-container">
       <header class="service-detail-header text-center mb-16">
@@ -86,8 +80,6 @@ const articles = (await getCollection('articles'))
               <li><strong>Tim Ahli:</strong> Konsultan bersertifikat AK3 Umum, berpengalaman 15+ tahun</li>
             </ul>
           </article>
-
-          <RelatedArticles articles={articles} title="Artikel Terkait Layanan Ini" />
         </div>
 
         <aside class="service-detail-sidebar space-y-6">
