@@ -1,6 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { getCollection, getEntryBySlug } from 'astro:content';
+import { getCollection } from 'astro:content';
 import { siteConfig, siteUrl } from '../../config/site.ts';
 
 export async function getStaticPaths() {
@@ -21,6 +21,8 @@ const formattedUpdatedDate = updatedDate ? new Date(updatedDate).toLocaleDateStr
 const tagsList = tags || [];
 const categoryLabel = category || 'Artikel';
 const authorName = author || 'Tim Konsultan CSMS';
+
+const { Content } = await article.render();
 ---
 <ArticleLayout
   title={title}
@@ -30,9 +32,6 @@ const authorName = author || 'Tim Konsultan CSMS';
   category={categoryLabel}
   author={authorName}
   tags={tagsList}
-  breadcrumbs={[{ label: 'Artikel', href: '/articles' }, { label: title, href: `/articles/${article.slug}` }]}
->
-  <article>
-    <slot />
-  </article>
+  breadcrumbs={[{ label: 'Artikel', href: '/articles' }, { label: title, href: `/articles/${article.slug}` }]}>
+  <Content />
 </ArticleLayout>
