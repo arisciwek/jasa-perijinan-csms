@@ -41,7 +41,12 @@ const routes = [
   { url: '/articles/persyaratan-csms-untuk-mengikuti-tender-di-perusahaan-migas-dan-pertambangan/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('persyaratan-csms-untuk-mengikuti-tender-di-perusahaan-migas-dan-pertambangan') },
   { url: '/articles/cara-membuat-dokumen-csms-dari-nol-untuk-perusahaan-yang-baru-mengikuti-tender/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('cara-membuat-dokumen-csms-dari-nol-untuk-perusahaan-yang-baru-mengikuti-tender') },
   { url: '/articles/manual-k3ll-sop-k3-dan-safe-work-practices-apa-perbedaan-dan-fungsinya/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('manual-k3ll-sop-k3-dan-safe-work-practices-apa-perbedaan-dan-fungsinya') },
-  { url: '/about/', changefreq: 'monthly', priority: 0.6, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
+    { url: '/articles/gap-analysis-csms-adalah-pengertian-tujuan-dan-tahapan-pelaksanaannya/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('gap-analysis-csms-adalah-pengertian-tujuan-dan-tahapan-pelaksanaannya') },
+    { url: '/articles/cara-mengevaluasi-kelengkapan-dokumen-csms-sebelum-mengikuti-tender/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('cara-mengevaluasi-kelengkapan-dokumen-csms-sebelum-mengikuti-tender') },
+    { url: '/articles/penyebab-dokumen-csms-tidak-memenuhi-persyaratan-verifikasi-dan-cara-memperbaikinya/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('penyebab-dokumen-csms-tidak-memenuhi-persyaratan-verifikasi-dan-cara-memperbaikinya') },
+    { url: '/articles/checklist-review-dokumen-csms-untuk-mempersiapkan-prakualifikasi-vendor/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('checklist-review-dokumen-csms-untuk-mempersiapkan-prakualifikasi-vendor') },
+    { url: '/articles/kapan-perusahaan-perlu-melakukan-review-dan-pembaruan-dokumen-csms/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('kapan-perusahaan-perlu-melakukan-review-dan-pembaruan-dokumen-csms') },
+    { url: '/about/', changefreq: 'monthly', priority: 0.6, lastmod: new Date().toISOString().replace(/\\.\\d{3}Z$/, 'Z') },
   { url: '/contact/', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
 ];
 
