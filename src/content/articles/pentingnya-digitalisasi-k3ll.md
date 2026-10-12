@@ -1,6 +1,6 @@
 ---
-id: 3
-ulid: "01J9Z8Y7X6W5V4U3T2S1R0Q9P3"
+id: 4
+ulid: "01J9Z8Y7X6W5V4U3T2S1R0Q9P4"
 type: "article"
 title: "Pentingnya Digitalisasi Dokumen K3LL bagi Kontraktor Modern"
 description: "Bagaimana transisi dari dokumen fisik ke sistem digital meningkatkan efisiensi audit dan pengelolaan keselamatan kerja."
@@ -8,9 +8,10 @@ pubDate: "2026-10-09T00:00:00Z"
 updatedDate: "2026-10-09T00:00:00Z"
 author: "Tim Konsultan CSMS"
 category: "Digitalisasi K3LL"
-tags: ["Digitalisasi", "K3LL", "Dokumen", "Efisiensi", "Teknologi", "Audit"]
+tags: ["CSMS", "Digitalisasi", "K3LL", "Monitoring", "Audit"]
 draft: false
-image: "/images/articles/digitalisasi-k3ll.svg"
+image: "/images/articles/pentingnya-digitalisasi-k3ll.svg"
+relatedService: "digitalisasi"
 ---
 
 # Pentingnya Digitalisasi Dokumen K3LL bagi Kontraktor Modern

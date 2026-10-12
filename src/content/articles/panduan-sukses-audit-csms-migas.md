@@ -1,16 +1,17 @@
 ---
-id: 1
-ulid: "01J9Z8Y7X6W5V4U3T2S1R0Q9P1"
+id: 3
+ulid: "01J9Z8Y7X6W5V4U3T2S1R0Q9P3"
 type: "article"
 title: "Panduan Sukses Menghadapi Audit Verifikasi CSMS di Sektor Migas"
 description: "Strategi dan persiapan matang yang wajib dilakukan kontraktor untuk meraih skor tinggi dalam verifikasi CSMS hulu migas."
 pubDate: "2026-10-11T00:00:00Z"
 updatedDate: "2026-10-11T00:00:00Z"
 author: "Tim Konsultan CSMS"
-category: "Audit & Verifikasi"
-tags: ["CSMS", "Audit", "Migas", "Verifikasi", "HSE"]
+category: "Audit & Verifikasi CSMS"
+tags: ["CSMS", "Audit", "Verifikasi", "Migas", "Pertamina", "K3LL"]
 draft: false
-image: "/images/articles/audit-csms-migas.svg"
+image: "/images/articles/panduan-sukses-audit-csms-migas.svg"
+relatedService: "audit"
 ---
 
 # Panduan Sukses Menghadapi Audit Verifikasi CSMS di Sektor Migas
