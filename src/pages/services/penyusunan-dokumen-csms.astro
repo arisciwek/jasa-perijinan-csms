@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig, siteUrl } from '../../config/site.ts';
 
@@ -37,7 +38,7 @@ const articles = (await getCollection('articles'))
               Bagi kontraktor baru atau perusahaan yang baru masuk sektor migas, tambang, petrokimia, dan konstruksi besar, memiliki dokumen CSMS yang lengkap dan sesuai standar adalah <strong>syarat mutlak</strong> untuk lolos prakualifikasi dan tender. Kami menyusun seluruh dokumentasi Sistem Manajemen Keselamatan Kerja dan Lingkungan (K3LL) dari nol, custom sesuai karakteristik proyek dan syarat principal.
             </p>
             <p class="text-gray-600 leading-relaxed mb-4">
-              Layanan ini mencakup: analisis kebutuhan (gap analysis awal), penyusunan 9 Elemen CSMS lengkap, Manual K3LL, Prosedur Operasional Standar (POS/SWP), formulir pendukung, register risiko (HIRA/JSA), serta panduan implementasi agar dokumen tidak hanya "lulus verifikasi" tapi benar-benar可操作 di lapangan.
+              Layanan ini mencakup: analisis kebutuhan (gap analysis awal), penyusunan 9 Elemen CSMS lengkap, Manual K3LL, Prosedur Operasional Standar (POS/SWP), formulir pendukung, register risiko (HIRA/JSA), serta panduan implementasi agar dokumen tidak hanya "lulus verifikasi" tapi benar-benar可操作 di lapangan。
             </p>
           </article>
 
@@ -86,22 +87,7 @@ const articles = (await getCollection('articles'))
             </ul>
           </article>
 
-          {articles.length > 0 && (
-            <div class="service-detail-related-articles bg-gray-50 p-8 rounded-xl border border-gray-200">
-              <h2 class="text-2xl font-bold text-gray-900 mb-6">Artikel Terkait Layanan Ini</h2>
-              <div class="space-y-4">
-                {articles.map(art => (
-                  <article class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                      <a href={`/articles/${art.slug}`} class="hover:text-primary-600 transition-colors">{art.data.title}</a>
-                    </h3>
-                    <p class="text-gray-600 text-sm mb-3">{art.data.description}</p>
-                    <a href={`/articles/${art.slug}`} class="inline-block text-primary-600 font-medium text-sm hover:underline">Baca Selengkapnya →</a>
-                  </article>
-                ))}
-              </div>
-            </div>
-          )}
+          <RelatedArticles articles={articles} title="Artikel Terkait Layanan Ini" />
         </div>
 
         <aside class="service-detail-sidebar space-y-6">
