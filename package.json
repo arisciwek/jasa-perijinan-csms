@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/generate-sitemap.cjs",
+    "build": "SITE_URL=https://jasa-perijinan-csms.vercel.app astro build && node scripts/generate-sitemap.cjs",
     "preview": "astro preview",
     "astro": "astro"
   },
