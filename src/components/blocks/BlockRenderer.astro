@@ -10,20 +10,22 @@ interface Props {
 
 const { blocks = [] } = Astro.props;
 ---
-<div class="content-blocks">
-  {blocks.map((block) => {
-    if (block.type === 'quick-answer') {
-      return <QuickAnswer {...block.data} />;
-    }
+{blocks.length > 0 && (
+  <div class="content-blocks">
+    {blocks.map((block) => {
+      if (block.type === 'quick-answer') {
+        return <QuickAnswer id={block.id} {...block.data} />;
+      }
 
-    if (block.type === 'process-timeline') {
-      return <ProcessTimeline {...block.data} />;
-    }
+      if (block.type === 'process-timeline') {
+        return <ProcessTimeline id={block.id} {...block.data} />;
+      }
 
-    if (block.type === 'requirement-checklist') {
-      return <RequirementChecklist {...block.data} />;
-    }
+      if (block.type === 'requirement-checklist') {
+        return <RequirementChecklist id={block.id} {...block.data} />;
+      }
 
-    return null;
-  })}
-</div>
+      return null;
+    })}
+  </div>
+)}
