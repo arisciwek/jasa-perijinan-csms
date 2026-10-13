@@ -9,6 +9,28 @@ import { csmsElementIds, serviceIds } from '../config/site.ts';
 export const contentBlockSchema = z.discriminatedUnion('type', [
   z.object({
     id: z.string().min(1),
+    type: z.literal('content-section'),
+    data: z.object({
+      title: z.string().min(1),
+      paragraphs: z.array(z.string().min(1)).min(1),
+      variant: z.enum(['plain', 'muted', 'primary']).optional(),
+    }),
+  }),
+  z.object({
+    id: z.string().min(1),
+    type: z.literal('feature-card-grid'),
+    data: z.object({
+      title: z.string().min(1),
+      columns: z.union([z.literal(2), z.literal(3)]),
+      items: z.array(z.object({
+        title: z.string().min(1),
+        description: z.string().optional(),
+        points: z.array(z.string().min(1)).optional(),
+      })).min(1),
+    }),
+  }),
+  z.object({
+    id: z.string().min(1),
     type: z.literal('latest-articles'),
     data: z.object({
       title: z.string().min(1),

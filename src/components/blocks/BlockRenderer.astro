@@ -12,6 +12,8 @@ import Hero from './Hero.astro';
 import ImagePanel from './ImagePanel.astro';
 import LatestArticlesBlock from './LatestArticlesBlock.astro';
 import ServiceDirectory from './ServiceDirectory.astro';
+import ContentSection from './ContentSection.astro';
+import FeatureCardGrid from './FeatureCardGrid.astro';
 
 interface Props {
   blocks?: ContentBlock[];
@@ -22,6 +24,14 @@ const { blocks = [] } = Astro.props;
 {blocks.length > 0 && (
   <div class="content-blocks">
     {blocks.map((block) => {
+      if (block.type === 'content-section') {
+        return <ContentSection id={block.id} {...block.data} />;
+      }
+
+      if (block.type === 'feature-card-grid') {
+        return <FeatureCardGrid id={block.id} {...block.data} />;
+      }
+
       if (block.type === 'latest-articles') {
         return <LatestArticlesBlock id={block.id} {...block.data} />;
       }
