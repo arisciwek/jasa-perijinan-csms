@@ -1,4 +1,6 @@
 ---
+import ArticleSection from './ArticleSection.astro';
+
 interface Subsection {
   title: string;
   paragraphs: string[];
@@ -15,20 +17,36 @@ interface Props {
 }
 const { id, introParagraphs, sections } = Astro.props;
 ---
-<article id={id} class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
-  <div class="prose prose-lg max-w-none prose-headings:scroll-mt-24 prose-h2:mt-12 prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-3 prose-h3:mt-8">
-    {introParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+<article id={id} class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+  <div class="mb-12 rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-slate-50 p-6 sm:p-8">
+    <div class="mb-4 flex items-center gap-3">
+      <span class="h-1 w-10 rounded-full bg-blue-700" aria-hidden="true"></span>
+      <span class="text-xs font-bold uppercase tracking-[0.18em] text-blue-800">Ringkasan Pembahasan</span>
+    </div>
+    <div class="max-w-3xl space-y-4 text-base leading-8 text-slate-700 sm:text-lg">
+      {introParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </div>
+
+  <div class="article-content">
     {sections.map((section, index) => (
-      <section aria-labelledby={`${id}-section-${index + 1}`}>
-        <h2 id={`${id}-section-${index + 1}`}>{section.title}</h2>
-        {section.intro ? <p>{section.intro}</p> : null}
-        {section.subsections.map((subsection, subIndex) => (
-          <section aria-labelledby={`${id}-section-${index + 1}-subsection-${subIndex + 1}`}>
-            <h3 id={`${id}-section-${index + 1}-subsection-${subIndex + 1}`}>{subsection.title}</h3>
-            {subsection.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-          </section>
-        ))}
-      </section>
+      <ArticleSection
+        id={`${id}-section-${index + 1}`}
+        index={index + 1}
+        title={section.title}
+        intro={section.intro}
+        subsections={section.subsections}
+      />
     ))}
   </div>
 </article>
+
+<style>
+  .article-content :global(p) {
+    text-wrap: pretty;
+  }
+
+  .article-section + .article-section {
+    margin-top: 3.5rem;
+  }
+</style>

@@ -265,6 +265,17 @@ export const contentBlockSchema = z.discriminatedUnion('type', [
       disclaimer: z.string().optional(),
     }),
   }),
-]);
+
+  z.object({ id: z.string().min(1), type: z.literal('article-hero'), data: z.object({ eyebrow: z.string().optional(), title: z.string().min(1), description: z.string().min(1), image: z.string().startsWith('/').optional(), imageAlt: z.string().optional() }) }),
+  z.object({ id: z.string().min(1), type: z.literal('article-lead'), data: z.object({ text: z.string().min(1), label: z.string().optional() }) }),
+  z.object({ id: z.string().min(1), type: z.literal('section-header'), data: z.object({ title: z.string().min(1), eyebrow: z.string().optional(), number: z.number().int().positive().optional(), description: z.string().optional() }) }),
+  z.object({ id: z.string().min(1), type: z.literal('content-card'), data: z.object({ title: z.string().min(1), description: z.string().optional(), items: z.array(z.string().min(1)).optional(), variant: z.enum(['blue', 'slate', 'white']).optional() }) }),
+  z.object({ id: z.string().min(1), type: z.literal('numbered-steps'), data: z.object({ title: z.string().min(1), intro: z.string().optional(), steps: z.array(z.object({ title: z.string().min(1), description: z.string().min(1) })).min(1) }) }),
+  z.object({ id: z.string().min(1), type: z.literal('checklist-card'), data: z.object({ title: z.string().min(1), description: z.string().optional(), items: z.array(z.object({ label: z.string().min(1), detail: z.string().optional(), required: z.boolean().optional() })).min(1), note: z.string().optional() }) }),
+  z.object({ id: z.string().min(1), type: z.literal('document-list'), data: z.object({ title: z.string().min(1), intro: z.string().optional(), items: z.array(z.object({ name: z.string().min(1), purpose: z.string().optional(), mandatory: z.boolean().optional() })).min(1) }) }),
+  z.object({ id: z.string().min(1), type: z.literal('comparison-table'), data: z.object({ title: z.string().min(1), intro: z.string().optional(), headers: z.array(z.string().min(1)).min(2), rows: z.array(z.array(z.string().min(1)).min(2)).min(1), note: z.string().optional() }) }),
+  z.object({ id: z.string().min(1), type: z.literal('info-callout'), data: z.object({ title: z.string().min(1), text: z.string().min(1), variant: z.enum(['info', 'warning', 'success']).optional() }) }),
+  z.object({ id: z.string().min(1), type: z.literal('service-cta'), data: z.object({ title: z.string().min(1), description: z.string().min(1), label: z.string().min(1), href: z.string().min(1), note: z.string().optional() }) }),
+]); 
 
 export type ContentBlock = z.infer<typeof contentBlockSchema>;
