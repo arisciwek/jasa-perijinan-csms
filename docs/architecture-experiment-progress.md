@@ -55,6 +55,14 @@ Catatan: angka statistik dan teks testimoni dipindahkan dari implementasi sebelu
 - `robots.txt` yang dihasilkan mengizinkan crawling dan mencantumkan sitemap.
 - Host deployment dari `VERCEL_URL` dinormalisasi menjadi URL HTTPS jika `SITE_URL` tidak ditentukan.
 
+### Halaman layanan, tentang kami, dan kontak
+
+- Menambahkan `src/content/pages/services.md`; halaman `/services` memilih layanan melalui ID pada frontmatter, sementara detail layanan tetap menggunakan registry `src/config/site.ts` sebagai sumber data bersama.
+- Mengubah `src/pages/services.astro` agar merender blok direktori layanan.
+- Menambahkan `src/content/pages/about.md` dan memindahkan bagian pengenalan, visi-misi, serta keunggulan ke blok `content-section` dan `feature-card-grid`.
+- Menambahkan `src/content/pages/contact.md` dan komponen `ContactPanel.astro`.
+- Formulir kontak kini menyusun pesan dan membuka WhatsApp; situs tidak mengklaim mengirim data formulir ke server. Data nomor WhatsApp, jam operasional, dan pilihan layanan berada di frontmatter.
+
 ## Status validasi
 
 - Perubahan tersimpan sebagai commit terpisah di branch eksperimen.
@@ -93,5 +101,10 @@ Catatan: angka statistik dan teks testimoni dipindahkan dari implementasi sebelu
 | `342d4f5` | fix(a11y): scope latest articles heading to block id |
 | `de2e6af` | fix(seo): generate sitemap from published routes |
 | `4979d44` | fix(seo): correct sitemap URL and newline handling |
+| `aa06632` | refactor(services): drive service directory from markdown |
+| `270fd67` | fix(services): narrow registry entries before rendering |
+| `fadb43c` | refactor(about): move page content into markdown blocks |
+| `4542dcd` | refactor(contact): move contact page into markdown block |
+| `f00929f` | chore(pages): remove unused page metadata variables |
 
-Commit berikutnya akan menambahkan catatan progres ini. Jumlah commit dan status branch perlu diverifikasi kembali sebelum merge.
+Status terakhir diverifikasi pada commit `f00929f`: branch eksperimen 24 commit di depan `main` dan tidak tertinggal commit. Build tetap belum dijalankan; periksa kembali status branch sebelum merge.
