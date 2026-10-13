@@ -37,7 +37,6 @@ contentBlocks:
           description: "Transformasi dokumen fisik ke format digital terstandar agar lebih mudah dikelola dan diakses."
           audience: "Cocok untuk: Kontraktor modern yang mengutamakan kerapihan data K3LL."
           href: "/services/digitalisasi-standardisasi-k3ll"
----
   - id: homepage-csms-elements
     type: csms-element-grid
     data:
@@ -55,3 +54,4 @@ contentBlocks:
           description: "Apakah perusahaan mempunyai panduan operasi, cara kerja K3LL, dan aturan keselamatan yang disahkan?"
         - elementId: 6
           description: "Pengaturan apa yang dimiliki perusahaan untuk pengawasan dan pemantauan kinerja K3LL?"
+---
