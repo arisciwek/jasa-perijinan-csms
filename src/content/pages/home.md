@@ -91,4 +91,10 @@ contentBlocks:
       secondaryHref: "/contact"
       secondaryIsWhatsApp: true
 
+  - id: homepage-latest-articles
+    type: latest-articles
+    data:
+      title: "Artikel Terbaru Seputar CSMS"
+      limit: 3
+
 ---

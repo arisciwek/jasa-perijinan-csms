@@ -1,8 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import { getCollection, getEntry } from 'astro:content';
+import { getEntry } from 'astro:content';
 import BlockRenderer from '../components/blocks/BlockRenderer.astro';
-import LatestArticles from '../components/blocks/LatestArticles.astro';
 import { siteConfig, siteUrl } from '../config/site.ts';
 
 const title = siteConfig.defaultTitle;
@@ -10,10 +9,6 @@ const description = siteConfig.defaultDescription;
 const image = siteUrl('/images/home/home-hero.svg');
 const seoImage = siteUrl('/images/home/home-hero.svg', true);
 const homeContent = await getEntry('pages', 'home');
-const latestArticles = (await getCollection('articles'))
-  .filter((article) => !article.data.draft)
-  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-  .slice(0, 3);
 ---
 <PageLayout
   title={title}
@@ -24,5 +19,4 @@ const latestArticles = (await getCollection('articles'))
   <!-- Section order is controlled by contentBlocks in src/content/pages/home.md -->
   <BlockRenderer blocks={homeContent?.data.contentBlocks ?? []} />
 
-  <LatestArticles articles={latestArticles} />
 </PageLayout>
