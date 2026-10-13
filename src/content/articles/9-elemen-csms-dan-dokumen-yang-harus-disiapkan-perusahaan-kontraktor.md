@@ -66,8 +66,6 @@ contentBlocks:
       "type": "article-body",
       "data": {
         "introParagraphs": [
-          "Fokus kata kunci: 9 elemen CSMS",
-          "Tujuan artikel: Menjelaskan elemen-elemen CSMS beserta dokumen pendukung yang perlu dipersiapkan perusahaan kontraktor.",
           "Memahami 9 elemen CSMS secara mendalam adalah kunci utama bagi kontraktor yang ingin lolos verifikasi dengan skor tinggi. Setiap elemen tidak berdiri sendiri, melainkan saling berkaitan membentuk sistem manajemen keselamatan yang utuh. Artikel ini membahas tiap elemen beserta dokumen spesifik yang harus disiapkan sebagai bukti implementasi."
         ],
         "sections": [
