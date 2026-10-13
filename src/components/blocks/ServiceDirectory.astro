@@ -1,5 +1,5 @@
 ---
-import { services } from '../../config/site.ts';
+import { services, type Service } from '../../config/site.ts';
 
 interface Props {
   id: string;
@@ -12,7 +12,7 @@ interface Props {
 const { id, title, intro, imageSrc, imageAlt, serviceIds } = Astro.props;
 const selectedServices = serviceIds
   .map((serviceId) => services.find((service) => service.id === serviceId))
-  .filter((service) => service !== undefined);
+  .filter((service): service is Service => service !== undefined);
 const titleId = `${id}-title`;
 ---
 <section id={id} class="py-16 bg-white services-section" aria-labelledby={titleId}>
