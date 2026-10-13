@@ -1,107 +1,13 @@
 ---
-import ElementLayout from '../../layouts/ElementLayout.astro';
-import { siteConfig, siteUrl } from '../../config/site.ts';
-
-const title = `Elemen #1: Kepemimpinan & Komitmen — ${siteConfig.siteName}`;
-const description = 'Kepemimpinan dan komitmen manajemen puncak adalah fondasi utama CSMS. Tanpa keterlibatan aktif direktur dan pemilik, sistem keselamatan tidak akan berjalan efektif.';
-const image = siteUrl('/images/csms-elements/elemen-1-kepemimpinan.svg');
-const seoImage = siteUrl('/images/csms-elements/elemen-1-kepemimpinan.svg', true);
-
-const breadcrumbs = [
-  { label: 'Elemen CSMS', href: '/csms-elements' },
-  { label: 'Kepemimpinan & Komitmen', href: '/csms-elements/kepemimpinan-komitmen' }
-];
-
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Elemen #1: Kepemimpinan & Komitmen CSMS',
-  description,
-  image: seoImage,
-  author: { '@type': 'Organization', name: siteConfig.siteName },
-  publisher: { '@type': 'Organization', name: siteConfig.siteName, logo: { '@type': 'ImageObject', url: siteUrl('/images/logo.png', true) } },
-  datePublished: '2026-10-10T00:00:00Z',
-  dateModified: '2026-10-10T00:00:00Z',
-};
+import { getEntry } from 'astro:content';
+import BlockRenderer from '../../components/blocks/BlockRenderer.astro';
+const pageContent = await getEntry('pages', 'kepemimpinan-komitmen');
 ---
-<ElementLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} elementId={1}>
-  <header slot="header" class="elemen-header text-center mb-16">
-        <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">Elemen #1</span>
-        <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Kepemimpinan & Komitmen</h1>
-        <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-8">Fondasi utama CSMS: keterlibatan aktif pimpinan dalam menetapkan visi, misi, dan budaya keselamatan.</p>
-        <div class="elemen-header-media flex justify-center">
-          <img src={image} alt="Ilustrasi Kepemimpinan & Komitmen CSMS" class="w-full max-w-2xl h-auto rounded-xl shadow-md border border-gray-100" />
-        </div>
-      </header>
-          <article class="elemen-article bg-gray-50 p-8 rounded-xl border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Deskripsi Elemen</h2>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Kepemimpinan dan komitmen adalah elemen pertama dan paling krusial dalam 9 Elemen CSMS. Elemen ini menuntut bahwa manajemen tingkat atas (Direktur, Pemilik, Senior Management) tidak hanya "menyetujui" kebijakan K3LL, tetapi secara aktif terlibat, mempromosikan, dan meneladankan budaya keselamatan di seluruh tingkat organisasi.
-            </p>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Standar verifikasi CSMS mensyaratkan bukti nyata keterlibatan pimpinan, bukan sekadar dokumen yang ditandatangani. Auditor akan mencari bukti: kehadiran di safety meeting, alokasi budget, pengambilan keputusan berbasis risiko, dan teladan perilaku aman.
-            </p>
-          </article>
-
-          <article class="elemen-article bg-gray-50 p-8 rounded-xl border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Mengapa Elemen Ini Penting?</h2>
-            <ul class="space-y-3 text-gray-700 list-disc list-inside">
-              <li><strong>Tone at the top:</strong> Budaya keselamatan dimulai dari pimpinan. Jika pimpinan tidak peduli, karyawan pun tidak akan peduli.</li>
-              <li><strong>Alokasi sumber daya:</strong> Hanya pimpinan yang bisa memastikan budget, tenaga, dan waktu dialokasikan untuk K3LL.</li>
-              <li><strong>Accountability:</strong> Pimpinan yang terlibat menciptakan rantai akuntabilitas dari atas ke bawah.</li>
-              <li><strong>Kesesuaian verifikasi:</strong> Elemen ini adalah "pintu gerbang" — gagal di sini, elemen lain sulit lolos verifikasi.</li>
-            </ul>
-          </article>
-
-          <article class="elemen-article bg-gray-50 p-8 rounded-xl border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Deliverable Umum (Bukti Verifikasi)</h2>
-            <ul class="space-y-2 text-gray-700 list-disc list-inside">
-              <li>Kebijakan K3LL ditandatangani Direktur/Pemilik (tanggal terbaru)</li>
-              <li>Organogram K3LL dengan tanggung jawab jelas per jabatan</li>
-              <li>Catatan rapat manajemen K3LL (min. 1x per kuartal)</li>
-              <li>Bukti kehadiran pimpinan di safety walk / safety meeting</li>
-              <li>Alokasi budget K3LL di anggaran tahunan perusahaan</li>
-              <li>Penunjukan HSE Officer / K3LL Coordinator yang kompeten</li>
-              <li>Komunikasi rutin visi misi K3LL ke seluruh karyawan</li>
-            </ul>
-          </article>
-
-          <article class="elemen-article bg-primary-50 p-8 rounded-xl border border-primary-200">
-            <h2 class="text-2xl font-bold text-primary-900 mb-4">Bagaimana Kami Membantu</h2>
-            <ul class="space-y-2 text-primary-800 list-disc list-inside">
-              <li>Menyusun <strong>Kebijakan K3LL</strong> yang komprehensif dan sesuai standar principal</li>
-              <li>Membuat <strong>Organogram & Job Description</strong> K3LL per level jabatan</li>
-              <li>Mempersiapkan <strong>Agenda & MoM Rapat Manajemen K3LL</strong> berkala</li>
-              <li>Melakukan <strong>Gap Analysis</strong> keterlibatan pimpinan vs standar verifikasi</li>
-              <li>Pendampingan <strong>Simulasi Audit Manajemen</strong> sebelum verifikasi principal</li>
-            </ul>
-          </article>
-
-
-  <div slot="aside" class="space-y-6">
-          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-            <h3 class="font-bold text-gray-900 mb-4">Navigasi 9 Elemen</h3>
-            <nav class="space-y-2">
-              <a href="/csms-elements/kepemimpinan-komitmen" class="block bg-primary-50 text-primary-800 p-3 rounded-lg font-medium border border-primary-200">→ Elemen #1: Kepemimpinan & Komitmen</a>
-              <a href="/csms-elements/kebijaksanaan-sasaran" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #2: Kebijaksanaan & Sasaran</a>
-              <a href="/csms-elements/organisasi-tanggungjawab" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #3: Organisasi & Tanggung Jawab</a>
-              <a href="/csms-elements/manajemen-risiko" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #4: Manajemen Risiko</a>
-              <a href="/csms-elements/perencanaan-prosedur" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #5: Perencanaan & Prosedur</a>
-              <a href="/csms-elements/implementasi-pemantauan" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #6: Implementasi & Pemantauan</a>
-              <a href="/csms-elements/audit-tinjauan" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #7: Audit & Tinjauan</a>
-              <a href="/csms-elements/pencapaian-kinerja" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #8: Pencapaian Kinerja</a>
-              <a href="/csms-elements/pencapaian-lainnya" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #9: Pencapaian Lainnya</a>
-            </nav>
-          </div>
-
-          <div class="bg-primary-600 text-white p-6 rounded-xl">
-            <h3 class="font-bold text-lg mb-3">Butuh Bantuan Elemen #1?</h3>
-            <p class="text-primary-100 mb-4 text-sm">Kami bantu susun kebijakan, organogram, bukti komitmen pimpinan, dan simulasi audit manajemen.</p>
-            <a href="/contact" class="inline-block bg-white text-primary-600 font-medium px-5 py-2 rounded-lg hover:bg-primary-50 transition-colors text-sm">Konsultasi Gratis</a>
-          </div>
-        </div>
-
-  <script is:inline>
-    // JSON-LD injection handled by StructuredData component via BaseLayout
-  </script>
-</ElementLayout>
+<BlockRenderer
+  blocks={pageContent?.data.contentBlocks ?? []}
+  pageMetadata={{
+    title: pageContent?.data.title ?? "Elemen #1: Kepemimpinan & Komitmen",
+    description: pageContent?.data.description ?? '',
+    image: pageContent?.data.image ?? "/images/csms-elements/elemen-1-kepemimpinan.svg",
+  }}
+/>
