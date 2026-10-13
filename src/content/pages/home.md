@@ -4,6 +4,16 @@ slug: home
 title: "Beranda Konsultan CSMS"
 description: "Konsultan jasa pembuatan dokumen CSMS untuk membantu kesiapan verifikasi kontraktor."
 contentBlocks:
+  - id: homepage-hero
+    type: hero
+    data:
+      title: "Solusi Digital Pembuatan Dokumen Keselamatan Kontraktor"
+      description: "Konsultan jasa pembuatan dokumen Sistem Manajemen Keselamatan Kontraktor (CSMS) secara digital untuk membantu kesiapan verifikasi kontraktor di sektor hulu migas, tambang, manufaktur, konstruksi, petrokimia, dan industri lainnya."
+      primaryLabel: "Layanan Kami"
+      primaryHref: "#services"
+      secondaryLabel: "Konsultasi Gratis via WhatsApp"
+      secondaryHref: "/contact"
+      secondaryIsWhatsApp: true
   - id: homepage-stats
     type: stats-grid
     data:
@@ -37,6 +47,11 @@ contentBlocks:
           description: "Transformasi dokumen fisik ke format digital terstandar agar lebih mudah dikelola dan diakses."
           audience: "Cocok untuk: Kontraktor modern yang mengutamakan kerapihan data K3LL."
           href: "/services/digitalisasi-standardisasi-k3ll"
+  - id: homepage-illustration
+    type: image-panel
+    data:
+      src: "/images/home/home-hero.svg"
+      alt: "Ilustrasi solusi digital pembuatan dokumen CSMS dengan 9 elemen utama"
   - id: homepage-csms-elements
     type: csms-element-grid
     data:
@@ -75,22 +90,5 @@ contentBlocks:
       secondaryLabel: "Chat Langsung via WhatsApp"
       secondaryHref: "/contact"
       secondaryIsWhatsApp: true
-
-  - id: homepage-hero
-    type: hero
-    data:
-      title: "Solusi Digital Pembuatan Dokumen Keselamatan Kontraktor"
-      description: "Konsultan jasa pembuatan dokumen Sistem Manajemen Keselamatan Kontraktor (CSMS) secara digital untuk membantu kesiapan verifikasi kontraktor di sektor hulu migas, tambang, manufaktur, konstruksi, petrokimia, dan industri lainnya."
-      primaryLabel: "Layanan Kami"
-      primaryHref: "#services"
-      secondaryLabel: "Konsultasi Gratis via WhatsApp"
-      secondaryHref: "/contact"
-      secondaryIsWhatsApp: true
-
-  - id: homepage-illustration
-    type: image-panel
-    data:
-      src: "/images/home/home-hero.svg"
-      alt: "Ilustrasi solusi digital pembuatan dokumen CSMS dengan 9 elemen utama"
 
 ---

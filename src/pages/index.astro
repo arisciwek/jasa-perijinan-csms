@@ -10,10 +10,6 @@ const description = siteConfig.defaultDescription;
 const image = siteUrl('/images/home/home-hero.svg');
 const seoImage = siteUrl('/images/home/home-hero.svg', true);
 const homeContent = await getEntry('pages', 'home');
-const statsBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'stats-grid');
-const servicesBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'service-card-grid');
-const csmsElementsBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'csms-element-grid');
-const heroBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'hero');
 const latestArticles = (await getCollection('articles'))
   .filter((article) => !article.data.draft)
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
@@ -25,23 +21,8 @@ const latestArticles = (await getCollection('articles'))
   image={seoImage}
   pageType="WebSite"
 >
-  <!-- Homepage hero content is maintained in src/content/pages/home.md -->
-  {heroBlock ? <BlockRenderer blocks={[heroBlock]} /> : null}
-
-  <!-- Stats Section: content comes from src/content/pages/home.md -->
-  {statsBlock ? <BlockRenderer blocks={[statsBlock]} /> : null}
-  {servicesBlock ? <BlockRenderer blocks={[servicesBlock]} /> : null}
-
-  <!-- Services Preview: content comes from src/content/pages/home.md -->
-
-  <!-- Homepage illustration content is maintained in src/content/pages/home.md -->
-  {homeContent?.data.contentBlocks?.filter((block) => block.type === 'image-panel').map((block) => <BlockRenderer blocks={[block]} />)}
-
-  <!-- CSMS element preview is maintained in src/content/pages/home.md -->
-  {csmsElementsBlock ? <BlockRenderer blocks={[csmsElementsBlock]} /> : null}
-
-  <!-- Testimonials and consultation CTA are maintained in src/content/pages/home.md -->
-  <BlockRenderer blocks={(homeContent?.data.contentBlocks ?? []).filter((block) => block.type === 'testimonial-grid' || block.type === 'call-to-action')} />
+  <!-- Section order is controlled by contentBlocks in src/content/pages/home.md -->
+  <BlockRenderer blocks={homeContent?.data.contentBlocks ?? []} />
 
   <LatestArticles articles={latestArticles} />
 </PageLayout>
