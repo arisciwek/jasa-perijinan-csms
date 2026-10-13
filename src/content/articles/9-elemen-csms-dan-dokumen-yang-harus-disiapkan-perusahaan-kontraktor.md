@@ -12,6 +12,32 @@ tags: ["CSMS", "9 Elemen", "Dokumen CSMS", "Kontraktor", "K3LL"]
 draft: false
 image: "/images/articles/9-elemen-csms.svg"
 relatedService: 1
+contentBlocks:
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AD"
+    type: "requirement-checklist"
+    data:
+      title: "Checklist Awal Persiapan Dokumen CSMS"
+      description: "Gunakan daftar ini sebagai pemeriksaan awal. Struktur dan bukti yang diminta dapat berbeda menurut klien, sektor, dan dokumen tender."
+      items:
+        - label: "Kebijakan dan komitmen K3LL"
+          required: true
+        - label: "Identifikasi bahaya dan penilaian risiko"
+          required: true
+        - label: "Identifikasi persyaratan hukum yang relevan"
+          required: true
+        - label: "Tujuan, sasaran, dan program K3LL"
+          required: true
+        - label: "Kompetensi, pelatihan, dan kesadaran pekerja"
+          required: true
+        - label: "Komunikasi dan pelaporan K3LL"
+          required: true
+        - label: "Pengendalian operasional dan prosedur kerja"
+          required: true
+        - label: "Kesiapsiagaan dan tanggap darurat"
+          required: true
+        - label: "Pemantauan, evaluasi, dan tindak lanjut"
+          required: true
+      disclaimer: "Daftar ini merupakan checklist awal, bukan daftar universal yang menjamin kelulusan CSMS. Cocokkan dengan kriteria resmi dari perusahaan pemberi kerja."
 ---
 
 # 9 Elemen CSMS dan Dokumen yang Harus Disiapkan Perusahaan Kontraktor

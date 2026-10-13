@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import BlockRenderer from '../../components/blocks/BlockRenderer.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig, siteUrl, getService } from '../../config/site.ts';
 import { pickRelatedArticles } from '../../utils/related.ts';
@@ -43,4 +44,5 @@ const relatedArticles = pickRelatedArticles(allArticles, {
   relatedArticles={relatedArticles}
   headings={headings}>
   <Content />
+  {article.data.contentBlocks?.length ? <BlockRenderer blocks={article.data.contentBlocks} /> : null}
 </ArticleLayout>
