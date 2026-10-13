@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
+import BlockRenderer from '../components/blocks/BlockRenderer.astro';
 import LatestArticles from '../components/blocks/LatestArticles.astro';
 import { siteConfig, siteUrl } from '../config/site.ts';
 
@@ -8,6 +9,8 @@ const title = siteConfig.defaultTitle;
 const description = siteConfig.defaultDescription;
 const image = siteUrl('/images/home/home-hero.svg');
 const seoImage = siteUrl('/images/home/home-hero.svg', true);
+const homeContent = await getEntry('pages', 'home');
+const statsBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'stats-grid');
 const latestArticles = (await getCollection('articles'))
   .filter((article) => !article.data.draft)
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
@@ -50,27 +53,8 @@ const latestArticles = (await getCollection('articles'))
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="py-12 bg-gray-50 stats-section">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 stats-container grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="stat-card text-center">
-        <p class="text-3xl font-bold text-primary-600">100%</p>
-        <p class="text-sm text-gray-500 mt-2">Tingkat Kelulusan CSMS</p>
-      </div>
-      <div class="stat-card text-center">
-        <p class="text-3xl font-bold text-primary-600">100+</p>
-        <p class="text-sm text-gray-500 mt-2">Kontraktor Terverifikasi Regional</p>
-      </div>
-      <div class="stat-card text-center">
-        <p class="text-3xl font-bold text-primary-600">0</p>
-        <p class="text-sm text-gray-500 mt-2">Komplain</p>
-      </div>
-      <div class="stat-card text-center">
-        <p class="text-3xl font-bold text-primary-600">24/7</p>
-        <p class="text-sm text-gray-500 mt-2">Konsultasi Pembangunan Real-time</p>
-      </div>
-    </div>
-  </section>
+  <!-- Stats Section: content comes from src/content/pages/home.md -->
+  {statsBlock ? <BlockRenderer blocks={[statsBlock]} /> : null}
 
   <!-- Services Preview -->
   <section id="services" class="py-12 services-preview-section">
