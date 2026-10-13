@@ -12,80 +12,82 @@ import Hero from './Hero.astro';
 import ImagePanel from './ImagePanel.astro';
 import LatestArticlesBlock from './LatestArticlesBlock.astro';
 import ServiceDirectory from './ServiceDirectory.astro';
+import ServiceDetail from './ServiceDetail.astro';
 import ContentSection from './ContentSection.astro';
 import FeatureCardGrid from './FeatureCardGrid.astro';
 import ContactPanel from './ContactPanel.astro';
 
 interface Props {
   blocks?: ContentBlock[];
+  pageMetadata?: { title: string; description: string; image?: string };
 }
 
-const { blocks = [] } = Astro.props;
+const { blocks = [], pageMetadata } = Astro.props;
 ---
-{blocks.length > 0 && (
-  <div class="content-blocks">
-    {blocks.map((block) => {
-      if (block.type === 'contact-panel') {
-        return <ContactPanel id={block.id} {...block.data} />;
-      }
+{blocks.map((block) => {
+  if (block.type === 'service-detail') {
+    return <ServiceDetail {...block.data} pageTitle={pageMetadata?.title ?? block.data.heading} pageDescription={pageMetadata?.description ?? ''} image={pageMetadata?.image ?? '/images/services/service-1-penyusunan.svg'} />;
+  }
 
-      if (block.type === 'content-section') {
-        return <ContentSection id={block.id} {...block.data} />;
-      }
+  if (block.type === 'contact-panel') {
+    return <ContactPanel id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'feature-card-grid') {
-        return <FeatureCardGrid id={block.id} {...block.data} />;
-      }
+  if (block.type === 'content-section') {
+    return <ContentSection id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'latest-articles') {
-        return <LatestArticlesBlock id={block.id} {...block.data} />;
-      }
+  if (block.type === 'feature-card-grid') {
+    return <FeatureCardGrid id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'image-panel') {
-        return <ImagePanel id={block.id} {...block.data} />;
-      }
+  if (block.type === 'latest-articles') {
+    return <LatestArticlesBlock id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'hero') {
-        return <Hero id={block.id} {...block.data} />;
-      }
+  if (block.type === 'image-panel') {
+    return <ImagePanel id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'service-directory') {
-        return <ServiceDirectory id={block.id} {...block.data} />;
-      }
+  if (block.type === 'hero') {
+    return <Hero id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'service-card-grid') {
-        return <ServiceCardGrid id={block.id} {...block.data} />;
-      }
+  if (block.type === 'service-directory') {
+    return <ServiceDirectory id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'stats-grid') {
-        return <StatsGrid id={block.id} {...block.data} />;
-      }
+  if (block.type === 'service-card-grid') {
+    return <ServiceCardGrid id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'quick-answer') {
-        return <QuickAnswer id={block.id} {...block.data} />;
-      }
+  if (block.type === 'stats-grid') {
+    return <StatsGrid id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'process-timeline') {
-        return <ProcessTimeline id={block.id} {...block.data} />;
-      }
+  if (block.type === 'quick-answer') {
+    return <QuickAnswer id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'csms-element-grid') {
-        return <CsmsElementGrid id={block.id} {...block.data} />;
-      }
+  if (block.type === 'process-timeline') {
+    return <ProcessTimeline id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'testimonial-grid') {
-        return <TestimonialGrid id={block.id} {...block.data} />;
-      }
+  if (block.type === 'csms-element-grid') {
+    return <CsmsElementGrid id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'call-to-action') {
-        return <CallToAction id={block.id} {...block.data} />;
-      }
+  if (block.type === 'testimonial-grid') {
+    return <TestimonialGrid id={block.id} {...block.data} />;
+  }
 
-      if (block.type === 'requirement-checklist') {
-        return <RequirementChecklist id={block.id} {...block.data} />;
-      }
+  if (block.type === 'call-to-action') {
+    return <CallToAction id={block.id} {...block.data} />;
+  }
 
-      return null;
-    })}
-  </div>
-)}
+  if (block.type === 'requirement-checklist') {
+    return <RequirementChecklist id={block.id} {...block.data} />;
+  }
+
+  return null;
+})}
