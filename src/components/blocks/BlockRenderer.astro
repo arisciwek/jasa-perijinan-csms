@@ -18,6 +18,16 @@ import ContentSection from './ContentSection.astro';
 import FeatureCardGrid from './FeatureCardGrid.astro';
 import ContactPanel from './ContactPanel.astro';
 import ArticleBody from './ArticleBody.astro';
+import ArticleHero from './ArticleHero.astro';
+import ArticleLead from './ArticleLead.astro';
+import SectionHeader from './SectionHeader.astro';
+import ContentCard from './ContentCard.astro';
+import NumberedSteps from './NumberedSteps.astro';
+import ChecklistCard from './ChecklistCard.astro';
+import DocumentList from './DocumentList.astro';
+import ComparisonTable from './ComparisonTable.astro';
+import InfoCallout from './InfoCallout.astro';
+import ServiceCTA from './ServiceCTA.astro';
 
 interface Props {
   blocks?: ContentBlock[];
@@ -27,6 +37,18 @@ interface Props {
 const { blocks = [], pageMetadata } = Astro.props;
 ---
 {blocks.map((block) => {
+
+  if (block.type === 'article-hero') return <ArticleHero id={block.id} {...block.data} />;
+  if (block.type === 'article-lead') return <ArticleLead id={block.id} {...block.data} />;
+  if (block.type === 'section-header') return <SectionHeader id={block.id} {...block.data} />;
+  if (block.type === 'content-card') return <ContentCard id={block.id} {...block.data} />;
+  if (block.type === 'numbered-steps') return <NumberedSteps id={block.id} {...block.data} />;
+  if (block.type === 'checklist-card') return <ChecklistCard id={block.id} {...block.data} />;
+  if (block.type === 'document-list') return <DocumentList id={block.id} {...block.data} />;
+  if (block.type === 'comparison-table') return <ComparisonTable id={block.id} {...block.data} />;
+  if (block.type === 'info-callout') return <InfoCallout id={block.id} {...block.data} />;
+  if (block.type === 'service-cta') return <ServiceCTA id={block.id} {...block.data} />;
+
   if (block.type === 'service-detail') {
     return <ServiceDetail {...block.data} pageTitle={pageMetadata?.title ?? block.data.heading} pageDescription={pageMetadata?.description ?? ''} image={pageMetadata?.image ?? '/images/services/service-1-penyusunan.svg'} />;
   }
