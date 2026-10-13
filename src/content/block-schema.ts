@@ -77,6 +77,44 @@ export const contentBlockSchema = z.discriminatedUnion('type', [
   }),
   z.object({
     id: z.string().min(1),
+    type: z.literal('service-detail'),
+    data: z.object({
+      serviceId: z.number().int().positive().refine((id) => serviceIds.includes(id), {
+        message: 'serviceId harus merujuk ke layanan di src/config/site.ts',
+      }),
+      heading: z.string().min(1),
+      description: z.string().min(1),
+      badge: z.string().min(1),
+      subtitle: z.string().min(1),
+      image: z.string().startsWith('/'),
+      imageAlt: z.string().min(1),
+      sections: z.array(z.object({
+        title: z.string().min(1),
+        variant: z.enum(['default', 'primary']).optional(),
+        paragraphs: z.array(z.string().min(1)).optional(),
+        items: z.array(z.object({
+          label: z.string().optional(),
+          text: z.string().min(1),
+        })).optional(),
+        ordered: z.boolean().optional(),
+        table: z.object({
+          headers: z.array(z.string().min(1)).min(1),
+          rows: z.array(z.array(z.string().min(1)).min(1)).min(1),
+        }).optional(),
+        note: z.string().optional(),
+      })).min(1),
+      sidebar: z.object({
+        ctaTitle: z.string().min(1),
+        ctaDescription: z.string().min(1),
+        ctaLabel: z.string().min(1),
+        ctaHref: z.string().min(1),
+        listTitle: z.string().optional(),
+        listItems: z.array(z.string().min(1)).optional(),
+      }),
+    }),
+  }),
+  z.object({
+    id: z.string().min(1),
     type: z.literal('service-directory'),
     data: z.object({
       title: z.string().min(1),
