@@ -1,5 +1,5 @@
 import { z } from 'astro:content';
-import { csmsElementIds } from '../config/site.ts';
+import { csmsElementIds, serviceIds } from '../config/site.ts';
 
 /**
  * Shared contract for content-driven Astro blocks.
@@ -34,6 +34,19 @@ export const contentBlockSchema = z.discriminatedUnion('type', [
       secondaryLabel: z.string().min(1),
       secondaryHref: z.string().min(1),
       secondaryIsWhatsApp: z.boolean().optional(),
+    }),
+  }),
+  z.object({
+    id: z.string().min(1),
+    type: z.literal('service-directory'),
+    data: z.object({
+      title: z.string().min(1),
+      intro: z.string().min(1),
+      imageSrc: z.string().startsWith('/'),
+      imageAlt: z.string().min(1),
+      serviceIds: z.array(z.number().int().positive().refine((id) => serviceIds.includes(id), {
+        message: 'serviceIds harus merujuk ke layanan di src/config/site.ts',
+      })).min(1),
     }),
   }),
   z.object({

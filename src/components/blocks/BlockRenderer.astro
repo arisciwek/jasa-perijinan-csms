@@ -11,6 +11,7 @@ import CallToAction from './CallToAction.astro';
 import Hero from './Hero.astro';
 import ImagePanel from './ImagePanel.astro';
 import LatestArticlesBlock from './LatestArticlesBlock.astro';
+import ServiceDirectory from './ServiceDirectory.astro';
 
 interface Props {
   blocks?: ContentBlock[];
@@ -31,6 +32,10 @@ const { blocks = [] } = Astro.props;
 
       if (block.type === 'hero') {
         return <Hero id={block.id} {...block.data} />;
+      }
+
+      if (block.type === 'service-directory') {
+        return <ServiceDirectory id={block.id} {...block.data} />;
       }
 
       if (block.type === 'service-card-grid') {

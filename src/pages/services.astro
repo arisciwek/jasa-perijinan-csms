@@ -1,11 +1,16 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import { siteConfig, siteUrl, services } from '../config/site.ts';
+import { getEntry } from 'astro:content';
+import BlockRenderer from '../components/blocks/BlockRenderer.astro';
+import { siteConfig, siteUrl } from '../config/site.ts';
 
+const pageContent = await getEntry('pages', 'services');
+const pageTitle = pageContent?.data.title ?? 'Layanan Profesional Kami';
+const description = pageContent?.data.description ?? 'Layanan penyusunan dokumen CSMS, gap analysis, pendampingan audit, dan digitalisasi K3LL.';
 const title = `Layanan Konsultasi CSMS & Perizinan — ${siteConfig.siteName}`;
-const description = 'Layanan lengkap penyusunan dokumen CSMS, gap analysis, pendampingan audit verifikasi HSE, digitalisasi K3LL, dan perizinan legalitas korporasi.';
-const image = siteUrl('/images/services/services-csms.svg');
-const seoImage = siteUrl('/images/services/services-csms.svg', true);
+const image = siteUrl(pageContent?.data.image || '/images/services/services-csms.svg');
+const seoImage = siteUrl(pageContent?.data.image || '/images/services/services-csms.svg', true);
+const serviceDirectoryBlock = pageContent?.data.contentBlocks?.find((block) => block.type === 'service-directory');
 ---
 <PageLayout
   title={title}
@@ -13,43 +18,5 @@ const seoImage = siteUrl('/images/services/services-csms.svg', true);
   image={seoImage}
   breadcrumbs={[{ label: 'Layanan', href: '/services' }]}
 >
-  <section class="py-16 bg-white services-section">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 services-container">
-      <header class="services-header text-center mb-16">
-        <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-          Layanan Profesional Kami
-        </h1>
-        <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-6">
-          Solusi end-to-end untuk kebutuhan Sistem Manajemen Keselamatan Kontraktor (CSMS) dan perizinan bisnis Anda.
-        </p>
-        <div class="services-header-media flex justify-center mt-6">
-          <img src={image} alt="Layanan Konsultasi CSMS dan Perizinan" class="w-full max-w-2xl h-auto rounded-xl shadow-md border border-gray-100" />
-        </div>
-      </header>
-
-      <div class="services-list space-y-16">
-        {services.map(svc => (
-          <article id={svc.slug} class="service-card bg-gray-50 p-8 sm:p-12 rounded-2xl border border-gray-200 grid md:grid-cols-2 gap-8 items-center">
-            <div class="service-content">
-              <span class="service-badge text-primary-600 font-semibold text-sm uppercase tracking-wider">{svc.badge}</span>
-              <h2 class="service-title text-2xl font-bold text-gray-900 mt-1 mb-4">{svc.title}</h2>
-              <p class="service-description text-gray-600 leading-relaxed mb-6">
-                {svc.description}
-              </p>
-              <ul class="service-features space-y-2 text-sm text-gray-700 mb-6">
-                {svc.features.map(f => <li>✓ {f}</li>)}
-              </ul>
-              <a href={svc.href} class="service-cta inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
-                {svc.cta}
-              </a>
-            </div>
-            <div class="service-target bg-primary-50 p-8 rounded-xl border border-primary-100">
-              <h3 class="font-bold text-primary-900 mb-2">Target Klien:</h3>
-              <p class="text-sm text-primary-800">{svc.target}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
+  {serviceDirectoryBlock ? <BlockRenderer blocks={[serviceDirectoryBlock]} /> : null}
 </PageLayout>
