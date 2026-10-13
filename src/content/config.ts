@@ -38,7 +38,6 @@ const pageSchema = z.object({
   id: z.number().int().positive().optional(),
   ulid: z.string().optional(),
   type: z.literal('page'),
-  slug: z.string(),
   title: z.string().min(1),
   description: z.string().optional(),
   pubDate: z.string().datetime({ offset: true }).optional(),
@@ -52,7 +51,6 @@ const categorySchema = z.object({
   id: z.number().int().positive().optional(),
   ulid: z.string().optional(),
   type: z.literal('category'),
-  slug: z.string(),
   title: z.string().min(1),
   description: z.string().optional(),
 });
@@ -61,7 +59,6 @@ const authorSchema = z.object({
   id: z.number().int().positive().optional(),
   ulid: z.string().optional(),
   type: z.literal('author'),
-  slug: z.string(),
   title: z.string().min(1),
   role: z.string().optional(),
   bio: z.string().optional(),
