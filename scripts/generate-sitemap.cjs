@@ -2,9 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
+const vercelHost = (process.env.VERCEL_URL || '').replace('https://', '').replace('http://', '');
 const configuredUrl = process.env.SITE_URL
-  || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL.replace(/^https?:\\/\\//, '')}` : 'http://jasa-perijinan-csms.lan');
-const baseUrl = configuredUrl.replace(/\\/+$/, '');
+  || (vercelHost ? 'https://' + vercelHost : 'http://jasa-perijinan-csms.lan');
+let baseUrl = configuredUrl;
+while (baseUrl.endsWith('/')) baseUrl = baseUrl.slice(0, -1);
 
 const rootDir = path.join(__dirname, '..');
 const pagesDir = path.join(rootDir, 'src/pages');
@@ -27,14 +29,12 @@ function toStaticRoute(filePath) {
   if (routeParts.some((part) => part.startsWith('[') && part.endsWith(']'))) return null;
 
   if (routeParts[routeParts.length - 1] === 'index') routeParts.pop();
-  const route = routeParts.length ? `/${routeParts.join('/')}/` : '/';
-  return route;
+  return routeParts.length ? '/' + routeParts.join('/') + '/' : '/';
 }
 
 function normalizeLastmod(value) {
-  if (!value) return new Date().toISOString().replace(/\\.\\d{3}Z$/, 'Z');
-  const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? new Date().toISOString().replace(/\\.\\d{3}Z$/, 'Z') : date.toISOString().replace(/\\.\\d{3}Z$/, 'Z');
+  const date = value ? new Date(value) : new Date();
+  return Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
 }
 
 const routeMap = new Map();
@@ -57,7 +57,7 @@ for (const filePath of articleFiles) {
   if (data.draft) continue;
 
   const slug = path.basename(filePath, '.md');
-  const route = `/articles/${slug}/`;
+  const route = '/articles/' + slug + '/';
   const lastmod = normalizeLastmod(data.updatedDate || data.pubDate);
   routeMap.set(route, { url: route, changefreq: 'monthly', priority: 0.7, lastmod });
   publishedArticles.push({ slug, lastmod });
@@ -66,7 +66,7 @@ for (const filePath of articleFiles) {
 const itemsPerPage = 9;
 const totalArticlePages = Math.ceil(publishedArticles.length / itemsPerPage);
 for (let page = 2; page <= totalArticlePages; page += 1) {
-  const route = `/articles/${page}/`;
+  const route = '/articles/' + page + '/';
   routeMap.set(route, {
     url: route,
     changefreq: 'weekly',
@@ -88,7 +88,7 @@ ${routes.map((route) => `  <url>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
     <lastmod>${route.lastmod}</lastmod>
-  </url>`).join('\\n')}
+  </url>`).join(String.fromCharCode(10))}
 </urlset>`;
 
 const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
@@ -109,5 +109,5 @@ fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap);
 fs.writeFileSync(path.join(distDir, 'sitemap-index.xml'), sitemapIndex);
 fs.writeFileSync(path.join(distDir, 'robots.txt'), robots);
 
-console.log(`Sitemap generated: ${routes.length} routes`);
-console.log(`Base URL: ${baseUrl}`);
+console.log('Sitemap generated: ' + routes.length + ' routes');
+console.log('Base URL: ' + baseUrl);
