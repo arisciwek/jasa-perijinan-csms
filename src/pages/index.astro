@@ -13,6 +13,7 @@ const homeContent = await getEntry('pages', 'home');
 const statsBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'stats-grid');
 const servicesBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'service-card-grid');
 const csmsElementsBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'csms-element-grid');
+const heroBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'hero');
 const latestArticles = (await getCollection('articles'))
   .filter((article) => !article.data.draft)
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
@@ -25,7 +26,7 @@ const latestArticles = (await getCollection('articles'))
   pageType="WebSite"
 >
   <!-- Homepage hero content is maintained in src/content/pages/home.md -->
-  {homeContent?.data.contentBlocks?.some((block) => block.type === 'hero') ? <BlockRenderer blocks={homeContent.data.contentBlocks.filter((block) => block.type === 'hero')} /> : null}
+  {heroBlock ? <BlockRenderer blocks={[heroBlock]} /> : null}
 
   <!-- Stats Section: content comes from src/content/pages/home.md -->
   {statsBlock ? <BlockRenderer blocks={[statsBlock]} /> : null}
@@ -53,4 +54,4 @@ const latestArticles = (await getCollection('articles'))
   <BlockRenderer blocks={(homeContent?.data.contentBlocks ?? []).filter((block) => block.type === 'testimonial-grid' || block.type === 'call-to-action')} />
 
   <LatestArticles articles={latestArticles} />
-</BaseLayout>
+</PageLayout>
