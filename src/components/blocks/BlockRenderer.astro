@@ -17,6 +17,7 @@ import ElementDetail from './ElementDetail.astro';
 import ContentSection from './ContentSection.astro';
 import FeatureCardGrid from './FeatureCardGrid.astro';
 import ContactPanel from './ContactPanel.astro';
+import ArticleBody from './ArticleBody.astro';
 
 interface Props {
   blocks?: ContentBlock[];
@@ -32,6 +33,10 @@ const { blocks = [], pageMetadata } = Astro.props;
 
   if (block.type === 'csms-element-detail') {
     return <ElementDetail {...block.data} pageTitle={pageMetadata?.title ?? block.data.heading} pageDescription={pageMetadata?.description ?? ''} image={pageMetadata?.image ?? '/images/csms-elements/csms-elements.svg'} />;
+  }
+
+  if (block.type === 'article-body') {
+    return <ArticleBody id={block.id} {...block.data} />;
   }
 
   if (block.type === 'contact-panel') {
