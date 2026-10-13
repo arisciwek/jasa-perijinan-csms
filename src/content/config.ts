@@ -1,12 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { serviceIds, csmsElementIds } from '../config/site.ts';
-
-
-const contentBlockSchema = z.discriminatedUnion('type', [
-  z.object({ id: z.string().min(1), type: z.literal('quick-answer'), data: z.object({ title: z.string().min(1), answer: z.string().min(1) }) }),
-  z.object({ id: z.string().min(1), type: z.literal('process-timeline'), data: z.object({ title: z.string().min(1), steps: z.array(z.object({ title: z.string().min(1), description: z.string().min(1) })).min(1) }) }),
-  z.object({ id: z.string().min(1), type: z.literal('requirement-checklist'), data: z.object({ title: z.string().min(1), description: z.string().optional(), items: z.array(z.object({ label: z.string().min(1), required: z.boolean().optional() })).min(1), disclaimer: z.string().optional() }) }),
-]);
+import { contentBlockSchema } from './block-schema.ts';
 
 const articleSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -44,20 +38,19 @@ const pageSchema = z.object({
   id: z.number().int().positive().optional(),
   ulid: z.string().optional(),
   type: z.literal('page'),
-  slug: z.string(),
   title: z.string().min(1),
   description: z.string().optional(),
   pubDate: z.string().datetime({ offset: true }).optional(),
   updatedDate: z.string().datetime({ offset: true }).optional(),
   draft: z.boolean().default(false),
   image: z.string().optional(),
+  contentBlocks: z.array(contentBlockSchema).optional(),
 });
 
 const categorySchema = z.object({
   id: z.number().int().positive().optional(),
   ulid: z.string().optional(),
   type: z.literal('category'),
-  slug: z.string(),
   title: z.string().min(1),
   description: z.string().optional(),
 });
@@ -66,7 +59,6 @@ const authorSchema = z.object({
   id: z.number().int().positive().optional(),
   ulid: z.string().optional(),
   type: z.literal('author'),
-  slug: z.string(),
   title: z.string().min(1),
   role: z.string().optional(),
   bio: z.string().optional(),

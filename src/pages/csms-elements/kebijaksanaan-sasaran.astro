@@ -1,91 +1,13 @@
 ---
-import ElementLayout from '../../layouts/ElementLayout.astro';
-import { siteConfig, siteUrl } from '../../config/site.ts';
-
-const title = `Elemen #2: Kebijaksanaan & Sasaran Strategis — ${siteConfig.siteName}`;
-const description = 'Kebijakan K3LL harus terintegrasi dengan strategi bisnis perusahaan. Sasaran strategis yang terukur (Zero Accident, LTIFR, TRIR) menjadi kompas arah implementasi CSMS.';
-const image = siteUrl('/images/csms-elements/elemen-2-kebijaksanaan.svg');
-const seoImage = siteUrl('/images/csms-elements/elemen-2-kebijaksanaan.svg', true);
-
-const breadcrumbs = [
-  { label: 'Elemen CSMS', href: '/csms-elements' },
-  { label: 'Kebijaksanaan & Sasaran Strategis', href: '/csms-elements/kebijaksanaan-sasaran' }
-];
+import { getEntry } from 'astro:content';
+import BlockRenderer from '../../components/blocks/BlockRenderer.astro';
+const pageContent = await getEntry('pages', 'kebijaksanaan-sasaran');
 ---
-<ElementLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} elementId={2}>
-  <header slot="header" class="elemen-header text-center mb-16">
-        <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">Elemen #2</span>
-        <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Kebijaksanaan & Sasaran Strategis</h1>
-        <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-8">Kebijakan K3LL yang terintegrasi dengan strategi bisnis dan sasaran terukur (Zero Accident, LTIFR, TRIR).</p>
-        <div class="elemen-header-media flex justify-center">
-          <img src={image} alt="Ilustrasi Kebijaksanaan & Sasaran Strategis CSMS" class="w-full max-w-2xl h-auto rounded-xl shadow-md border border-gray-100" />
-        </div>
-      </header>
-          <article class="elemen-article bg-gray-50 p-8 rounded-xl border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Deskripsi Elemen</h2>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Elemen ini mengatur bagaimana kebijakan K3LL diterjemahkan dari visi manajemen menjadi sasaran operasional yang terukur. Kebijakan tidak boleh sekadar dokumen formal, melainkan harus menjadi "constitution" yang mengarah pada target konkret: Zero Accident, LTIFR (Lost Time Injury Frequency Rate), TRIR (Total Recordable Incident Rate), dan Near Miss Reporting Rate.
-            </p>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Sasaran harus: SMART (Specific, Measurable, Achievable, Relevant, Time-bound), disosialisasikan ke seluruh tingkat, dan direview berkala oleh manajemen. Integrasi dengan strategi bisnis berarti K3LL bukan "beban" tapi "investasi" untuk kelangsungan kontrak dan reputasi.
-            </p>
-          </article>
-
-          <article class="elemen-article bg-gray-50 p-8 rounded-xl border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Mengapa Elemen Ini Penting?</h2>
-            <ul class="space-y-3 text-gray-700 list-disc list-inside">
-              <li><strong>Arah yang jelas:</strong> Tanpa sasaran terukur, program K3LL berjalan tanpa kompas.</li>
-              <li><strong>Integrasi bisnis:</strong> K3LL yang terpisah dari strategi bisnis akan selalu dianggap biaya, bukan investasi.</li>
-              <li><strong>Review manajemen:</strong> Sasaran memungkinkan Management Review Meeting berbasis data, bukan feeling.</li>
-              <li><strong>Benchmarking:</strong> LTIFR/TRIR memungkinkan perbandingan dengan standar industri & principal.</li>
-            </ul>
-          </article>
-
-          <article class="elemen-article bg-gray-50 p-8 rounded-xl border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Deliverable Umum (Bukti Verifikasi)</h2>
-            <ul class="space-y-2 text-gray-700 list-disc list-inside">
-              <li>Dokumen Kebijakan K3LL terbaru (versi & tanggal review)</li>
-              <li>Sasaran K3LL tahunan: Zero Fatality, LTIFR < target, TRIR < target</li>
-              <li>Bukti sosialisasi sasaran ke seluruh karyawan & kontraktor</li>
-              <li>Catatan Management Review Meeting (min. 1x setahun)</li>
-              <li>Analisis tren KPI K3LL vs target (dashboard/bulanan)</li>
-              <li>Rencana aksi korektif jika sasaran tidak tercapai</li>
-              <li>Integrasi sasaran K3LL ke KPI manajemen proyek/operasional</li>
-            </ul>
-          </article>
-
-          <article class="elemen-article bg-primary-50 p-8 rounded-xl border border-primary-200">
-            <h2 class="text-2xl font-bold text-primary-900 mb-4">Bagaimana Kami Membantu</h2>
-            <ul class="space-y-2 text-primary-800 list-disc list-inside">
-              <li>Menyusun <strong>Kebijakan K3LL</strong> terintegrasi strategi bisnis & standar principal</li>
-              <li>Menetapkan <strong>KPI K3LL SMART</strong> (LTIFR, TRIR, Near Miss, Training Hours)</li>
-              <li>Membuat <strong>Dashboard K3LL</strong> untuk monitoring real-time</li>
-              <li>Mempersiapkan <strong>Materi Management Review Meeting</strong> berbasis data</li>
-              <li>Review & update kebijakan & sasaran sesuai regulasi terbaru</li>
-            </ul>
-          </article>
-
-
-  <div slot="aside" class="space-y-6">
-          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-            <h3 class="font-bold text-gray-900 mb-4">Navigasi 9 Elemen</h3>
-            <nav class="space-y-2">
-              <a href="/csms-elements/kepemimpinan-komitmen" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #1: Kepemimpinan & Komitmen</a>
-              <a href="/csms-elements/kebijaksanaan-sasaran" class="block bg-primary-50 text-primary-800 p-3 rounded-lg font-medium border border-primary-200">→ Elemen #2: Kebijaksanaan & Sasaran</a>
-              <a href="/csms-elements/organisasi-tanggungjawab" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #3: Organisasi & Tanggung Jawab</a>
-              <a href="/csms-elements/manajemen-risiko" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #4: Manajemen Risiko</a>
-              <a href="/csms-elements/perencanaan-prosedur" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #5: Perencanaan & Prosedur</a>
-              <a href="/csms-elements/implementasi-pemantauan" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #6: Implementasi & Pemantauan</a>
-              <a href="/csms-elements/audit-tinjauan" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #7: Audit & Tinjauan</a>
-              <a href="/csms-elements/pencapaian-kinerja" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #8: Pencapaian Kinerja</a>
-              <a href="/csms-elements/pencapaian-lainnya" class="block text-gray-700 hover:bg-gray-50 p-3 rounded-lg transition-colors">Elemen #9: Pencapaian Lainnya</a>
-            </nav>
-          </div>
-
-          <div class="bg-primary-600 text-white p-6 rounded-xl">
-            <h3 class="font-bold text-lg mb-3">Butuh Bantuan Elemen #2?</h3>
-            <p class="text-primary-100 mb-4 text-sm">Kami bantu tetapkan KPI K3LL SMART, buat dashboard monitoring, dan persiapkan Management Review Meeting.</p>
-            <a href="/contact" class="inline-block bg-white text-primary-600 font-medium px-5 py-2 rounded-lg hover:bg-primary-50 transition-colors text-sm">Konsultasi Gratis</a>
-          </div>
-        </div>
-</ElementLayout>
+<BlockRenderer
+  blocks={pageContent?.data.contentBlocks ?? []}
+  pageMetadata={{
+    title: pageContent?.data.title ?? "Elemen #2: Kebijaksanaan & Sasaran Strategis",
+    description: pageContent?.data.description ?? '',
+    image: pageContent?.data.image ?? "/images/csms-elements/elemen-2-kebijaksanaan.svg",
+  }}
+/>

@@ -1,10 +1,98 @@
 ---
+import type { ContentBlock } from '../../content/block-schema.ts';
 import QuickAnswer from './QuickAnswer.astro';
 import ProcessTimeline from './ProcessTimeline.astro';
 import RequirementChecklist from './RequirementChecklist.astro';
-interface Block { id: string; type: string; data: Record<string, any> }
-interface Props { blocks?: Block[] }
-const { blocks = [] } = Astro.props;
-const registry = { 'quick-answer': QuickAnswer, 'process-timeline': ProcessTimeline, 'requirement-checklist': RequirementChecklist } as const;
+import StatsGrid from './StatsGrid.astro';
+import ServiceCardGrid from './ServiceCardGrid.astro';
+import CsmsElementGrid from './CsmsElementGrid.astro';
+import TestimonialGrid from './TestimonialGrid.astro';
+import CallToAction from './CallToAction.astro';
+import Hero from './Hero.astro';
+import ImagePanel from './ImagePanel.astro';
+import LatestArticlesBlock from './LatestArticlesBlock.astro';
+import ServiceDirectory from './ServiceDirectory.astro';
+import ServiceDetail from './ServiceDetail.astro';
+import ElementDetail from './ElementDetail.astro';
+import ContentSection from './ContentSection.astro';
+import FeatureCardGrid from './FeatureCardGrid.astro';
+import ContactPanel from './ContactPanel.astro';
+
+interface Props {
+  blocks?: ContentBlock[];
+  pageMetadata?: { title: string; description: string; image?: string };
+}
+
+const { blocks = [], pageMetadata } = Astro.props;
 ---
-<div class="content-blocks">{blocks.map((block) => { const BlockComponent = registry[block.type as keyof typeof registry]; return BlockComponent ? <BlockComponent {...block.data} /> : null; })}</div>
+{blocks.map((block) => {
+  if (block.type === 'service-detail') {
+    return <ServiceDetail {...block.data} pageTitle={pageMetadata?.title ?? block.data.heading} pageDescription={pageMetadata?.description ?? ''} image={pageMetadata?.image ?? '/images/services/service-1-penyusunan.svg'} />;
+  }
+
+  if (block.type === 'csms-element-detail') {
+    return <ElementDetail {...block.data} pageTitle={pageMetadata?.title ?? block.data.heading} pageDescription={pageMetadata?.description ?? ''} image={pageMetadata?.image ?? '/images/csms-elements/csms-elements.svg'} />;
+  }
+
+  if (block.type === 'contact-panel') {
+    return <ContactPanel id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'content-section') {
+    return <ContentSection id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'feature-card-grid') {
+    return <FeatureCardGrid id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'latest-articles') {
+    return <LatestArticlesBlock id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'image-panel') {
+    return <ImagePanel id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'hero') {
+    return <Hero id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'service-directory') {
+    return <ServiceDirectory id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'service-card-grid') {
+    return <ServiceCardGrid id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'stats-grid') {
+    return <StatsGrid id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'quick-answer') {
+    return <QuickAnswer id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'process-timeline') {
+    return <ProcessTimeline id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'csms-element-grid') {
+    return <CsmsElementGrid id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'testimonial-grid') {
+    return <TestimonialGrid id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'call-to-action') {
+    return <CallToAction id={block.id} {...block.data} />;
+  }
+
+  if (block.type === 'requirement-checklist') {
+    return <RequirementChecklist id={block.id} {...block.data} />;
+  }
+
+  return null;
+})}

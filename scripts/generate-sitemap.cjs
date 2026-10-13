@@ -2,80 +2,112 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-const siteUrl = process.env.SITE_URL || process.env.VERCEL_URL || 'http://jasa-perijinan-csms.lan';
-const baseUrl = siteUrl.replace(/\/+$/, '');
+const vercelHost = (process.env.VERCEL_URL || '').replace('https://', '').replace('http://', '');
+const configuredUrl = process.env.SITE_URL
+  || (vercelHost ? 'https://' + vercelHost : 'http://jasa-perijinan-csms.lan');
+let baseUrl = configuredUrl;
+while (baseUrl.endsWith('/')) baseUrl = baseUrl.slice(0, -1);
 
-const contentDir = path.join(__dirname, '../src/content/articles');
+const rootDir = path.join(__dirname, '..');
+const pagesDir = path.join(rootDir, 'src/pages');
+const articlesDir = path.join(rootDir, 'src/content/articles');
+const distDir = path.join(rootDir, 'dist');
 
-function getArticleLastmod(slug) {
-  const filePath = path.join(contentDir, `${slug}.md`);
-  if (!fs.existsSync(filePath)) return new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
-  const content = fs.readFileSync(filePath, 'utf8');
-  const { data } = matter(content);
-  return data.updatedDate || data.pubDate || new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+function walkFiles(directory) {
+  if (!fs.existsSync(directory)) return [];
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const fullPath = path.join(directory, entry.name);
+    return entry.isDirectory() ? walkFiles(fullPath) : [fullPath];
+  });
 }
 
-const routes = [
-  { url: '/', changefreq: 'weekly', priority: 1.0, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/services/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/services/penyusunan-dokumen-csms/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/services/review-gap-analysis-csms/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/services/pendampingan-verifikasi-audit-hse/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/services/digitalisasi-standardisasi-k3ll/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/csms-elements/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/csms-elements/kepemimpinan-komitmen/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/csms-elements/kebijaksanaan-sasaran/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/csms-elements/organisasi-tanggungjawab/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/csms-elements/manajemen-risiko/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/csms-elements/perencanaan-prosedur/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/csms-elements/implementasi-pemantauan/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/csms-elements/audit-tinjauan/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/csms-elements/pencapaian-kinerja/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/csms-elements/pencapaian-lainnya/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/articles/', changefreq: 'weekly', priority: 0.8, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-  { url: '/articles/panduan-sukses-audit-csms-migas/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('panduan-sukses-audit-csms-migas') },
-  { url: '/articles/mengenal-9-elemen-csms/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('mengenal-9-elemen-csms') },
-  { url: '/articles/pentingnya-digitalisasi-k3ll/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('pentingnya-digitalisasi-k3ll') },
-  { url: '/articles/dokumen-csms-adalah-pengertian-fungsi-manfaat-bagi-kontraktor/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('dokumen-csms-adalah-pengertian-fungsi-manfaat-bagi-kontraktor') },
-  { url: '/articles/9-elemen-csms-dan-dokumen-yang-harus-disiapkan-perusahaan-kontraktor/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('9-elemen-csms-dan-dokumen-yang-harus-disiapkan-perusahaan-kontraktor') },
-  { url: '/articles/persyaratan-csms-untuk-mengikuti-tender-di-perusahaan-migas-dan-pertambangan/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('persyaratan-csms-untuk-mengikuti-tender-di-perusahaan-migas-dan-pertambangan') },
-  { url: '/articles/cara-membuat-dokumen-csms-dari-nol-untuk-perusahaan-yang-baru-mengikuti-tender/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('cara-membuat-dokumen-csms-dari-nol-untuk-perusahaan-yang-baru-mengikuti-tender') },
-  { url: '/articles/manual-k3ll-sop-k3-dan-safe-work-practices-apa-perbedaan-dan-fungsinya/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('manual-k3ll-sop-k3-dan-safe-work-practices-apa-perbedaan-dan-fungsinya') },
-    { url: '/articles/gap-analysis-csms-adalah-pengertian-tujuan-dan-tahapan-pelaksanaannya/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('gap-analysis-csms-adalah-pengertian-tujuan-dan-tahapan-pelaksanaannya') },
-    { url: '/articles/cara-mengevaluasi-kelengkapan-dokumen-csms-sebelum-mengikuti-tender/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('cara-mengevaluasi-kelengkapan-dokumen-csms-sebelum-mengikuti-tender') },
-    { url: '/articles/penyebab-dokumen-csms-tidak-memenuhi-persyaratan-verifikasi-dan-cara-memperbaikinya/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('penyebab-dokumen-csms-tidak-memenuhi-persyaratan-verifikasi-dan-cara-memperbaikinya') },
-    { url: '/articles/checklist-review-dokumen-csms-untuk-mempersiapkan-prakualifikasi-vendor/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('checklist-review-dokumen-csms-untuk-mempersiapkan-prakualifikasi-vendor') },
-    { url: '/articles/kapan-perusahaan-perlu-melakukan-review-dan-pembaruan-dokumen-csms/', changefreq: 'monthly', priority: 0.7, lastmod: getArticleLastmod('kapan-perusahaan-perlu-melakukan-review-dan-pembaruan-dokumen-csms') },
-    { url: '/about/', changefreq: 'monthly', priority: 0.6, lastmod: new Date().toISOString().replace(/\\.\\d{3}Z$/, 'Z') },
-  { url: '/contact/', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') },
-];
+function toStaticRoute(filePath) {
+  const relative = path.relative(pagesDir, filePath).split(path.sep).join('/');
+  if (!relative.endsWith('.astro') || relative === '404.astro') return null;
+
+  const routeParts = relative.slice(0, -'.astro'.length).split('/');
+  if (routeParts.some((part) => part.startsWith('[') && part.endsWith(']'))) return null;
+
+  if (routeParts[routeParts.length - 1] === 'index') routeParts.pop();
+  return routeParts.length ? '/' + routeParts.join('/') + '/' : '/';
+}
+
+function normalizeLastmod(value) {
+  const date = value ? new Date(value) : new Date();
+  return Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
+}
+
+const routeMap = new Map();
+for (const filePath of walkFiles(pagesDir)) {
+  const route = toStaticRoute(filePath);
+  if (!route) continue;
+  const depth = route.split('/').filter(Boolean).length;
+  routeMap.set(route, {
+    url: route,
+    changefreq: route === '/' ? 'weekly' : 'monthly',
+    priority: route === '/' ? 1.0 : depth <= 1 ? 0.8 : 0.7,
+    lastmod: normalizeLastmod(),
+  });
+}
+
+const articleFiles = walkFiles(articlesDir).filter((filePath) => filePath.endsWith('.md'));
+const publishedArticles = [];
+for (const filePath of articleFiles) {
+  const { data } = matter(fs.readFileSync(filePath, 'utf8'));
+  if (data.draft) continue;
+
+  const slug = path.basename(filePath, '.md');
+  const route = '/articles/' + slug + '/';
+  const lastmod = normalizeLastmod(data.updatedDate || data.pubDate);
+  routeMap.set(route, { url: route, changefreq: 'monthly', priority: 0.7, lastmod });
+  publishedArticles.push({ slug, lastmod });
+}
+
+const itemsPerPage = 9;
+const totalArticlePages = Math.ceil(publishedArticles.length / itemsPerPage);
+for (let page = 2; page <= totalArticlePages; page += 1) {
+  const route = '/articles/' + page + '/';
+  routeMap.set(route, {
+    url: route,
+    changefreq: 'weekly',
+    priority: 0.6,
+    lastmod: normalizeLastmod(),
+  });
+}
+
+const routes = [...routeMap.values()].sort((a, b) => {
+  if (a.url === '/') return -1;
+  if (b.url === '/') return 1;
+  return a.url.localeCompare(b.url);
+});
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes.map(r => `  <url>
-    <loc>${baseUrl}${r.url}</loc>
-    <changefreq>${r.changefreq}</changefreq>
-    <priority>${r.priority}</priority>
-    <lastmod>${r.lastmod}</lastmod>
-  </url>`).join('\n')}
+${routes.map((route) => `  <url>
+    <loc>${baseUrl}${route.url}</loc>
+    <changefreq>${route.changefreq}</changefreq>
+    <priority>${route.priority}</priority>
+    <lastmod>${route.lastmod}</lastmod>
+  </url>`).join(String.fromCharCode(10))}
 </urlset>`;
 
 const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>${baseUrl}/sitemap.xml</loc>
-    <lastmod>${routes[0].lastmod}</lastmod>
+    <lastmod>${routes[0]?.lastmod || normalizeLastmod()}</lastmod>
   </sitemap>
 </sitemapindex>`;
 
 const robots = `User-agent: *
-Disallow: /
-Sitemap: ${baseUrl}/sitemap.xml`;
+Allow: /
+Sitemap: ${baseUrl}/sitemap.xml
+`;
 
-const distDir = path.join(__dirname, '../dist');
+fs.mkdirSync(distDir, { recursive: true });
 fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap);
 fs.writeFileSync(path.join(distDir, 'sitemap-index.xml'), sitemapIndex);
 fs.writeFileSync(path.join(distDir, 'robots.txt'), robots);
 
-console.log('Sitemap & robots.txt generated successfully!');
-console.log('lastmod:', routes[0].lastmod);
+console.log('Sitemap generated: ' + routes.length + ' routes');
+console.log('Base URL: ' + baseUrl);

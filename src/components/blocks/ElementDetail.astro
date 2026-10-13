@@ -1,0 +1,99 @@
+---
+import ElementLayout from '../../layouts/ElementLayout.astro';
+import { siteConfig, siteUrl, csmsElements } from '../../config/site.ts';
+
+interface ElementSection {
+  title: string;
+  variant?: 'default' | 'primary';
+  paragraphs?: string[];
+  items?: { label?: string; text: string }[];
+  ordered?: boolean;
+  table?: { headers: string[]; rows: string[][] };
+  note?: string;
+}
+interface Props {
+  elementId: number;
+  heading: string;
+  badge: string;
+  subtitle: string;
+  imageAlt: string;
+  sections: ElementSection[];
+  sidebar: { ctaTitle: string; ctaDescription: string; ctaLabel: string; ctaHref: string };
+  pageTitle: string;
+  pageDescription: string;
+  image: string;
+}
+const { elementId, heading, badge, subtitle, imageAlt, sections, sidebar, pageTitle, pageDescription, image } = Astro.props;
+const element = csmsElements.find((item) => item.id === elementId);
+const title = pageTitle + ' — ' + siteConfig.siteName;
+const seoImage = siteUrl(image, true);
+const breadcrumbs = [
+  { label: 'Elemen CSMS', href: '/csms-elements' },
+  { label: element?.title ?? heading, href: element?.href ?? '/csms-elements' },
+];
+---
+<ElementLayout title={title} description={pageDescription} image={seoImage} breadcrumbs={breadcrumbs} elementId={elementId}>
+  <header slot="header" class="elemen-header text-center mb-16">
+    <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">{badge}</span>
+    <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">{heading}</h1>
+    <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-8">{subtitle}</p>
+    <div class="elemen-header-media flex justify-center">
+      <img src={image} alt={imageAlt} class="w-full max-w-2xl h-auto rounded-xl shadow-md border border-gray-100" />
+    </div>
+  </header>
+  {sections.map((section) => (
+    <article class:list={[
+      'elemen-article p-8 rounded-xl border',
+      section.variant === 'primary' ? 'bg-primary-50 border-primary-200' : 'bg-gray-50 border-gray-200',
+    ]}>
+      <h2 class:list={[
+        'text-2xl font-bold mb-4',
+        section.variant === 'primary' ? 'text-primary-900' : 'text-gray-900',
+      ]}>{section.title}</h2>
+      {section.paragraphs?.map((paragraph) => <p class="text-gray-600 leading-relaxed mb-4">{paragraph}</p>)}
+      {section.items && (section.ordered ? (
+        <ol class="space-y-3 text-gray-700 list-decimal list-inside">
+          {section.items.map((item) => <li>{item.label && <strong>{item.label}: </strong>}{item.text}</li>)}
+        </ol>
+      ) : (
+        <ul class:list={[
+          'space-y-3 list-disc list-inside',
+          section.variant === 'primary' ? 'text-primary-800' : 'text-gray-700',
+        ]}>
+          {section.items.map((item) => <li>{item.label && <strong>{item.label}: </strong>}{item.text}</li>)}
+        </ul>
+      ))}
+      {section.table && (
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-primary-50 text-primary-900">
+              <tr>{section.table.headers.map((header) => <th class="p-3 font-semibold">{header}</th>)}</tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              {section.table.rows.map((row) => <tr class="hover:bg-gray-50">{row.map((cell) => <td class="p-3">{cell}</td>)}</tr>)}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {section.note && <p class="mt-4 text-sm text-gray-500">{section.note}</p>}
+    </article>
+  ))}
+  <div slot="aside" class="space-y-6">
+    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+      <h3 class="font-bold text-gray-900 mb-4">Navigasi 9 Elemen</h3>
+      <nav class="space-y-2">
+        {csmsElements.map((item) => (
+          <a href={item.href} aria-current={item.id === elementId ? 'page' : undefined} class:list={[
+            'block p-3 rounded-lg transition-colors',
+            item.id === elementId ? 'bg-primary-50 text-primary-800 font-medium border border-primary-200' : 'text-gray-700 hover:bg-gray-50',
+          ]}>{item.id === elementId ? '→ ' : ''}{item.badge}: {item.title}</a>
+        ))}
+      </nav>
+    </div>
+    <div class="bg-primary-600 text-white p-6 rounded-xl">
+      <h3 class="font-bold text-lg mb-3">{sidebar.ctaTitle}</h3>
+      <p class="text-primary-100 mb-4 text-sm">{sidebar.ctaDescription}</p>
+      <a href={sidebar.ctaHref} class="inline-block bg-white text-primary-600 font-medium px-5 py-2 rounded-lg hover:bg-primary-50 transition-colors text-sm">{sidebar.ctaLabel}</a>
+    </div>
+  </div>
+</ElementLayout>
