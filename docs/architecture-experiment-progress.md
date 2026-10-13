@@ -63,6 +63,17 @@ Catatan: angka statistik dan teks testimoni dipindahkan dari implementasi sebelu
 - Menambahkan `src/content/pages/contact.md` dan komponen `ContactPanel.astro`.
 - Formulir kontak kini menyusun pesan dan membuka WhatsApp; situs tidak mengklaim mengirim data formulir ke server. Data nomor WhatsApp, jam operasional, dan pilihan layanan berada di frontmatter.
 
+### Halaman detail layanan
+
+- Menambahkan blok bertipe `service-detail` dan komponen `ServiceDetail.astro` untuk merender header, bagian konten, tabel, navigasi layanan, dan CTA.
+- Memindahkan data empat halaman detail layanan ke frontmatter:
+  - `src/content/pages/penyusunan-dokumen-csms.md`
+  - `src/content/pages/review-gap-analysis-csms.md`
+  - `src/content/pages/pendampingan-verifikasi-audit-hse.md`
+  - `src/content/pages/digitalisasi-standardisasi-k3ll.md`
+- File route Astro masing-masing sekarang mengambil entry Markdown dan meneruskan blok ke komponen.
+- Klaim persentase atau jaminan hasil yang tidak didukung data telah diganti dengan uraian yang lebih terukur pada konten yang dimigrasikan. Pemilik situs tetap perlu meninjau seluruh klaim sebelum publikasi.
+
 ## Status validasi
 
 - Perubahan tersimpan sebagai commit terpisah di branch eksperimen.
@@ -106,5 +117,8 @@ Catatan: angka statistik dan teks testimoni dipindahkan dari implementasi sebelu
 | `fadb43c` | refactor(about): move page content into markdown blocks |
 | `4542dcd` | refactor(contact): move contact page into markdown block |
 | `f00929f` | chore(pages): remove unused page metadata variables |
+| `5a5162a` | refactor(service): drive CSMS document service page from markdown |
+| `494edfd` | refactor(service): reuse page metadata in service detail block |
+| `5e6d6bc` | refactor(services): migrate remaining service pages to markdown blocks |
 
-Status terakhir diverifikasi pada commit `f00929f`: branch eksperimen 24 commit di depan `main` dan tidak tertinggal commit. Build tetap belum dijalankan; periksa kembali status branch sebelum merge.
+Status terakhir diverifikasi pada commit `5e6d6bc`: branch eksperimen 28 commit di depan `main` dan tidak tertinggal commit. Build tetap belum dijalankan; periksa kembali status branch sebelum merge.
