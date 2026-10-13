@@ -13,6 +13,7 @@ import ImagePanel from './ImagePanel.astro';
 import LatestArticlesBlock from './LatestArticlesBlock.astro';
 import ServiceDirectory from './ServiceDirectory.astro';
 import ServiceDetail from './ServiceDetail.astro';
+import ElementDetail from './ElementDetail.astro';
 import ContentSection from './ContentSection.astro';
 import FeatureCardGrid from './FeatureCardGrid.astro';
 import ContactPanel from './ContactPanel.astro';
@@ -27,6 +28,10 @@ const { blocks = [], pageMetadata } = Astro.props;
 {blocks.map((block) => {
   if (block.type === 'service-detail') {
     return <ServiceDetail {...block.data} pageTitle={pageMetadata?.title ?? block.data.heading} pageDescription={pageMetadata?.description ?? ''} image={pageMetadata?.image ?? '/images/services/service-1-penyusunan.svg'} />;
+  }
+
+  if (block.type === 'csms-element-detail') {
+    return <ElementDetail {...block.data} pageTitle={pageMetadata?.title ?? block.data.heading} pageDescription={pageMetadata?.description ?? ''} image={pageMetadata?.image ?? '/images/csms-elements/csms-elements.svg'} />;
   }
 
   if (block.type === 'contact-panel') {
