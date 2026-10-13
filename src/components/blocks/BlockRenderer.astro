@@ -9,6 +9,7 @@ import CsmsElementGrid from './CsmsElementGrid.astro';
 import TestimonialGrid from './TestimonialGrid.astro';
 import CallToAction from './CallToAction.astro';
 import Hero from './Hero.astro';
+import ImagePanel from './ImagePanel.astro';
 
 interface Props {
   blocks?: ContentBlock[];
@@ -19,6 +20,10 @@ const { blocks = [] } = Astro.props;
 {blocks.length > 0 && (
   <div class="content-blocks">
     {blocks.map((block) => {
+      if (block.type === 'image-panel') {
+        return <ImagePanel id={block.id} {...block.data} />;
+      }
+
       if (block.type === 'hero') {
         return <Hero id={block.id} {...block.data} />;
       }

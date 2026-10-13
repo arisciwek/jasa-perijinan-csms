@@ -34,18 +34,8 @@ const latestArticles = (await getCollection('articles'))
 
   <!-- Services Preview: content comes from src/content/pages/home.md -->
 
-  <!-- Visual Section (SVG Illustration) -->
-  <section class="py-12 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative mx-auto max-w-4xl">
-        <img 
-          src={image} 
-          alt="Ilustrasi solusi digital pembuatan dokumen CSMS dengan 9 elemen utama" 
-          class="w-full h-auto rounded-xl shadow-lg"
-        />
-      </div>
-    </div>
-  </section>
+  <!-- Homepage illustration content is maintained in src/content/pages/home.md -->
+  {homeContent?.data.contentBlocks?.filter((block) => block.type === 'image-panel').map((block) => <BlockRenderer blocks={[block]} />)}
 
   <!-- CSMS element preview is maintained in src/content/pages/home.md -->
   {csmsElementsBlock ? <BlockRenderer blocks={[csmsElementsBlock]} /> : null}

@@ -9,6 +9,14 @@ import { csmsElementIds } from '../config/site.ts';
 export const contentBlockSchema = z.discriminatedUnion('type', [
   z.object({
     id: z.string().min(1),
+    type: z.literal('image-panel'),
+    data: z.object({
+      src: z.string().startsWith('/'),
+      alt: z.string().min(1),
+    }),
+  }),
+  z.object({
+    id: z.string().min(1),
     type: z.literal('hero'),
     data: z.object({
       title: z.string().min(1),

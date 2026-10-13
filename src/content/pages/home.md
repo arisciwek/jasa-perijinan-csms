@@ -87,4 +87,10 @@ contentBlocks:
       secondaryHref: "/contact"
       secondaryIsWhatsApp: true
 
+  - id: homepage-illustration
+    type: image-panel
+    data:
+      src: "/images/home/home-hero.svg"
+      alt: "Ilustrasi solusi digital pembuatan dokumen CSMS dengan 9 elemen utama"
+
 ---
