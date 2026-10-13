@@ -9,7 +9,7 @@ interface Props { id: string; title: string; items: ServiceCard[] }
 const { id, title, items } = Astro.props;
 const titleId = `${id}-title`;
 ---
-<section id="services" class="py-12 services-preview-section" aria-labelledby={titleId}>
+<section id={id} class="py-12 services-preview-section" aria-labelledby={titleId}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 services-preview-container">
     <header class="services-preview-header text-center mb-8">
       <h2 id={titleId} class="text-2xl font-bold text-gray-900">{title}</h2>

@@ -16,7 +16,7 @@ contentBlocks:
           label: "Komplain"
         - value: "24/7"
           label: "Konsultasi Pembangunan Real-time"
-  - id: homepage-services
+  - id: services
     type: service-card-grid
     data:
       title: "Layanan Konsultasi CSMS"
