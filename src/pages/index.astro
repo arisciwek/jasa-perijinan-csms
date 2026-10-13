@@ -1,11 +1,17 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import LatestArticles from '../components/blocks/LatestArticles.astro';
 import { siteConfig, siteUrl } from '../config/site.ts';
 
 const title = siteConfig.defaultTitle;
 const description = siteConfig.defaultDescription;
 const image = siteUrl('/images/home/home-hero.svg');
 const seoImage = siteUrl('/images/home/home-hero.svg', true);
+const latestArticles = (await getCollection('articles'))
+  .filter((article) => !article.data.draft)
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+  .slice(0, 3);
 ---
 <PageLayout
   title={title}
@@ -270,4 +276,5 @@ const seoImage = siteUrl('/images/home/home-hero.svg', true);
       </div>
     </div>
   </section>
+  <LatestArticles articles={latestArticles} />
 </BaseLayout>

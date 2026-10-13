@@ -12,6 +12,30 @@ tags: ["CSMS", "Gap Analysis", "Review Dokumen", "Verifikasi", "Prakualifikasi",
 draft: false
 image: "/images/articles/gap-analysis-csms.svg"
 relatedService: 2
+contentBlocks:
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AB"
+    type: "quick-answer"
+    data:
+      title: "Apa itu Gap Analysis CSMS?"
+      answer: >-
+        Gap Analysis CSMS adalah evaluasi kesenjangan antara persyaratan
+        keselamatan kontraktor yang diminta klien dan bukti atau dokumen
+        yang telah dimiliki perusahaan.
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AC"
+    type: "process-timeline"
+    data:
+      title: "Tahapan Umum Gap Analysis CSMS"
+      steps:
+        - title: "Pahami persyaratan"
+          description: "Identifikasi kriteria CSMS dan persyaratan tender dari perusahaan pemberi kerja."
+        - title: "Inventarisasi bukti"
+          description: "Kumpulkan kebijakan, prosedur, rekaman, dan dokumen pendukung yang tersedia."
+        - title: "Petakan kesenjangan"
+          description: "Bandingkan bukti yang tersedia dengan setiap persyaratan yang relevan."
+        - title: "Susun rekomendasi"
+          description: "Prioritaskan perbaikan berdasarkan temuan dan kebutuhan verifikasi."
+        - title: "Tinjau ulang"
+          description: "Periksa kembali kelengkapan bukti setelah perbaikan dilakukan."
 ---
 
 # Gap Analysis CSMS Adalah: Pengertian, Tujuan, dan Tahapan Pelaksanaannya

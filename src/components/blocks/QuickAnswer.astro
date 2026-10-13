@@ -1,0 +1,8 @@
+---
+interface Props { title: string; answer: string }
+const { title, answer } = Astro.props;
+---
+<aside class="my-8 rounded-xl border-l-4 border-primary-600 bg-primary-50 p-5 sm:p-6" aria-label={title}>
+  <h2 class="mb-2 text-lg font-semibold text-primary-900">{title}</h2>
+  <p class="leading-7 text-gray-700">{answer}</p>
+</aside>

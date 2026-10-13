@@ -1,0 +1,10 @@
+---
+import QuickAnswer from './QuickAnswer.astro';
+import ProcessTimeline from './ProcessTimeline.astro';
+import RequirementChecklist from './RequirementChecklist.astro';
+interface Block { id: string; type: string; data: Record<string, any> }
+interface Props { blocks?: Block[] }
+const { blocks = [] } = Astro.props;
+const registry = { 'quick-answer': QuickAnswer, 'process-timeline': ProcessTimeline, 'requirement-checklist': RequirementChecklist } as const;
+---
+<div class="content-blocks">{blocks.map((block) => { const BlockComponent = registry[block.type as keyof typeof registry]; return BlockComponent ? <BlockComponent {...block.data} /> : null; })}</div>
