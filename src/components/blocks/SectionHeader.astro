@@ -1,5 +1,6 @@
 ---
+import ArticleH2 from './ArticleH2.astro';
 interface Props { id: string; title: string; eyebrow?: string; number?: number; description?: string }
 const { id, title, eyebrow, number, description } = Astro.props;
 ---
-<header id={id} class="my-10 scroll-mt-28 border-b border-slate-200 pb-5"><div class="mb-3 flex flex-wrap items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-blue-700"><span class="h-px w-8 bg-blue-600" aria-hidden="true"></span>{number !== undefined && <span>Bagian {String(number).padStart(2, '0')}</span>}{eyebrow && <span>{eyebrow}</span>}</div><h2 class="max-w-3xl text-2xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-3xl">{title}</h2>{description && <p class="mt-4 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">{description}</p>}</header>
+<section class="my-10"><ArticleH2 id={id} title={title} index={number} eyebrow={eyebrow} />{description && <p class="-mt-2 mb-6 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">{description}</p>}</section>
