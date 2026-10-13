@@ -83,10 +83,8 @@ export const contentBlockSchema = z.discriminatedUnion('type', [
         message: 'serviceId harus merujuk ke layanan di src/config/site.ts',
       }),
       heading: z.string().min(1),
-      description: z.string().min(1),
       badge: z.string().min(1),
       subtitle: z.string().min(1),
-      image: z.string().startsWith('/'),
       imageAlt: z.string().min(1),
       sections: z.array(z.object({
         title: z.string().min(1),

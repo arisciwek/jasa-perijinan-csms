@@ -10,10 +10,8 @@ contentBlocks:
     data:
       serviceId: 1
       heading: "Penyusunan Dokumen CSMS dari Nol"
-      description: "Layanan penyusunan lengkap dokumen CSMS untuk kontraktor yang mempersiapkan prakualifikasi principal migas, tambang, dan konstruksi."
       badge: "Layanan Utama #1"
       subtitle: "Solusi end-to-end untuk perusahaan atau kontraktor yang belum memiliki dokumentasi K3LL dan perlu mempersiapkan verifikasi CSMS principal."
-      image: "/images/services/service-1-penyusunan.svg"
       imageAlt: "Penyusunan Dokumen CSMS dari Nol"
       sections:
         - title: "Deskripsi Layanan"

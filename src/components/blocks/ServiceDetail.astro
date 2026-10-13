@@ -14,7 +14,8 @@ interface ServiceSection {
 interface Props {
   serviceId: number;
   heading: string;
-  description: string;
+  pageTitle: string;
+  pageDescription: string;
   badge: string;
   subtitle: string;
   image: string;
@@ -29,16 +30,16 @@ interface Props {
     listItems?: string[];
   };
 }
-const { serviceId, heading, description, badge, subtitle, image, imageAlt, sections, sidebar } = Astro.props;
+const { serviceId, pageTitle, pageDescription, heading, badge, subtitle, image, imageAlt, sections, sidebar } = Astro.props;
 const service = services.find((item) => item.id === serviceId);
-const title = `${heading} — ${siteConfig.siteName}`;
+const title = `${pageTitle} — ${siteConfig.siteName}`;
 const seoImage = siteUrl(image, true);
 const breadcrumbs = [
   { label: 'Layanan', href: '/services' },
   { label: service?.title ?? heading, href: service?.href ?? '/services' },
 ];
 ---
-<ServiceLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} serviceId={serviceId}>
+<ServiceLayout title={title} description={pageDescription} image={seoImage} breadcrumbs={breadcrumbs} serviceId={serviceId}>
   <header slot="header" class="service-detail-header text-center mb-16">
     <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">{badge}</span>
     <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">{heading}</h1>

@@ -5,4 +5,4 @@ import ServiceDetail from '../../components/blocks/ServiceDetail.astro';
 const pageContent = await getEntry('pages', 'penyusunan-dokumen-csms');
 const serviceBlock = pageContent?.data.contentBlocks?.find((block) => block.type === 'service-detail');
 ---
-{serviceBlock ? <ServiceDetail {...serviceBlock.data} /> : null}
+{serviceBlock && pageContent ? <ServiceDetail {...serviceBlock.data} pageTitle={pageContent.data.title} pageDescription={pageContent.data.description ?? ''} image={pageContent.data.image ?? '/images/services/service-1-penyusunan.svg'} /> : null}
