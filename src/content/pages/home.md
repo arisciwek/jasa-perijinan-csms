@@ -76,4 +76,15 @@ contentBlocks:
       secondaryHref: "/contact"
       secondaryIsWhatsApp: true
 
+  - id: homepage-hero
+    type: hero
+    data:
+      title: "Solusi Digital Pembuatan Dokumen Keselamatan Kontraktor"
+      description: "Konsultan jasa pembuatan dokumen Sistem Manajemen Keselamatan Kontraktor (CSMS) secara digital untuk membantu kesiapan verifikasi kontraktor di sektor hulu migas, tambang, manufaktur, konstruksi, petrokimia, dan industri lainnya."
+      primaryLabel: "Layanan Kami"
+      primaryHref: "#services"
+      secondaryLabel: "Konsultasi Gratis via WhatsApp"
+      secondaryHref: "/contact"
+      secondaryIsWhatsApp: true
+
 ---

@@ -24,36 +24,8 @@ const latestArticles = (await getCollection('articles'))
   image={seoImage}
   pageType="WebSite"
 >
-  <!-- Hero Section -->
-  <section class="py-16 bg-white hero-section">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-container">
-      <header class="hero-header text-center mb-12">
-        <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-          Solusi Digital Pembuatan Dokumen Keselamatan Kontraktor
-        </h1>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Konsultan jasa pembuatan dokumen Sistem Manajemen Keselamatan Kontraktor (CSMS)
-          secara digital untuk memastikan keberhasilan proses verifikasi skor CSMS tertinggi
-          dari client di sektor hulu Migas, Tambang, Manufakturing, Konstruksi, Petrokimia
-          dan sektor industri lain dalam satu platform terpercaya.
-        </p>
-      </header>
-      <div class="hero-actions mt-10 flex justify-center space-x-6">
-        <a
-          href="#services"
-          class="px-6 py-3 bg-primary-600 text-white font-medium rounded-lg shadow-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500"
-        >
-          Layanan Kami
-        </a>
-        <a
-          href={`https://wa.me/${siteConfig.whatsapp}`}
-          class="px-6 py-3 bg-green-600 text-white font-medium rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-green-500"
-        >
-          Konsultasi Gratis via WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- Homepage hero content is maintained in src/content/pages/home.md -->
+  {homeContent?.data.contentBlocks?.some((block) => block.type === 'hero') ? <BlockRenderer blocks={homeContent.data.contentBlocks.filter((block) => block.type === 'hero')} /> : null}
 
   <!-- Stats Section: content comes from src/content/pages/home.md -->
   {statsBlock ? <BlockRenderer blocks={[statsBlock]} /> : null}

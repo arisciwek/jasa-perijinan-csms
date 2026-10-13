@@ -9,6 +9,19 @@ import { csmsElementIds } from '../config/site.ts';
 export const contentBlockSchema = z.discriminatedUnion('type', [
   z.object({
     id: z.string().min(1),
+    type: z.literal('hero'),
+    data: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+      primaryLabel: z.string().min(1),
+      primaryHref: z.string().min(1),
+      secondaryLabel: z.string().min(1),
+      secondaryHref: z.string().min(1),
+      secondaryIsWhatsApp: z.boolean().optional(),
+    }),
+  }),
+  z.object({
+    id: z.string().min(1),
     type: z.literal('service-card-grid'),
     data: z.object({
       title: z.string().min(1),
