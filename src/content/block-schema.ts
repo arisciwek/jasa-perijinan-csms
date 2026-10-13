@@ -8,6 +8,19 @@ import { z } from 'astro:content';
 export const contentBlockSchema = z.discriminatedUnion('type', [
   z.object({
     id: z.string().min(1),
+    type: z.literal('service-card-grid'),
+    data: z.object({
+      title: z.string().min(1),
+      items: z.array(z.object({
+        title: z.string().min(1),
+        description: z.string().min(1),
+        audience: z.string().min(1),
+        href: z.string().startsWith('/'),
+      })).min(1),
+    }),
+  }),
+  z.object({
+    id: z.string().min(1),
     type: z.literal('stats-grid'),
     data: z.object({
       items: z.array(z.object({

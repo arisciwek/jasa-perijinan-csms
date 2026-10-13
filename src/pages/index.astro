@@ -11,6 +11,7 @@ const image = siteUrl('/images/home/home-hero.svg');
 const seoImage = siteUrl('/images/home/home-hero.svg', true);
 const homeContent = await getEntry('pages', 'home');
 const statsBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'stats-grid');
+const servicesBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'service-card-grid');
 const latestArticles = (await getCollection('articles'))
   .filter((article) => !article.data.draft)
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
@@ -55,62 +56,9 @@ const latestArticles = (await getCollection('articles'))
 
   <!-- Stats Section: content comes from src/content/pages/home.md -->
   {statsBlock ? <BlockRenderer blocks={[statsBlock]} /> : null}
+  {servicesBlock ? <BlockRenderer blocks={[servicesBlock]} /> : null}
 
-  <!-- Services Preview -->
-  <section id="services" class="py-12 services-preview-section">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 services-preview-container">
-      <header class="services-preview-header text-center mb-8">
-        <h2 class="text-2xl font-bold text-gray-900">
-          Layanan Konsultasi CSMS
-        </h2>
-      </header>
-      <div class="services-preview-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <!-- Service Card 1 -->
-        <article class="service-preview-card bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="service-preview-content p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Penyusunan Dokumen CSMS dari Nol</h3>
-            <p class="text-gray-600 mb-4">
-              Kami menyusun seluruh dokumen CSMS Anda dari awal secara profesional sesuai kebutuhan klien.
-            </p>
-            <p class="text-sm text-primary-600 font-medium">Cocok untuk: Perusahaan atau kontraktor yang belum memiliki dokumen K3LL.</p>
-          </div>
-        </article>
-
-        <!-- Service Card 2 -->
-        <article class="service-preview-card bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="service-preview-content p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Review & Gap Analysis CSMS</h3>
-            <p class="text-gray-600 mb-4">
-              Evaluasi mendalam dokumen yang sudah ada untuk mengidentifikasi poin-poin yang perlu diperbaiki.
-            </p>
-            <p class="text-sm text-primary-600 font-medium">Cocok untuk: Kontraktor yang ingin memperbaharui atau meningkatkan skor CSMS.</p>
-          </div>
-        </article>
-
-        <!-- Service Card 3 -->
-        <article class="service-preview-card bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="service-preview-content p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Pendampingan Verifikasi & Audit HSE</h3>
-            <p class="text-gray-600 mb-4">
-              Kami mendampingi proses verifikasi oleh auditor principal untuk memastikan kelulusan audit.
-            </p>
-            <p class="text-sm text-primary-600 font-medium">Cocok untuk: Perusahaan yang akan menghadapi audit verifikasi HSE principal.</p>
-          </div>
-        </article>
-
-        <!-- Service Card 4 -->
-        <article class="service-preview-card bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="service-preview-content p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Digitalisasi & Standardisasi K3LL</h3>
-            <p class="text-gray-600 mb-4">
-              Transformasi dokumen fisik ke format digital terstandar agar lebih mudah dikelola dan diakses.
-            </p>
-            <p class="text-sm text-primary-600 font-medium">Cocok untuk: Kontraktor modern yang mengutamakan kerapihan data K3LL.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+  <!-- Services Preview: content comes from src/content/pages/home.md -->
 
   <!-- Visual Section (SVG Illustration) -->
   <section class="py-12 bg-white">

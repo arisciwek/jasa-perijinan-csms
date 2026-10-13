@@ -16,4 +16,25 @@ contentBlocks:
           label: "Komplain"
         - value: "24/7"
           label: "Konsultasi Pembangunan Real-time"
+  - id: homepage-services
+    type: service-card-grid
+    data:
+      title: "Layanan Konsultasi CSMS"
+      items:
+        - title: "Penyusunan Dokumen CSMS dari Nol"
+          description: "Kami menyusun seluruh dokumen CSMS Anda dari awal secara profesional sesuai kebutuhan klien."
+          audience: "Cocok untuk: Perusahaan atau kontraktor yang belum memiliki dokumen K3LL."
+          href: "/services/penyusunan-dokumen-csms"
+        - title: "Review & Gap Analysis CSMS"
+          description: "Evaluasi mendalam dokumen yang sudah ada untuk mengidentifikasi poin-poin yang perlu diperbaiki."
+          audience: "Cocok untuk: Kontraktor yang ingin memperbaharui atau meningkatkan skor CSMS."
+          href: "/services/review-gap-analysis-csms"
+        - title: "Pendampingan Verifikasi & Audit HSE"
+          description: "Kami mendampingi proses verifikasi oleh auditor principal untuk memastikan kelulusan audit."
+          audience: "Cocok untuk: Perusahaan yang akan menghadapi audit verifikasi HSE principal."
+          href: "/services/pendampingan-verifikasi-audit-hse"
+        - title: "Digitalisasi & Standardisasi K3LL"
+          description: "Transformasi dokumen fisik ke format digital terstandar agar lebih mudah dikelola dan diakses."
+          audience: "Cocok untuk: Kontraktor modern yang mengutamakan kerapihan data K3LL."
+          href: "/services/digitalisasi-standardisasi-k3ll"
 ---

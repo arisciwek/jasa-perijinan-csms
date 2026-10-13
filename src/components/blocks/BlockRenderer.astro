@@ -4,6 +4,7 @@ import QuickAnswer from './QuickAnswer.astro';
 import ProcessTimeline from './ProcessTimeline.astro';
 import RequirementChecklist from './RequirementChecklist.astro';
 import StatsGrid from './StatsGrid.astro';
+import ServiceCardGrid from './ServiceCardGrid.astro';
 
 interface Props {
   blocks?: ContentBlock[];
@@ -14,6 +15,10 @@ const { blocks = [] } = Astro.props;
 {blocks.length > 0 && (
   <div class="content-blocks">
     {blocks.map((block) => {
+      if (block.type === 'service-card-grid') {
+        return <ServiceCardGrid id={block.id} {...block.data} />;
+      }
+
       if (block.type === 'stats-grid') {
         return <StatsGrid id={block.id} {...block.data} />;
       }
