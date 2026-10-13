@@ -13,18 +13,19 @@ function byDateDesc(a: ArticleEntry, b: ArticleEntry): number {
 
 /**
  * Pilih artikel terkait, maksimal `limit` item, tanpa draft dan tanpa artikel saat ini.
- * Prioritas: (1) satu layanan → (2) satu kategori → (3) terbaru.
+ * Prioritas: (1) satu layanan/elemen → (2) satu kategori → (3) terbaru.
  */
 export function pickRelatedArticles(
   articles: ArticleEntry[],
   opts: {
     currentSlug?: string;
     serviceId?: number | null;
+    elementId?: number | null;
     category?: string | null;
     limit?: number;
   } = {}
 ): ArticleEntry[] {
-  const { currentSlug, serviceId, category, limit = 3 } = opts;
+  const { currentSlug, serviceId, elementId, category, limit = 3 } = opts;
   const pool = articles.filter(a => !a.data.draft && a.slug !== currentSlug);
 
   const picked: ArticleEntry[] = [];
@@ -41,6 +42,9 @@ export function pickRelatedArticles(
   const sorted = [...pool].sort(byDateDesc);
   if (serviceId != null) {
     take(sorted.filter(a => a.data.relatedService === serviceId));
+  }
+  if (elementId != null) {
+    take(sorted.filter(a => a.data.relatedElement === elementId));
   }
   if (category) {
     take(sorted.filter(a => a.data.category === category));

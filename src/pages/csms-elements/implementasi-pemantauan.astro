@@ -1,5 +1,5 @@
 ---
-import PageLayout from '../../layouts/PageLayout.astro';
+import ElementLayout from '../../layouts/ElementLayout.astro';
 import { siteConfig, siteUrl } from '../../config/site.ts';
 
 const title = `Elemen #6: Implementasi & Pemantauan — ${siteConfig.siteName}`;
@@ -12,10 +12,8 @@ const breadcrumbs = [
   { label: 'Implementasi & Pemantauan', href: '/csms-elements/implementasi-pemantauan' }
 ];
 ---
-<PageLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} pageType="Article">
-  <section class="py-16 bg-white elemen-section">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 elemen-container">
-      <header class="elemen-header text-center mb-16">
+<ElementLayout title={title} description={description} image={seoImage} breadcrumbs={breadcrumbs} elementId={6}>
+  <header slot="header" class="elemen-header text-center mb-16">
         <span class="inline-block bg-primary-100 text-primary-800 font-bold text-xs px-3 py-1 rounded-full mb-4">Elemen #6</span>
         <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">Implementasi & Pemantauan</h1>
         <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-8">Inspeksi rutin, K3 Patrol & Observation, pengukuran lingkungan, pelaporan & investigasi insiden.</p>
@@ -23,9 +21,6 @@ const breadcrumbs = [
           <img src={image} alt="Ilustrasi Implementasi & Pemantauan CSMS" class="w-full max-w-2xl h-auto rounded-xl shadow-md border border-gray-100" />
         </div>
       </header>
-
-      <div class="elemen-content grid lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2 elemen-main space-y-10">
           <article class="elemen-article bg-gray-50 p-8 rounded-xl border border-gray-200">
             <h2 class="text-2xl font-bold text-gray-900 mb-4">Deskripsi Elemen</h2>
             <p class="text-gray-600 leading-relaxed mb-4">
@@ -69,9 +64,9 @@ const breadcrumbs = [
               <li>Pendampingan <strong>investigasi insiden kritis</strong> & penyusunan CAP</li>
             </ul>
           </article>
-        </div>
 
-        <aside class="elemen-sidebar space-y-6">
+
+  <div slot="aside" class="space-y-6">
           <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
             <h3 class="font-bold text-gray-900 mb-4">Navigasi 9 Elemen</h3>
             <nav class="space-y-2">
@@ -92,8 +87,5 @@ const breadcrumbs = [
             <p class="text-primary-100 mb-4 text-sm">Kami bantu program inspeksi, K3 Patrol, pengukuran lingkungan, sistem insiden & RCA.</p>
             <a href="/contact" class="inline-block bg-white text-primary-600 font-medium px-5 py-2 rounded-lg hover:bg-primary-50 transition-colors text-sm">Konsultasi Gratis</a>
           </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-</PageLayout>
+        </div>
+</ElementLayout>

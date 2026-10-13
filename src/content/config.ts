@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import { serviceIds } from '../config/site.ts';
+import { serviceIds, csmsElementIds } from '../config/site.ts';
 
 const articleSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -20,6 +20,14 @@ const articleSchema = z.object({
     .positive()
     .refine(id => serviceIds.includes(id), {
       message: 'relatedService harus berupa id layanan yang valid (lihat services di src/config/site.ts)',
+    })
+    .optional(),
+  relatedElement: z
+    .number()
+    .int()
+    .positive()
+    .refine(id => csmsElementIds.includes(id), {
+      message: 'relatedElement harus berupa id elemen CSMS yang valid (lihat csmsElements di src/config/site.ts)',
     })
     .optional(),
 });

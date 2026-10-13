@@ -1,0 +1,26 @@
+---
+import PageLayout from './PageLayout.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import { getCollection } from 'astro:content';
+import { pickRelatedArticles } from '../utils/related.ts';
+
+const { title, description, image, breadcrumbs = [], elementId } = Astro.props;
+
+const relatedArticles = elementId
+  ? pickRelatedArticles(await getCollection('articles'), { elementId, limit: 3 })
+  : [];
+---
+<PageLayout title={title} description={description} image={image} breadcrumbs={breadcrumbs} pageType="Article">
+  <slot name="header" />
+  <div class="elemen-content grid lg:grid-cols-3 gap-8">
+    <div class="lg:col-span-2 elemen-main space-y-10">
+      <slot />
+      {relatedArticles.length > 0 && (
+        <RelatedArticles articles={relatedArticles} title="Artikel Terkait Elemen Ini" />
+      )}
+    </div>
+    <aside class="elemen-sidebar space-y-6">
+      <slot name="aside" />
+    </aside>
+  </div>
+</PageLayout>

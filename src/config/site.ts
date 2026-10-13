@@ -161,6 +161,35 @@ export function getService(id?: number | null): Service | undefined {
   return services.find(s => s.id === id);
 }
 
+// ── Registry elemen CSMS (single source of truth) ──
+// ID bersifat STABIL: jangan diubah dan jangan dipakai ulang.
+// Artikel menghubungkan diri ke elemen lewat `relatedElement: <id>` di frontmatter.
+export interface CsmsElement {
+  id: number;
+  slug: string;
+  href: string;
+  badge: string;
+  title: string;
+}
+
+export const csmsElements: CsmsElement[] = [
+  { id: 1, slug: 'kepemimpinan-komitmen', href: '/csms-elements/kepemimpinan-komitmen', badge: 'Elemen #1', title: 'Kepemimpinan & Komitmen' },
+  { id: 2, slug: 'kebijaksanaan-sasaran', href: '/csms-elements/kebijaksanaan-sasaran', badge: 'Elemen #2', title: 'Kebijaksanaan & Sasaran Strategis' },
+  { id: 3, slug: 'organisasi-tanggungjawab', href: '/csms-elements/organisasi-tanggungjawab', badge: 'Elemen #3', title: 'Organisasi & Tanggung Jawab' },
+  { id: 4, slug: 'manajemen-risiko', href: '/csms-elements/manajemen-risiko', badge: 'Elemen #4', title: 'Manajemen Risiko' },
+  { id: 5, slug: 'perencanaan-prosedur', href: '/csms-elements/perencanaan-prosedur', badge: 'Elemen #5', title: 'Perencanaan & Prosedur' },
+  { id: 6, slug: 'implementasi-pemantauan', href: '/csms-elements/implementasi-pemantauan', badge: 'Elemen #6', title: 'Implementasi & Pemantauan' },
+  { id: 7, slug: 'audit-tinjauan', href: '/csms-elements/audit-tinjauan', badge: 'Elemen #7', title: 'Audit & Tinjauan Pelaksanaan K3LL' },
+  { id: 8, slug: 'pencapaian-kinerja', href: '/csms-elements/pencapaian-kinerja', badge: 'Elemen #8', title: 'Pencapaian Kinerja K3LL' },
+  { id: 9, slug: 'pencapaian-lainnya', href: '/csms-elements/pencapaian-lainnya', badge: 'Elemen #9', title: 'Pencapaian Lainnya' },
+];
+
+export const csmsElementIds: number[] = csmsElements.map(e => e.id);
+
+export function getCsmsElement(id?: number | null): CsmsElement | undefined {
+  return csmsElements.find(e => e.id === id);
+}
+
 // Helper: bangun URL lengkap dari path
 // Untuk UI/assets di halaman (<img>, dll), gunakan relative path agar selalu aman di .lan, Vercel, dan custom domain.
 // Untuk SEO (og:image, canonical, sitemap), gunakan absolute URL dari SITE_URL atau domain.
