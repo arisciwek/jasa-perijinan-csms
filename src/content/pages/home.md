@@ -54,4 +54,26 @@ contentBlocks:
           description: "Apakah perusahaan mempunyai panduan operasi, cara kerja K3LL, dan aturan keselamatan yang disahkan?"
         - elementId: 6
           description: "Pengaturan apa yang dimiliki perusahaan untuk pengawasan dan pemantauan kinerja K3LL?"
+  - id: homepage-testimonials
+    type: testimonial-grid
+    data:
+      title: "Testimoni Perusahaan"
+      items:
+        - quote: "Implementasi CSMS digital ini telah meningkatkan efisiensi verifikasi dokumen kami hingga 70%. Keamanan aset dan nyawa adalah prioritas utama kami."
+          attribution: "MITSUBISHI CHEMICAL - Sr. HSE supervisor"
+        - quote: "Satu-satunya solusi yang benar-benar memahami regulasi K3 di Indonesia. Dashboard analitiknya sangat membantu dalam pengambilan keputusan taktis."
+          attribution: "BAYU ADJI PERTIWI - Head of Safety Compliance"
+        - quote: "Transparansi dan audit trail yang disediakan sistem ini memberikan ketenangan bagi manajemen dalam mengelola ribuan kontraktor di lapangan."
+          attribution: "PRASADHA PAMUNAH LIMBAH INDUSTRI - HSE MANAJER"
+  - id: homepage-consultation-cta
+    type: call-to-action
+    data:
+      title: "Butuh Konsultasi CSMS?"
+      description: "Kami akan meninjau secara mendalam kebutuhan spesifik perusahaan Anda dan memberikan rekomendasi paket layanan yang paling efektif. Tim kami siap membantu kesiapan dokumen dan sistem K3LL perusahaan."
+      primaryLabel: "Ajukan Permintaan Konsultasi"
+      primaryHref: "#contact"
+      secondaryLabel: "Chat Langsung via WhatsApp"
+      secondaryHref: "/contact"
+      secondaryIsWhatsApp: true
+
 ---

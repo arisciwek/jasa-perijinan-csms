@@ -77,64 +77,8 @@ const latestArticles = (await getCollection('articles'))
   <!-- CSMS element preview is maintained in src/content/pages/home.md -->
   {csmsElementsBlock ? <BlockRenderer blocks={[csmsElementsBlock]} /> : null}
 
-  <!-- Testimonials -->
-  <section class="py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">
-        Testimoni Perusahaan
-      </h2>
-      <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
-        <!-- Testimonial 1 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden p-6">
-          <p class="text-gray-600 italic mb-4">
-            "Implementasi CSMS digital ini telah meningkatkan efisiensi verifikasi dokumen kami hingga 70%. Keamanan aset dan nyawa adalah prioritas utama kami."
-          </p>
-          <p class="text-sm font-medium text-gray-900">MITSUBISHI CHEMICAL - Sr. HSE supervisor</p>
-        </div>
+  <!-- Testimonials and consultation CTA are maintained in src/content/pages/home.md -->
+  <BlockRenderer blocks={(homeContent?.data.contentBlocks ?? []).filter((block) => block.type === 'testimonial-grid' || block.type === 'call-to-action')} />
 
-        <!-- Testimonial 2 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden p-6">
-          <p class="text-gray-600 italic mb-4">
-            "Satu-satunya solusi yang benar-benar memahami regulasi K3 di Indonesia. Dashboard analitiknya sangat membantu dalam pengambilan keputusan taktis."
-          </p>
-          <p class="text-sm font-medium text-gray-900">BAYU ADJI PERTIWI - Head of Safety Compliance</p>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden p-6">
-          <p class="text-gray-600 italic mb-4">
-            "Transparansi dan audit trail yang disediakan sistem ini memberikan ketenangan bagi manajemen dalam mengelola ribuan kontraktor di lapangan."
-          </p>
-          <p class="text-sm font-medium text-gray-900">PRASADHA PAMUNAH LIMBAH INDUSTRI - HSE MANAJER</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="bg-primary-50 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-2xl font-bold text-primary-800 mb-6">
-        Butuh Konsultasi CSMS ?
-      </h2>
-      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-        Kami akan meninjau secara mendalam kebutuhan spesifik perusahaan Anda dan memberikan rekomendasi paket layanan yang paling efektif. Tim ahli kami siap membantu Anda memastikan kesiapan dokumen dan sistem K3LL perusahaan.
-      </p>
-      <div class="flex flex-col sm:flex-row sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-        <a
-          href="#contact"
-          class="px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500"
-        >
-          Ajukan Permintaan Konsultasi
-        </a>
-        <a
-          href={`https://wa.me/${siteConfig.whatsapp}`}
-          class="px-6 py-3 bg-white text-primary-600 font-medium border border-primary-300 rounded-lg hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary-500"
-        >
-          Chat Langsung via WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
   <LatestArticles articles={latestArticles} />
 </BaseLayout>

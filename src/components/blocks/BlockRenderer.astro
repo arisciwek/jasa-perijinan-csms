@@ -6,6 +6,8 @@ import RequirementChecklist from './RequirementChecklist.astro';
 import StatsGrid from './StatsGrid.astro';
 import ServiceCardGrid from './ServiceCardGrid.astro';
 import CsmsElementGrid from './CsmsElementGrid.astro';
+import TestimonialGrid from './TestimonialGrid.astro';
+import CallToAction from './CallToAction.astro';
 
 interface Props {
   blocks?: ContentBlock[];
@@ -34,6 +36,14 @@ const { blocks = [] } = Astro.props;
 
       if (block.type === 'csms-element-grid') {
         return <CsmsElementGrid id={block.id} {...block.data} />;
+      }
+
+      if (block.type === 'testimonial-grid') {
+        return <TestimonialGrid id={block.id} {...block.data} />;
+      }
+
+      if (block.type === 'call-to-action') {
+        return <CallToAction id={block.id} {...block.data} />;
       }
 
       if (block.type === 'requirement-checklist') {
