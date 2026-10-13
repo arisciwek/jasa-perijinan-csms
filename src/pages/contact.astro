@@ -5,7 +5,6 @@ import BlockRenderer from '../components/blocks/BlockRenderer.astro';
 import { siteConfig, siteUrl } from '../config/site.ts';
 
 const pageContent = await getEntry('pages', 'contact');
-const pageTitle = pageContent?.data.title ?? 'Hubungi Kami';
 const title = `Kontak & Konsultasi — ${siteConfig.siteName}`;
 const description = pageContent?.data.description ?? 'Hubungi tim kami untuk konsultasi CSMS dan K3LL.';
 const seoImage = siteUrl(pageContent?.data.image || '/images/contact/contact.svg', true);

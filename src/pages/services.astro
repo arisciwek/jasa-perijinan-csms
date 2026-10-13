@@ -5,10 +5,8 @@ import BlockRenderer from '../components/blocks/BlockRenderer.astro';
 import { siteConfig, siteUrl } from '../config/site.ts';
 
 const pageContent = await getEntry('pages', 'services');
-const pageTitle = pageContent?.data.title ?? 'Layanan Profesional Kami';
 const description = pageContent?.data.description ?? 'Layanan penyusunan dokumen CSMS, gap analysis, pendampingan audit, dan digitalisasi K3LL.';
 const title = `Layanan Konsultasi CSMS & Perizinan — ${siteConfig.siteName}`;
-const image = siteUrl(pageContent?.data.image || '/images/services/services-csms.svg');
 const seoImage = siteUrl(pageContent?.data.image || '/images/services/services-csms.svg', true);
 const serviceDirectoryBlock = pageContent?.data.contentBlocks?.find((block) => block.type === 'service-directory');
 ---
