@@ -5,6 +5,7 @@ import ProcessTimeline from './ProcessTimeline.astro';
 import RequirementChecklist from './RequirementChecklist.astro';
 import StatsGrid from './StatsGrid.astro';
 import ServiceCardGrid from './ServiceCardGrid.astro';
+import CsmsElementGrid from './CsmsElementGrid.astro';
 
 interface Props {
   blocks?: ContentBlock[];
@@ -29,6 +30,10 @@ const { blocks = [] } = Astro.props;
 
       if (block.type === 'process-timeline') {
         return <ProcessTimeline id={block.id} {...block.data} />;
+      }
+
+      if (block.type === 'csms-element-grid') {
+        return <CsmsElementGrid id={block.id} {...block.data} />;
       }
 
       if (block.type === 'requirement-checklist') {

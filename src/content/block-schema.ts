@@ -1,4 +1,5 @@
 import { z } from 'astro:content';
+import { csmsElementIds } from '../config/site.ts';
 
 /**
  * Shared contract for content-driven Astro blocks.
@@ -44,6 +45,19 @@ export const contentBlockSchema = z.discriminatedUnion('type', [
       title: z.string().min(1),
       steps: z.array(z.object({
         title: z.string().min(1),
+        description: z.string().min(1),
+      })).min(1),
+    }),
+  }),
+  z.object({
+    id: z.string().min(1),
+    type: z.literal('csms-element-grid'),
+    data: z.object({
+      title: z.string().min(1),
+      items: z.array(z.object({
+        elementId: z.number().int().positive().refine((id) => csmsElementIds.includes(id), {
+          message: 'elementId harus merujuk ke elemen CSMS di src/config/site.ts',
+        }),
         description: z.string().min(1),
       })).min(1),
     }),

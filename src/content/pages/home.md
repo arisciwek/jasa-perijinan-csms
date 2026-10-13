@@ -38,3 +38,20 @@ contentBlocks:
           audience: "Cocok untuk: Kontraktor modern yang mengutamakan kerapihan data K3LL."
           href: "/services/digitalisasi-standardisasi-k3ll"
 ---
+  - id: homepage-csms-elements
+    type: csms-element-grid
+    data:
+      title: "9 Elemen Utama Contractor Safety Management System (CSMS)"
+      items:
+        - elementId: 1
+          description: "Bagaimana para senior manajer terlibat secara pribadi dalam manajemen K3LL, sebagai contoh dalam menetapkan sasaran dan pengawasannya?"
+        - elementId: 2
+          description: "Bagaimana perusahaan mempunyai dokumen kebijakan K3LL dan objective target yang terintegrasi dengan operasi perusahaan?"
+        - elementId: 3
+          description: "Bagaimana struktur perusahaan dibuat untuk mengelola dan mengomunikasikan K3LL secara efektif?"
+        - elementId: 4
+          description: "Bagaimana perusahaan mengidentifikasi bahaya, menilai risiko, mengendalikan, dan memitigasi dampak hingga tingkat yang dapat diterima (ALARP)?"
+        - elementId: 5
+          description: "Apakah perusahaan mempunyai panduan operasi, cara kerja K3LL, dan aturan keselamatan yang disahkan?"
+        - elementId: 6
+          description: "Pengaturan apa yang dimiliki perusahaan untuk pengawasan dan pemantauan kinerja K3LL?"

@@ -12,6 +12,7 @@ const seoImage = siteUrl('/images/home/home-hero.svg', true);
 const homeContent = await getEntry('pages', 'home');
 const statsBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'stats-grid');
 const servicesBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'service-card-grid');
+const csmsElementsBlock = homeContent?.data.contentBlocks?.find((block) => block.type === 'csms-element-grid');
 const latestArticles = (await getCollection('articles'))
   .filter((article) => !article.data.draft)
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
@@ -73,81 +74,8 @@ const latestArticles = (await getCollection('articles'))
     </div>
   </section>
 
-  <!-- CSMS Elements Preview -->
-  <section class="bg-gray-50 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">
-        9 Elemen Utama Contractor Safety Management System (CSMS)
-      </h2>
-      <div class="grid gap-6 sm:grid-cols-3">
-        <!-- Element 1 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #1</h3>
-            <p class="text-base font-medium text-primary-600 mb-3">Kepemimpinan & Komitmen</p>
-            <p class="text-sm text-gray-600">
-              Bagaimana para senior manajer terlibat secara pribadi dalam manajemen K3LL, sebagai contoh dalam menetapkan sasaran (objective) dan pengawasannya?
-            </p>
-          </div>
-        </div>
-
-        <!-- Element 2 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #2</h3>
-            <p class="text-base font-medium text-primary-600 mb-3">Kebijaksanaan dan Sasaran Strategis</p>
-            <p class="text-sm text-gray-600">
-              Bagaimana perusahaan Anda mempunyai dokumen kebijakan K3LL & Objective Target K3LL yang terintegrasi dengan operasi Perusahaan?
-            </p>
-          </div>
-        </div>
-
-        <!-- Element 3 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #3</h3>
-            <p class="text-base font-medium text-primary-600 mb-3">Organisasi, Tanggung Jawab</p>
-            <p class="text-sm text-gray-600">
-              Bagaimana struktur perusahaan Anda dibuat untuk mengelola dan mengkomunikasikan K3LL secara efektif?
-            </p>
-          </div>
-        </div>
-
-        <!-- Element 4 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #4</h3>
-            <p class="text-base font-medium text-primary-600 mb-3">Manajemen Resiko</p>
-            <p class="text-sm text-gray-600">
-              Bagaimana Perusahaan Anda mengidentifikasi bahaya, menilai risiko, mengendalikan dan memitigasi dampak, ke tingkat yang dapat diterima secara praktis (ALARP - as low as reasonably practicable).
-            </p>
-          </div>
-        </div>
-
-        <!-- Element 5 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #5</h3>
-            <p class="text-base font-medium text-primary-600 mb-3">Perencanaan dan Prosedur</p>
-            <p class="text-sm text-gray-600">
-              Apakah Perusahaan anda mempunyai dokumen panduan Operasi yang sesuai dengan aturan-aturan K3LL yang dijelaskan secara rinci dalam cara kerja K3LL dan aturan keselamatan yang disahkan oleh perusahaan?
-            </p>
-          </div>
-        </div>
-
-        <!-- Element 6 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Elemen #6</h3>
-            <p class="text-base font-medium text-primary-600 mb-3">Implementasi dan Pemantauan</p>
-            <p class="text-sm text-gray-600">
-              Pengaturan apa yang dipunyai perusahaan Anda untuk pengawasan dan pemantauan kinerja K3LL?
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- CSMS element preview is maintained in src/content/pages/home.md -->
+  {csmsElementsBlock ? <BlockRenderer blocks={[csmsElementsBlock]} /> : null}
 
   <!-- Testimonials -->
   <section class="py-12">
