@@ -5,18 +5,17 @@ import { siteConfig, siteUrl } from '../config/site.ts';
 
 const { pageType, title, description, url } = Astro.props;
 
-const fullUrl = url || siteUrl();
-const logoUrl = siteUrl(siteConfig.logo);
-const orgId = `${siteUrl()}#localbusiness`;
+const fullUrl = url || siteUrl('', true);
+const logoUrl = siteUrl(siteConfig.logo, true);
+const orgId = `${siteUrl('', true)}#localbusiness`;
 
-// Organization / LocalBusiness data from config
 const organizationData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": orgId,
   "name": siteConfig.siteName,
   "image": logoUrl,
-  "url": siteUrl(),
+  "url": siteUrl('', true),
   "telephone": siteConfig.phone,
   "priceRange": siteConfig.priceRange,
   "address": {
@@ -32,14 +31,12 @@ const organizationData = {
     "latitude": siteConfig.geo.latitude,
     "longitude": siteConfig.geo.longitude,
   },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": siteConfig.openingHours.days,
-      "opens": siteConfig.openingHours.opens,
-      "closes": siteConfig.openingHours.closes,
-    },
-  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": siteConfig.openingHours.days,
+    "opens": siteConfig.openingHours.opens,
+    "closes": siteConfig.openingHours.closes,
+  }],
   "sameAs": [
     siteConfig.social.facebook,
     siteConfig.social.instagram,
@@ -50,7 +47,6 @@ const organizationData = {
   ],
 };
 
-// Page-specific structured data
 let pageData = {};
 
 switch (pageType) {
@@ -66,13 +62,12 @@ switch (pageType) {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "url-template": `${fullUrl}?s={search_term_string}`,
+          "urlTemplate": `${fullUrl}?s={search_term_string}`,
         },
         "query-input": "required name=search_term_string",
       },
     };
     break;
-
   case 'AboutPage':
     pageData = {
       "@context": "https://schema.org",
@@ -83,7 +78,6 @@ switch (pageType) {
       "description": description,
     };
     break;
-
   case 'ContactPage':
     pageData = {
       "@context": "https://schema.org",
@@ -94,7 +88,6 @@ switch (pageType) {
       "description": description,
     };
     break;
-
   case 'Service':
     pageData = {
       "@context": "https://schema.org",
@@ -103,20 +96,13 @@ switch (pageType) {
       "url": fullUrl,
       "name": title,
       "description": description,
-      "areaServed": {
-        "@type": "Place",
-        "@id": "#placeholder",
-      },
+      "areaServed": { "@type": "Place", "@id": "#placeholder" },
       "availableChannel": {
         "@type": "ServiceChannel",
-        "serviceLocation": {
-          "@type": "Place",
-          "@id": "#placeholder",
-        },
+        "serviceLocation": { "@type": "Place", "@id": "#placeholder" },
       },
     };
     break;
-
   case 'FAQPage':
     pageData = {
       "@context": "https://schema.org",
@@ -127,7 +113,6 @@ switch (pageType) {
       "description": description,
     };
     break;
-
   default:
     pageData = {
       "@context": "https://schema.org",
@@ -136,12 +121,8 @@ switch (pageType) {
       "url": fullUrl,
       "name": title,
       "description": description,
-      "isPartOf": {
-        "@id": `${siteUrl()}#website`,
-      },
-      "about": {
-        "@id": orgId,
-      },
+      "isPartOf": { "@id": `${siteUrl('', true)}#website` },
+      "about": { "@id": orgId },
     };
 }
 
@@ -151,6 +132,4 @@ const structuredData = {
 };
 ---
 
-<script type="application/ld+json">
-  {JSON.stringify(structuredData, null, 2)}
-</script>
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>

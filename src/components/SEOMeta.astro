@@ -1,21 +1,22 @@
 ---
-// SEO Meta tags for Open Graph and Twitter Cards
+// SEO Meta tags for Open Graph, Twitter Cards, and canonical URLs
 import { siteConfig, siteUrl } from '../config/site.ts';
 
 const { title, description, image, type = 'website', url } = Astro.props;
 
-const defaultImage = image || siteUrl(siteConfig.ogImage);
-const fullUrl = url || siteUrl();
+const fullUrl = url || siteUrl('', true);
+const defaultImage = image
+  ? (image.startsWith('http://') || image.startsWith('https://') ? image : siteUrl(image, true))
+  : siteUrl(siteConfig.ogImage, true);
 const siteName = siteConfig.siteName;
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
+<link rel="canonical" href={fullUrl} />
 
-<!-- Primary Meta Tags -->
 <meta name="title" content={title} />
 
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={fullUrl} />
 <meta property="og:title" content={title} />
@@ -25,12 +26,9 @@ const siteName = siteConfig.siteName;
 <meta property="og:locale" content={siteConfig.locale} />
 <meta property="article:modified_time" content={new Date().toISOString()} />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={fullUrl} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={defaultImage} />
-<meta property="twitter:site" content={`@${siteConfig.twitterHandle}`} />
-
-<!-- Meta Tags Generated via https://metatags.io -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={fullUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={defaultImage} />
+<meta name="twitter:site" content={`@${siteConfig.twitterHandle}`} />
