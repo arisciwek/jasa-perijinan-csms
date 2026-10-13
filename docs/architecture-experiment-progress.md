@@ -74,6 +74,14 @@ Catatan: angka statistik dan teks testimoni dipindahkan dari implementasi sebelu
 - File route Astro masing-masing sekarang mengambil entry Markdown dan meneruskan blok ke komponen.
 - Klaim persentase atau jaminan hasil yang tidak didukung data telah diganti dengan uraian yang lebih terukur pada konten yang dimigrasikan. Pemilik situs tetap perlu meninjau seluruh klaim sebelum publikasi.
 
+### Detail 9 Elemen CSMS
+
+- Kesembilan halaman detail Elemen CSMS kini memakai frontmatter Markdown pada `src/content/pages/` sebagai sumber data.
+- Route Astro pada `src/pages/csms-elements/` dibuat tipis: mengambil entry koleksi `pages` lalu meneruskan `contentBlocks` dan metadata ke `BlockRenderer`.
+- Komponen bersama `src/components/blocks/ElementDetail.astro` merender header, bagian isi, daftar, navigasi 9 elemen dari registry, dan CTA.
+- Data isi dan CTA elemen 7–9 dimigrasikan pada commit `dcd6c48`; pemeriksaan struktur route untuk semua sembilan halaman menunjukkan tidak ada lagi markup detail yang di-hardcode di file route.
+- Build lokal belum dijalankan. Validasi build dan rendering akhir tetap dilakukan oleh pemilik repo secara lokal.
+
 ## Status validasi
 
 - Perubahan tersimpan sebagai commit terpisah di branch eksperimen.
@@ -120,5 +128,6 @@ Catatan: angka statistik dan teks testimoni dipindahkan dari implementasi sebelu
 | `5a5162a` | refactor(service): drive CSMS document service page from markdown |
 | `494edfd` | refactor(service): reuse page metadata in service detail block |
 | `5e6d6bc` | refactor(services): migrate remaining service pages to markdown blocks |
+| `dcd6c48` | refactor(csms): migrate elements 7 to 9 into markdown blocks |
 
-Status terakhir diverifikasi pada commit `5e6d6bc`: branch eksperimen 28 commit di depan `main` dan tidak tertinggal commit. Build tetap belum dijalankan; periksa kembali status branch sebelum merge.
+Status sebelum pembaruan dokumentasi diverifikasi pada commit `dcd6c48`: branch eksperimen 35 commit di depan `main` dan tidak tertinggal commit. Build tetap belum dijalankan; periksa kembali status branch sebelum merge.
