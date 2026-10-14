@@ -58,6 +58,7 @@ const toc: TocHeading[] = headings.filter((h: TocHeading) => h.depth === 2 || h.
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-12 gap-8 min-h-[calc(100vh-200px)]">
       <!-- Sidebar (3 columns) -->
       <aside class="col-span-12 lg:col-span-3 hidden lg:block lg:sticky lg:top-24 space-y-6">
+        <div class="max-h-[calc(100vh-260px)] overflow-y-auto space-y-6">
         <!-- Table of Contents -->
         {toc.length > 0 && (
           <nav aria-label="Daftar Isi" class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
@@ -104,6 +105,7 @@ const toc: TocHeading[] = headings.filter((h: TocHeading) => h.depth === 2 || h.
             Tim ahli K3LL dengan pengalaman lebih dari 15 tahun di sektor migas, tambang, dan konstruksi.
           </p>
         </div>
+      </div>
       </aside>
 
       <!-- Main Article Content (9 columns) -->
