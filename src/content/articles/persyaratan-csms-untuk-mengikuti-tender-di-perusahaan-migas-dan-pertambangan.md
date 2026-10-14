@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8S9"
     type: "article-lead"
     data:
-      text: "Perusahaan migas dan pertambangan memiliki standar CSMS yang ketat karena natura pekerjaan berisiko tinggi. Memahami persyaratan spesifik setiap principal menghemat waktu dan biaya dalam persiapan tender."
+      text: "Persyaratan CSMS untuk mengikuti tender di perusahaan migas dan pertambangan perlu dipahami sejak tahap persiapan prakualifikasi. Persyaratan tersebut dapat mencakup dokumen kebijakan K3LL, pengelolaan risiko, prosedur kerja, kompetensi personel, serta bukti penerapan sistem manajemen keselamatan sesuai lingkup pekerjaan. Karena ketentuan setiap pemberi kerja dapat berbeda, kontraktor perlu memeriksa dokumen tender dan kriteria resmi yang berlaku sebelum menyiapkan kelengkapan CSMS."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8T0"
     type: "section-header"
