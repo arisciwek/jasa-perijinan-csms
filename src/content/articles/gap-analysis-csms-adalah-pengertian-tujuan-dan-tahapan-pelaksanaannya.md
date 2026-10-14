@@ -24,7 +24,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AE"
     type: "article-lead"
     data:
-      text: "Gap Analysis CSMS adalah langkah strategis yang wajib dilakukan kontraktor sebelum menghadapi verifikasi atau prakualifikasi vendor. Melalui analisis kesenjangan ini, perusahaan dapat mengidentifikasi kelemahan sistem manajemen keselamatan secara dini dan memperbaikinya sebelum dinilai oleh verifikator principal."
+      text: "Gap Analysis CSMS adalah proses membandingkan kondisi dokumen dan penerapan sistem manajemen keselamatan perusahaan dengan persyaratan yang menjadi acuan penilaian. Analisis ini membantu kontraktor mengidentifikasi kesenjangan, memahami penyebab ketidaksesuaian, dan menentukan tindakan perbaikan sebelum mengikuti verifikasi atau prakualifikasi vendor. Pelaksanaannya perlu dilakukan secara sistematis agar hasil analisis dapat digunakan untuk menyusun prioritas perbaikan."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AF"
     type: "section-header"
