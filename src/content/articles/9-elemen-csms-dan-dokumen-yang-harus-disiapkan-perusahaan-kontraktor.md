@@ -78,6 +78,14 @@ contentBlocks:
       items:
         - "Verifikator tidak hanya memeriksa keberadaan dokumen, tapi juga kesesuaian antara dokumen dengan realita lapangan."
         - "Setiap elemen harus didukung bukti implementasi seperti foto inspeksi, attendance training, hasil audit internal, dan catatan tindak lanjut temuan."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8B6"
+    type: "service-cta"
+    data:
+      title: "Butuh Pendampingan Penyusunan Dokumen CSMS?"
+      description: "Tim kami siap membantu Anda menyusun seluruh dokumen CSMS dari nol hingga siap verifikasi. Konsultasi gratis untuk memahami kebutuhan perusahaan Anda."
+      label: "Konsultasi Sekarang"
+      href: "/services/penyusunan-dokumen-csms"
+      note: "Respon dalam 1x24 jam kerja via WhatsApp."
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AK"
     type: "section-header"
     data:
