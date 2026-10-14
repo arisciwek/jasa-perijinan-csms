@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P1"
     type: "article-lead"
     data:
-      text: "Verifikasi CSMS di sektor hulu migas adalah proses kritis yang menentukan kelayakan kontraktor untuk bekerja di area operasi perusahaan minyak dan gas bumi. Skor verifikasi yang tinggi tidak hanya membuka peluang tender, tetapi juga mencerminkan komitmen perusahaan terhadap keselamatan kerja."
+      text: "Audit verifikasi CSMS di sektor migas merupakan proses evaluasi untuk menilai kesesuaian sistem manajemen keselamatan kontraktor dengan persyaratan perusahaan pemberi kerja. Persiapan audit mencakup pemeriksaan kelengkapan dokumen, konsistensi informasi, ketersediaan bukti penerapan, serta kesiapan personel yang terlibat. Dengan persiapan yang terarah, perusahaan dapat mengidentifikasi kekurangan lebih awal dan menindaklanjutinya sebelum audit dilaksanakan."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P2"
     type: "section-header"
