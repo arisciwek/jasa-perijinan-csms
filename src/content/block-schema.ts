@@ -235,7 +235,8 @@ export const contentBlockSchema = z.discriminatedUnion('type', [
       title: z.string().min(1),
       items: z.array(z.object({
         quote: z.string().min(1),
-        attribution: z.string().min(1),
+        name: z.string().min(1),
+        industry: z.string().min(1),
       })).min(1),
     }),
   }),
