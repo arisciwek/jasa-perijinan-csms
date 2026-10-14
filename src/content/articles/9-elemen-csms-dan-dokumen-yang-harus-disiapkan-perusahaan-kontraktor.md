@@ -41,7 +41,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AE"
     type: "article-lead"
     data:
-      text: "Memahami 9 elemen CSMS secara mendalam adalah kunci utama bagi kontraktor yang ingin lolos verifikasi dengan skor tinggi. Setiap elemen tidak berdiri sendiri, melainkan saling berkaitan membentuk sistem manajemen keselamatan yang utuh. Artikel ini membahas tiap elemen beserta dokumen spesifik yang harus disiapkan sebagai bukti implementasi."
+      text: "9 elemen CSMS merupakan komponen utama dalam sistem manajemen keselamatan kontraktor yang perlu dipahami dan dipersiapkan sebelum mengikuti proses verifikasi. Setiap elemen berkaitan dengan aspek pengelolaan K3LL yang berbeda dan perlu didukung dokumen serta bukti penerapan yang sesuai dengan persyaratan perusahaan pemberi kerja. Memahami hubungan antara 9 elemen CSMS dan dokumen pendukungnya membantu kontraktor mempersiapkan evaluasi secara terstruktur."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AF"
     type: "section-header"
