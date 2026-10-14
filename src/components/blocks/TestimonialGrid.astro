@@ -1,7 +1,8 @@
 ---
 interface Testimonial {
   quote: string;
-  attribution: string;
+  name: string;
+  industry: string;
 }
 interface Props { id: string; title: string; items: Testimonial[] }
 const { id, title, items } = Astro.props;
@@ -14,7 +15,10 @@ const titleId = `${id}-title`;
       {items.map((item) => (
         <figure class="bg-white rounded-lg shadow overflow-hidden p-6">
           <blockquote class="text-gray-600 italic mb-4">“{item.quote}”</blockquote>
-          <figcaption class="text-sm font-medium text-gray-900">{item.attribution}</figcaption>
+          <figcaption class="text-sm font-medium text-gray-900">
+            <span class="block">{item.name}</span>
+            <span class="block mt-1 text-gray-500 font-normal">{item.industry}</span>
+          </figcaption>
         </figure>
       ))}
     </div>
