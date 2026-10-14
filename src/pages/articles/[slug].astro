@@ -21,7 +21,28 @@ const seoImage = image ? siteUrl(image, true) : siteUrl('/images/articles/articl
 const categoryLabel = category || 'Artikel';
 const authorName = author || 'Tim Konsultan CSMS';
 
-const { Content, headings } = await article.render();
+const contentBlocks = article.data.contentBlocks ?? [];
+const headings = contentBlocks.flatMap((block) => {
+  if (block.type === 'section-header') {
+    return [{ depth: 2, slug: block.id, text: block.data.title }];
+  }
+
+  if (block.type === 'article-body') {
+    return block.data.sections.flatMap((section, sectionIndex) => {
+      const sectionId = `${block.id}-section-${sectionIndex + 1}`;
+      return [
+        { depth: 2, slug: `${sectionId}-heading`, text: section.title },
+        ...section.subsections.map((subsection, subsectionIndex) => ({
+          depth: 3,
+          slug: `${sectionId}-subsection-${subsectionIndex + 1}-heading`,
+          text: subsection.title,
+        })),
+      ];
+    });
+  }
+
+  return [];
+});
 const allArticles = await getCollection('articles');
 const service = getService(relatedService);
 const relatedArticles = pickRelatedArticles(allArticles, {
