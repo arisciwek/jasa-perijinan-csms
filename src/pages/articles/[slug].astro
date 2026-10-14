@@ -64,6 +64,5 @@ const relatedArticles = pickRelatedArticles(allArticles, {
   service={service}
   relatedArticles={relatedArticles}
   headings={headings}>
-  <Content />
-  {article.data.contentBlocks?.length ? <BlockRenderer blocks={article.data.contentBlocks} /> : null}
+  <BlockRenderer blocks={contentBlocks} pageMetadata={{ title, description, image: seoImage }} />
 </ArticleLayout>
