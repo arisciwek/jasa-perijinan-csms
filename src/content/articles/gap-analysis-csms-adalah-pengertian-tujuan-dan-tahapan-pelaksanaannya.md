@@ -21,6 +21,88 @@ contentBlocks:
         Gap Analysis CSMS adalah evaluasi kesenjangan antara persyaratan
         keselamatan kontraktor yang diminta klien dan bukti atau dokumen
         yang telah dimiliki perusahaan.
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AE"
+    type: "article-lead"
+    data:
+      text: "Gap Analysis CSMS adalah langkah strategis yang wajib dilakukan kontraktor sebelum menghadapi verifikasi atau prakualifikasi vendor. Melalui analisis kesenjangan ini, perusahaan dapat mengidentifikasi kelemahan sistem manajemen keselamatan secara dini dan memperbaikinya sebelum dinilai oleh verifikator principal."
+      label: "Inti pembahasan"
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AF"
+    type: "section-header"
+    data:
+      title: "Pengertian Gap Analysis CSMS dan Perannya dalam Evaluasi Kontraktor"
+      number: 1
+      description: "Gap Analysis CSMS merupakan proses perbandingan sistematis antara kondisi dokumen serta implementasi K3LL perusahaan saat ini dengan standar yang ditetapkan oleh principal atau regulasi K3LL."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AG"
+    type: "content-card"
+    data:
+      title: "Apa yang Dimaksud dengan Gap Analysis CSMS?"
+      items:
+        - "Gap Analysis CSMS adalah evaluasi mendalam untuk mengukur tingkat kepatuhan dan kematangan sistem manajemen keselamatan kontraktor terhadap referensi standar yang berlaku."
+        - "Berbeda dengan audit formal yang bersifat penilaian (pass/fail), Gap Analysis bersifat diagnostik dan perbaikan."
+        - "Tujuannya menemukan celah agar bisa diperbaiki sebelum verifikasi resmi."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AH"
+    type: "content-card"
+    data:
+      title: "Perbedaan Gap Analysis CSMS dengan Review Dokumen CSMS"
+      items:
+        - "Review dokumen CSMS umumnya bersifat administratif: memeriksa kelengkapan dokumen, tanda tangan, masa berlaku, dan konsistensi format."
+        - "Gap Analysis lebih mendalam—menilai kesesuaian isi dokumen dengan realita lapangan."
+        - "Gap Analysis = Review dokumen + evaluasi implementasi + rekomendasi perbaikan prioritas."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AI"
+    type: "section-header"
+    data:
+      title: "Tujuan dan Manfaat Gap Analysis CSMS bagi Perusahaan"
+      number: 2
+      description: "Melakukan Gap Analysis sebelum verifikasi memberikan keuntungan kompetitif: mengurangi risiko gagal verifikasi, menghemat biaya perbaikan darurat, dan meningkatkan skor penilaian prakualifikasi vendor."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AJ"
+    type: "content-card"
+    data:
+      title: "Mengidentifikasi Kesenjangan Dokumen terhadap Persyaratan CSMS"
+      items:
+        - "Setiap principal memiliki standar CSMS sendiri (Contoh: K3-PT Pertamina, HSE-MS Shell, Contractor HSE Requirement BP)."
+        - "Gap Analysis memetakan dokumen perusahaan terhadap checklist spesifik principal target."
+        - "Temuan dikategorikan: Critical (harus diperbaiki sebelum verifikasi), Major (perbaikan sebelum audit), Minor (perbaikan berkala)."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AK"
+    type: "content-card"
+    data:
+      title: "Meningkatkan Kesiapan Perusahaan Mengikuti Prakualifikasi Vendor"
+      items:
+        - "Mengalokasikan budget & timeline perbaikan realistis."
+        - "Melibatkan konsultan tepat sasaran."
+        - "Mempersiapkan bukti pendukung (evidence) yang solid."
+        - "Masuk ruang verifikasi dengan keyakinan karena sudah mensimulasikan temuan verifikator."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8B6"
+    type: "service-cta"
+    data:
+      title: "Butuh Pendampingan Gap Analysis CSMS?"
+      description: "Tim kami siap melakukan Gap Analysis komprehensif untuk mengidentifikasi kesenjangan dokumen dan implementasi K3LL Anda. Dapatkan laporan detail dengan rekomendasi prioritas."
+      label: "Jadwalkan Konsultasi"
+      href: "/services/review-gap-analysis-csms"
+      note: "Konsultasi awal gratis untuk memahami kebutuhan perusahaan Anda."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AL"
+    type: "section-header"
+    data:
+      title: "Tahapan Pelaksanaan Gap Analysis CSMS yang Sistematis"
+      number: 3
+      description: "Proses Gap Analysis profesional mengikuti alur terstruktur agar hasilnya akurat, actionable, dan siap dieksekusi tim internal."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AM"
+    type: "content-card"
+    data:
+      title: "Mengumpulkan Dokumen dan Membandingkannya dengan Persyaratan"
+      items:
+        - "Kumpulkan seluruh dokumen K3LL existing (Manual, SOP, Form, Register, Record)."
+        - "Dapatkan standar referensi—Contractor HSE Specification principal target, SMK3 PP 50/2012, ISO 45001."
+        - "Lakukan gap mapping per elemen CSMS (9 elemen) menggunakan checklist terstandarisasi."
+        - "Wawancara personel kunci (HSE Manager, Supervisor, Operator) untuk verifikasi implementasi lapangan."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AN"
+    type: "content-card"
+    data:
+      title: "Menyusun Rekomendasi Perbaikan dan Menindaklanjuti Temuan"
+      items:
+        - "Hasil Gap Analysis disajikan dalam Laporan Gap Analysis yang berisi Executive Summary."
+        - "Detail Temuan per Elemen: deskripsi gap, refer standar, bukti pendukung, risiko jika tidak diperbaiki."
+        - "Rekomendasi Perbaikan: prioritas Critical/Major/Minor, aksi spesifik, PIC, deadline estimasi."
+        - "Roadmap Perbaikan: Gantt chart 4-8 minggu untuk eksekusi terstruktur."
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8AC"
     type: "process-timeline"
     data:
@@ -36,33 +118,4 @@ contentBlocks:
           description: "Prioritaskan perbaikan berdasarkan temuan dan kebutuhan verifikasi."
         - title: "Tinjau ulang"
           description: "Periksa kembali kelengkapan bukti setelah perbaikan dilakukan."
----
-
-# Gap Analysis CSMS Adalah: Pengertian, Tujuan, dan Tahapan Pelaksanaannya
-
-**Fokus kata kunci:** Gap Analysis CSMS  
-**Tujuan artikel:** Menjelaskan konsep, tujuan, manfaat, dan tahapan pelaksanaan Gap Analysis CSMS untuk persiapan verifikasi dan prakualifikasi vendor.
-
-Gap Analysis CSMS adalah langkah strategis yang wajib dilakukan kontraktor sebelum menghadapi verifikasi atau prakualifikasi vendor. Melalui analisis kesenjangan ini, perusahaan dapat mengidentifikasi kelemahan sistem manajemen keselamatan secara dini dan memperbaikinya sebelum dinilai oleh verifikator principal.
-
-## Pengertian Gap Analysis CSMS dan Perannya dalam Evaluasi Kontraktor
-Gap Analysis CSMS merupakan proses perbandingan sistematis antara kondisi dokumen serta implementasi K3LL perusahaan saat ini dengan standar yang ditetapkan oleh principal (migas, tambang, petrokimia) atau regulasi K3LL (SMK3 PP 50/2012, ISO 45001). Hasilnya berupa daftar temuan (gap) yang menunjukkan kesenjangan antara keadaan nyata dengan ekspektasi standar.
-### Apa yang Dimaksud dengan Gap Analysis CSMS?
-Gap Analysis CSMS adalah evaluasi mendalam untuk mengukur tingkat kepatuhan dan kematangan sistem manajemen keselamatan kontraktor terhadap referensi standar yang berlaku. Berbeda dengan audit formal yang bersifat penilaian (pass/fail), Gap Analysis bersifat diagnostik dan perbaikan—tujuannya menemukan celah agar bisa diperbaiki sebelum verifikasi resmi.
-### Perbedaan Gap Analysis CSMS dengan Review Dokumen CSMS
-Review dokumen CSMS umumnya bersifat administratif: memeriksa kelengkapan dokumen, tanda tangan, masa berlaku, dan konsistensi format. Gap Analysis lebih mendalam—menilai kesesuaian isi dokumen dengan realita lapangan, kedalaman analisis risiko (HIRA/JSA), kelogisan SOP terhadap bahaya aktual, serta bukti implementasi (training record, inspeksi, investigasi insiden). Gap Analysis = Review dokumen + evaluasi implementasi + rekomendasi perbaikan prioritas.
-
-## Tujuan dan Manfaat Gap Analysis CSMS bagi Perusahaan
-Melakukan Gap Analysis sebelum verifikasi memberikan keuntungan kompetitif: mengurangi risiko gagal verifikasi, menghemat biaya perbaikan darurat, dan meningkatkan skor penilaian prakualifikasi vendor.
-### Mengidentifikasi Kesenjangan Dokumen terhadap Persyaratan CSMS
-Setiap principal memiliki standar CSMS sendiri (Contoh: K3-PT Pertamina, HSE-MS Shell, Contractor HSE Requirement BP). Gap Analysis memetakan dokumen perusahaan terhadap checklist spesifik principal target. Temuan dikategorikan: Critical (harus diperbaiki sebelum verifikasi), Major (perbaikan sebelum audit), Minor (perbaikan berkala).
-### Meningkatkan Kesiapan Perusahaan Mengikuti Prakualifikasi Vendor
-Dengan mengetahui gap sejak dini, perusahaan bisa: mengalokasikan budget & timeline perbaikan realistis, melibatkan konsultan tepat sasaran, mempersiapkan bukti pendukung (evidence) yang solid, dan masuk ruang verifikasi dengan keyakinan karena sudah mensimulasikan temuan verifikator.
-
-## Tahapan Pelaksanaan Gap Analysis CSMS yang Sistematis
-Proses Gap Analysis profesional mengikuti alur terstruktur agar hasilnya akurat, actionable, dan siap dieksekusi tim internal.
-### Mengumpulkan Dokumen dan Membandingkannya dengan Persyaratan
-Tahap 1: Kumpulkan seluruh dokumen K3LL existing (Manual, SOP, Form, Register, Record). Tahap 2: Dapatkan standar referensi—Contractor HSE Specification principal target, SMK3 PP 50/2012, ISO 45001. Tahap 3: Lakukan gap mapping per elemen CSMS (9 elemen) menggunakan checklist terstandarisasi. Tahap 4: Wawancara personel kunci (HSE Manager, Supervisor, Operator) untuk verifikasi implementasi lapangan.
-### Menyusun Rekomendasi Perbaikan dan Menindaklanjuti Temuan Gap Analysis
-Hasil Gap Analysis disajikan dalam Laporan Gap Analysis yang berisi: Executive Summary (skor keseluruhan, jumlah temuan per kategori), Detail Temuan per Elemen (deskripsi gap, refer standar, bukti pendukung, risiko jika tidak diperbaiki), Rekomendasi Perbaikan (prioritas Critical/Major/Minor, aksi spesifik, PIC, deadline estimasi), dan Roadmap Perbaikan (Gantt chart 4-8 minggu). Laporan ini menjadi bahan briefing manajemen dan panduan eksekusi tim HSE internal.
 ---
