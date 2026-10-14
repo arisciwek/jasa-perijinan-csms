@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8H7"
     type: "article-lead"
     data:
-      text: "Dalam industri kontraktor, terutama yang bekerja di sektor migas, pertambangan, dan konstruksi berat, memiliki dokumen CSMS yang lengkap bukan hanya merupakan persyaratan administratif, tetapi juga bukti komitmen perusahaan terhadap keselamatan dan kesejahteraan kerja."
+      text: "Dokumen CSMS adalah kumpulan dokumen yang menggambarkan kebijakan, prosedur, pengendalian, dan bukti penerapan sistem manajemen keselamatan kontraktor (Contractor Safety Management System). Bagi perusahaan kontraktor, dokumen tersebut digunakan untuk menjelaskan bagaimana risiko keselamatan kerja dikelola dan bagaimana penerapan K3LL dibuktikan dalam kegiatan operasional. Dokumen CSMS juga berperan dalam proses evaluasi dan prakualifikasi sesuai persyaratan perusahaan pemberi kerja."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8H8"
     type: "section-header"
