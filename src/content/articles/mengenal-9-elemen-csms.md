@@ -12,89 +12,132 @@ tags: ["CSMS", "9 Elemen", "K3LL", "Manajemen Keselamatan", "Kontraktor"]
 draft: false
 image: "/images/articles/9-elemen-csms.svg"
 relatedService: 1
+contentBlocks:
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8N5"
+    type: "article-lead"
+    data:
+      text: "Kelulusan verifikasi CSMS bukan soal 'memiliki dokumen' tapi 'hidup di dalam dokumen'. Setiap elemen harus terbukti diimplementasikan, dipantau, dan ditingkatkan secara berkelanjutan."
+      label: "Inti pembahasan"
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8N6"
+    type: "section-header"
+    data:
+      title: "Apa Itu CSMS?"
+      number: 1
+      description: "Contractor Safety Management System (CSMS) adalah sistem manajemen keselamatan kerja yang khusus dirancang untuk kontraktor di lingkungan operasi perusahaan principal."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8N7"
+    type: "content-card"
+    data:
+      title: "Definisi CSMS"
+      items:
+        - "Sistem manajemen keselamatan kerja yang dirancang khusus untuk kontraktor."
+        - "Bekerja di lingkungan operasi perusahaan principal (migas, tambang, petrokimia, konstruksi berat)."
+        - "Mengadopsi standar SMK3 dan ISO 45001 dengan penyesuaian kebutuhan kontrak kerja."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8N8"
+    type: "service-cta"
+    data:
+      title: "Bantuan Penyusunan Dokumen 9 Elemen CSMS"
+      description: "Tim kami siap membantu Anda menyusun seluruh dokumen CSMS sesuai 9 elemen utama. Konsultasi gratis untuk memahami kebutuhan perusahaan Anda."
+      label: "Mulai Konsultasi"
+      href: "/services/penyusunan-dokumen-csms"
+      note: "Respon dalam 1x24 jam kerja via WhatsApp."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8N9"
+    type: "section-header"
+    data:
+      title: "9 Elemen CSMS dan Kunci Kelulusannya"
+      number: 2
+      description: "Setiap elemen memiliki fokus dan dokumen pendukung yang berbeda. Berikut penjelasan lengkap masing-masing elemen."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8O0"
+    type: "content-card"
+    data:
+      title: "Elemen 1: Kepemimpinan & Komitmen"
+      items:
+        - "Fokus: Keterlibatan aktif pimpinan dalam K3LL."
+        - "Kebijakan K3LL ditandatangani Direktur/Pemilik."
+        - "Manajemen hadir di safety meeting berkala."
+        - "Alokasi budget K3LL jelas dan terlaksana."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8O1"
+    type: "content-card"
+    data:
+      title: "Elemen 2: Kebijaksanaan & Sasaran Strategis"
+      items:
+        - "Fokus: Kebijakan K3LL terintegrasi dengan strategi bisnis."
+        - "Target K3LL (Zero Accident, LTIFR, TRIR) terukur."
+        - "Sasaran disosialisasikan ke seluruh tingkat."
+        - "Review berkala oleh manajemen."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8O2"
+    type: "content-card"
+    data:
+      title: "Elemen 3: Organisasi & Tanggung Jawab"
+      items:
+        - "Fokus: Struktur organisasi K3LL yang jelas."
+        - "Organogram K3LL dengan jabatan & tanggung jawab."
+        - "Penunjukan HSE Officer yang kompeten."
+        - "Job description K3LL untuk semua level."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8O3"
+    type: "content-card"
+    data:
+      title: "Elemen 4: Manajemen Risiko"
+      items:
+        - "Fokus: Identifikasi bahaya, penilaian, dan pengendalian risiko."
+        - "HIRA (Hazard Identification Risk Assessment) lengkap."
+        - "JSA (Job Safety Analysis) per pekerjaan kritis."
+        - "Hierarki pengendalian diterapkan (Eliminasi → PPE)."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8O4"
+    type: "content-card"
+    data:
+      title: "Elemen 5: Perencanaan & Prosedur"
+      items:
+        - "Fokus: Dokumen operasional yang terstandarisasi."
+        - "SOP/SWP untuk pekerjaan risiko tinggi."
+        - "Permit to Work (PTW) system."
+        - "Emergency Response Plan."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8O5"
+    type: "content-card"
+    data:
+      title: "Elemen 6: Implementasi & Pemantauan"
+      items:
+        - "Fokus: Pelaksanaan dan pengawasan di lapangan."
+        - "Inspeksi rutin (daily, weekly, monthly)."
+        - "K3 Patrol & Observation program."
+        - "Pengukuran lingkungan (noise, dust, gas)."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8O6"
+    type: "content-card"
+    data:
+      title: "Elemen 7: Audit & Tinjauan Pelaksanaan"
+      items:
+        - "Fokus: Evaluasi efektivitas sistem."
+        - "Audit internal berkala (min. 1x setahun)."
+        - "Audit oleh pihak ketiga/independen."
+        - "Management Review Meeting."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8O7"
+    type: "content-card"
+    data:
+      title: "Elemen 8: Pencapaian Kinerja K3LL"
+      items:
+        - "Fokus: Data statistik dan tren keselamatan."
+        - "Laporan bulanan/tahunan K3LL."
+        - "Analisis tren kecelakaan & near miss."
+        - "Benchmarking dengan standar industri."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8O8"
+    type: "content-card"
+    data:
+      title: "Elemen 9: Pencapaian Lainnya"
+      items:
+        - "Fokus: Penghargaan, sertifikasi, inovasi."
+        - "Sertifikasi ISO 45001 / SMK3 (jika ada)."
+        - "Penghargaan K3LL dari principal/pemerintah."
+        - "Inovasi K3LL (digitalisasi, alat bantu)."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8O9"
+    type: "section-header"
+    data:
+      title: "Kesimpulan"
+      number: 3
+      description: "Kelulusan verifikasi CSMS bukan soal 'memiliki dokumen' tapi 'hidup di dalam dokumen'."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P0"
+    type: "content-card"
+    data:
+      title: "Kunci Kelulusan Verifikasi CSMS"
+      items:
+        - "Setiap elemen harus terbukti diimplementasikan, dipantau, dan ditingkatkan secara berkelanjutan."
+        - "Dokumen hanyalah alat, bukti implementasi di lapangan yang menentukan kelulusan."
 ---
-
-# Mengenal 9 Elemen Utama CSMS dan Kunci Kelulusannya
-
-## Apa Itu CSMS?
-
-**Contractor Safety Management System (CSMS)** adalah sistem manajemen keselamatan kerja yang khusus dirancang untuk kontraktor yang bekerja di lingkungan operasi perusahaan principal (migas, tambang, petrokimia, konstruksi berat). CSMS mengadopsi standar **SMK3 (Sistem Manajemen Keselamatan dan Kesehatan Kerja)** dan **ISO 45001** dengan penyesuaian kebutuhan kontrak kerja.
-
-## 9 Elemen CSMS
-
-### 1. Kepemimpinan & Komitmen
-**Fokus**: Keterlibatan aktif pimpinan dalam K3LL.
-**Kunci kelulusan**: 
-- Kebijakan K3LL ditandatangani Direktur/Pemilik
-- Manajemen hadir di safety meeting berkala
-- Alokasi budget K3LL jelas dan terlaksana
-
-### 2. Kebijaksanaan & Sasaran Strategis
-**Fokus**: Kebijakan K3LL terintegrasi dengan strategi bisnis.
-**Kunci kelulusan**:
-- Target K3LL (Zero Accident, LTIFR, TRIR) terukur
-- Sasaran disosialisasikan ke seluruh tingkat
-- Review berkala oleh manajemen
-
-### 3. Organisasi & Tanggung Jawab
-**Fokus**: Struktur organisasi K3LL yang jelas.
-**Kunci kelulusan**:
-- Organogram K3LL dengan jabatan & tanggung jawab
-- Penunjukan HSE Officer yang kompeten
-- Job description K3LL untuk semua level
-
-### 4. Manajemen Risiko
-**Fokus**: Identifikasi bahaya, penilaian, dan pengendalian risiko.
-**Kunci kelulusan**:
-- HIRA (Hazard Identification Risk Assessment) lengkap
-- JSA (Job Safety Analysis) per pekerjaan kritis
-- Hierarki pengendalian diterapkan (Eliminasi → PPE)
-- ALARP principle diterapkan
-
-### 5. Perencanaan & Prosedur
-**Fokus**: Dokumen operasional yang terstandarisasi.
-**Kunci kelulusan**:
-- SOP/SWP untuk pekerjaan risiko tinggi
-- Permit to Work (PTW) system
-- Emergency Response Plan
-- Manajemen perubahan (MOC)
-
-### 6. Implementasi & Pemantauan
-**Fokus**: Pelaksanaan dan pengawasan di lapangan.
-**Kunci kelulusan**:
-- Inspeksi rutin (daily, weekly, monthly)
-- K3 Patrol & Observation program
-- Pengukuran lingkungan (noise, dust, gas)
-- Pelaporan & investigasi insiden
-
-### 7. Audit & Tinjauan Pelaksanaan
-**Fokus**: Evaluasi efektivitas sistem.
-**Kunci kelulusan**:
-- Audit internal berkala (min. 1x setahun)
-- Audit oleh pihak ketiga/independen
-- Management Review Meeting
-- Follow-up temuan audit tertutup
-
-### 8. Pencapaian Kinerja K3LL
-**Fokus**: Data statistik dan tren keselamatan.
-**Kunci kelulusan**:
-- Laporan bulanan/tahunan K3LL
-- Analisis tren kecelakaan & near miss
-- Benchmarking dengan standar industri
-- Program perbaikan berkelanjutan
-
-### 9. Pencapaian Lainnya
-**Fokus**: Penghargaan, sertifikasi, inovasi.
-**Kunci kelulusan**:
-- Sertifikasi ISO 45001 / SMK3 (jika ada)
-- Penghargaan K3LL dari principal/pemerintah
-- Inovasi K3LL (digitalisasi, alat bantu)
-- Partisipasi forum K3LL industri
-
-## Kesimpulan
-
-Kelulusan verifikasi CSMS bukan soal "memiliki dokumen" tapi **"hidup di dalam dokumen"**. Setiap elemen harus terbukti diimplementasikan, dipantau, dan ditingkatkan secara berkelanjutan.
-
----
-
-*Butuh bantuan menyusun atau review dokumen 9 Elemen CSMS? Tim Konsultan CSMS siap membantu.*

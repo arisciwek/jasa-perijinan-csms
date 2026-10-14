@@ -12,63 +12,107 @@ tags: ["CSMS", "Audit", "Verifikasi", "Migas", "Pertamina", "K3LL"]
 draft: false
 image: "/images/articles/panduan-sukses-audit-csms-migas.svg"
 relatedService: 3
+contentBlocks:
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P1"
+    type: "article-lead"
+    data:
+      text: "Verifikasi CSMS di sektor hulu migas adalah proses kritis yang menentukan kelayakan kontraktor untuk bekerja di area operasi perusahaan minyak dan gas bumi. Skor verifikasi yang tinggi tidak hanya membuka peluang tender, tetapi juga mencerminkan komitmen perusahaan terhadap keselamatan kerja."
+      label: "Inti pembahasan"
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P2"
+    type: "section-header"
+    data:
+      title: "Persiapan Dokumen"
+      number: 1
+      description: "Dokumen yang lengkap dan konsisten adalah fondasi utama keberhasilan verifikasi CSMS."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P3"
+    type: "content-card"
+    data:
+      title: "Kelengkapan 9 Elemen CSMS"
+      items:
+        - "Kepemimpinan & Komitmen."
+        - "Kebijaksanaan & Sasaran Strategis."
+        - "Organisasi & Tanggung Jawab."
+        - "Manajemen Risiko."
+        - "Perencanaan & Prosedur."
+        - "Implementasi & Pemantauan."
+        - "Audit & Tinjauan Pelaksanaan."
+        - "Pencapaian Kinerja K3LL."
+        - "Pencapaian Lainnya."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P4"
+    type: "content-card"
+    data:
+      title: "Bukti Pelaksanaan (Evidence)"
+      items:
+        - "Minutes meeting manajemen."
+        - "Hasil identifikasi bahaya dan penilaian risiko (HIRA/JSA)."
+        - "Rekap pelaksanaan toolbox meeting."
+        - "Catatan inspeksi dan audit internal."
+        - "Data kecelakaan dan near miss."
+        - "Sertifikat pelatihan karyawan."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P5"
+    type: "service-cta"
+    data:
+      title: "Bantuan Persiapan Audit Verifikasi CSMS"
+      description: "Tim kami siap mendampingi persiapan audit verifikasi perusahaan Anda. Dapatkan simulasi audit dan gap analysis komprehensif."
+      label: "Jadwalkan Konsultasi"
+      href: "/services/pendampingan-verifikasi-audit-hse"
+      note: "Konsultasi awal gratis untuk memahami kebutuhan perusahaan Anda."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P6"
+    type: "section-header"
+    data:
+      title: "Simulasi Audit (Mock Audit)"
+      number: 2
+      description: "Lakukan simulasi audit minimal 2 minggu sebelum audit aktual untuk mengidentifikasi celah sebelum verifikator datang."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P7"
+    type: "content-card"
+    data:
+      title: "Langkah-Langkah Mock Audit"
+      items:
+        - "Form tim audit internal yang independen."
+        - "Gunakan checklist verifikasi standar principal."
+        - "Identifikasi temuan (findings) dan buat Corrective Action Plan."
+        - "Verifikasi kelengkapan perbaikan sebelum audit aktual."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P8"
+    type: "section-header"
+    data:
+      title: "Persiapan Tim"
+      number: 3
+      description: "Tim yang siap dan terlatih adalah kunci keberhasilan durante audit berlangsung."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8P9"
+    type: "content-card"
+    data:
+      title: "Peran Setiap Anggota Tim"
+      items:
+        - "Management Representative: Siap menjelaskan komitmen manajemen."
+        - "HSE Manager: Menguasai detail dokumen dan implementasi lapangan."
+        - "Supervisor Lapangan: Mampu menunjukkan bukti pelaksanaan di TK."
+        - "Dokument Controller: Mengakses dan menyerahkan dokumen dengan cepat."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8Q0"
+    type: "section-header"
+    data:
+      title: "Tips Praktis Saat Audit"
+      number: 4
+      description: "Tips ini membantu tim Anda tetap profesional dan responsif durante interaksi dengan auditor."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8Q1"
+    type: "content-card"
+    data:
+      title: "Etika dan Strategi Jawaban Auditor"
+      items:
+        - "Jangan terburu-buru saat menjawab pertanyaan auditor."
+        - "Bawa bukti fisik (foto, logbook, rekaman) bukan hanya dokumen."
+        - "Akui keterbatasan dengan jujur dan tunjukkan rencana perbaikan."
+        - "Fokus pada kontinuitas perbaikan, bukan hanya compliance sesaat."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8Q2"
+    type: "section-header"
+    data:
+      title: "Kesimpulan"
+      number: 5
+      description: "Kunci keberhasilan audit verifikasi CSMS adalah konsistensi antara dokumen, implementasi lapangan, dan bukti pendukung."
+  - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8Q3"
+    type: "content-card"
+    data:
+      title: "Pesan Utama"
+      items:
+        - "Persiapan yang matang dan tim yang siap akan menghasilkan skor verifikasi optimal."
+        - "CSMS harus hidup, bukan sekadar dokumen di atas kertas."
 ---
-
-# Panduan Sukses Menghadapi Audit Verifikasi CSMS di Sektor Migas
-
-## Pendahuluan
-
-Verifikasi CSMS (Contractor Safety Management System) di sektor hulu migas adalah proses kritis yang menentukan kelayakan kontraktor untuk bekerja di area operasi perusahaan minyak dan gas bumi. Skor verifikasi yang tinggi tidak hanya membuka peluang tender, tetapi juga mencerminkan komitmen perusahaan terhadap keselamatan kerja.
-
-## Persiapan Dokumen
-
-### 1. Kelengkapan 9 Elemen CSMS
-Pastikan seluruh 9 elemen CSMS terdokumentasi dengan lengkap:
-- Kepemimpinan & Komitmen
-- Kebijaksanaan & Sasaran Strategis
-- Organisasi & Tanggung Jawab
-- Manajemen Risiko
-- Perencanaan & Prosedur
-- Implementasi & Pemantauan
-- Audit & Tinjauan Pelaksanaan
-- Pencapaian Kinerja K3LL
-- Pencapaian Lainnya
-
-### 2. Bukkti Pelaksanaan (Evidence)
-Setiap elemen harus didukung bukti nyata:
-- Minutes meeting manajemen
-- Hasil identifikasi bahaya dan penilaian risiko (HIRA/JSA)
-- Rekap pelaksanaan toolbox meeting
-- Catatan inspeksi dan audit internal
-- Data kecelakaan dan near miss
-- Sertifikat pelatihan karyawan
-
-## Simulasi Audit (Mock Audit)
-
-Lakukan simulasi audit minimal 2 minggu sebelum audit aktual:
-1. Form tim audit internal yang independen
-2. Gunakan checklist verifikasi standar principal
-3. Identifikasi temuan (findings) dan buat Corrective Action Plan
-4. Verifikasi kelengkapan perbaikan sebelum audit aktual
-
-## Persiapan Tim
-
-- **Management Representative**: Siap menjelaskan komitmen manajemen
-- **HSE Manager**: Menguasai detail dokumen dan implementasi lapangan
-- **Supervisor Lapangan**: Mampu menunjukkan bukti pelaksanaan di TK
-- **Dokument Controller**: Mengakses dan menyerahkan dokumen dengan cepat
-
-## Tips Praktis
-
-1. **Jangan terburu-buru** saat menjawab pertanyaan auditor
-2. **Bawa bukti fisik** (foto, logbook, rekaman) bukan hanya dokumen
-3. **Akui keterbatasan** dengan jujur dan tunjukkan rencana perbaikan
-4. **Fokus pada kontinuitas** perbaikan, bukan hanya compliance sesaat
-
-## Kesimpulan
-
-Kunci keberhasilan audit verifikasi CSMS adalah **konsistensi** antara dokumen, implementasi lapangan, dan bukti pendukung. Persiapan yang matang dan tim yang siap akan menghasilkan skor verifikasi optimal.
-
----
-
-*Konsultan CSMS siap mendampingi persiapan audit verifikasi perusahaan Anda. Hubungi kami untuk simulasi audit dan gap analysis.*
