@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8L3"
     type: "article-lead"
     data:
-      text: "Dalam penyusunan dokumen CSMS, kontraktor sering bingung membedakan tingkatan hierarki dokumen K3LL. Manual K3LL, SOP K3, dan Safe Work Practices memiliki fungsi dan cakupan yang berbeda namun saling melengkapi."
+      text: "Manual K3LL, SOP K3, dan Safe Work Practices merupakan dokumen yang dapat digunakan untuk mendukung pengelolaan keselamatan kerja, tetapi memiliki fokus dan tingkat penerapan yang berbeda. Manual K3LL menjelaskan kerangka sistem manajemen, SOP mengatur langkah pelaksanaan suatu proses atau pekerjaan, sedangkan Safe Work Practices berisi praktik kerja aman yang relevan dengan aktivitas tertentu. Memahami perbedaannya membantu kontraktor menyusun dokumentasi yang saling melengkapi dan sesuai dengan kebutuhan operasional."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8L4"
     type: "section-header"
