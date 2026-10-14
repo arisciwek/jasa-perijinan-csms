@@ -72,14 +72,17 @@ contentBlocks:
   - id: homepage-testimonials
     type: testimonial-grid
     data:
-      title: "Testimoni Perusahaan"
+      title: "Testimoni"
       items:
         - quote: "Implementasi CSMS digital ini telah meningkatkan efisiensi verifikasi dokumen kami hingga 70%. Keamanan aset dan nyawa adalah prioritas utama kami."
-          attribution: "MITSUBISHI CHEMICAL - Sr. HSE supervisor"
+          name: "Yunita"
+          industry: "Kimia"
         - quote: "Satu-satunya solusi yang benar-benar memahami regulasi K3 di Indonesia. Dashboard analitiknya sangat membantu dalam pengambilan keputusan taktis."
-          attribution: "BAYU ADJI PERTIWI - Head of Safety Compliance"
+          name: "Bayu Adji Pertiwi"
+          industry: "Pertambangan"
         - quote: "Transparansi dan audit trail yang disediakan sistem ini memberikan ketenangan bagi manajemen dalam mengelola ribuan kontraktor di lapangan."
-          attribution: "PRASADHA PAMUNAH LIMBAH INDUSTRI - HSE MANAJER"
+          name: "Prasadha Pamunah"
+          industry: "Limbah Industri"
   - id: homepage-consultation-cta
     type: call-to-action
     data:
