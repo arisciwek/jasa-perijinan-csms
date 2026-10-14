@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8N5"
     type: "article-lead"
     data:
-      text: "Kelulusan verifikasi CSMS bukan soal 'memiliki dokumen' tapi 'hidup di dalam dokumen'. Setiap elemen harus terbukti diimplementasikan, dipantau, dan ditingkatkan secara berkelanjutan."
+      text: "9 elemen utama CSMS mencakup berbagai aspek pengelolaan keselamatan kontraktor, mulai dari kepemimpinan dan komitmen hingga pemantauan serta pencapaian kinerja K3LL. Dalam proses verifikasi, perusahaan perlu memahami persyaratan setiap elemen dan menyiapkan dokumen yang relevan beserta bukti penerapannya. Karena itu, persiapan CSMS tidak cukup hanya dengan mengumpulkan dokumen, tetapi juga perlu memastikan kesesuaian antara isi dokumen dan pelaksanaan di lapangan."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8N6"
     type: "section-header"
