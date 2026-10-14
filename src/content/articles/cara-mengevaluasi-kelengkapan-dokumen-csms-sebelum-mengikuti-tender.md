@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8F1"
     type: "article-lead"
     data:
-      text: "Kegagalan dalam tahap administrasi prakualifikasi sering disebabkan oleh kelalaian sederhana: dokumen tidak lengkap, kadaluwarsa, atau tidak konsisten. Evaluasi mandiri yang sistematis sebelum submit dokumen tender dapat menghemat waktu, biaya, dan reputasi perusahaan."
+      text: "Cara mengevaluasi kelengkapan dokumen CSMS sebelum mengikuti tender adalah dengan membandingkan dokumen yang dimiliki perusahaan terhadap persyaratan yang ditetapkan oleh pemberi kerja. Evaluasi perlu mencakup ketersediaan dokumen, kesesuaian isi, keabsahan dokumen yang relevan, serta bukti penerapan di lapangan. Pemeriksaan sebelum pengajuan membantu perusahaan mengidentifikasi kekurangan dan menentukan perbaikan yang perlu dilakukan."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8F2"
     type: "section-header"

@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8G2"
     type: "article-lead"
     data:
-      text: "Checklist ini dirancang berdasarkan pengalaman verifikasi CSMS di principal utama (Pertamina, Shell, BP, PTBA, Adaro, dll) dan standar SMK3 PP 50/2012 serta ISO 45001. Gunakan checklist ini sebagai alat internal audit sebelum mengirimkan dokumen prakualifikasi."
+      text: "Checklist review dokumen CSMS merupakan alat bantu untuk memeriksa kelengkapan, kesesuaian, dan konsistensi dokumen sebelum perusahaan mengikuti prakualifikasi vendor. Pemeriksaan dapat mencakup dokumen untuk setiap elemen CSMS, kesesuaian dengan lingkup pekerjaan, serta bukti penerapan sistem manajemen keselamatan. Dengan checklist yang disusun berdasarkan persyaratan pemberi kerja, perusahaan dapat mencatat kekurangan dan menentukan prioritas perbaikan sebelum dokumen diajukan."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8G3"
     type: "section-header"

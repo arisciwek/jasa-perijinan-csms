@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8C1"
     type: "article-lead"
     data:
-      text: "Membuat dokumen CSMS dari nol tampak menakutkan bagi kontraktor baru. Tanpa peta jalan yang jelas, waktu dan biaya bisa terbuang tanpa hasil. Artikel ini membedah langkah praktis menyusun dokumentasi sistem manajemen keselamatan dari awal hingga siap verifikasi."
+      text: "Cara membuat dokumen CSMS dari nol dimulai dengan memahami persyaratan perusahaan pemberi kerja, menentukan lingkup pekerjaan, dan mengidentifikasi risiko keselamatan yang berkaitan dengan aktivitas kontraktor. Perusahaan kemudian menyusun dokumen yang diperlukan, mulai dari kebijakan K3LL hingga prosedur kerja dan bukti penerapannya. Penyusunan yang terarah membantu perusahaan mempersiapkan dokumen CSMS sesuai kebutuhan tender dan proses verifikasi."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8C2"
     type: "section-header"

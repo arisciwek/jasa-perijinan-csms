@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8R8"
     type: "article-lead"
     data:
-      text: "Banyak kontraktor berpengalaman tetap gagal verifikasi CSMS karena kesalahan yang sebenarnya bisa dihindari. Memahami pola kegagalan umum dan metodologi perbaikan sistematis adalah kunci untuk lolos verifikasi di putaran berikutnya."
+      text: "Dokumen CSMS dapat tidak memenuhi persyaratan verifikasi ketika isinya tidak lengkap, tidak sesuai dengan lingkup pekerjaan, tidak konsisten, atau tidak didukung bukti penerapan yang memadai. Ketidaksesuaian juga dapat muncul ketika dokumen tidak diperbarui setelah terjadi perubahan persyaratan maupun kondisi operasional. Dengan mengidentifikasi penyebab masalah dan menentukan tindakan korektif yang sesuai, perusahaan dapat memperbaiki dokumentasi sekaligus meningkatkan kesiapan menghadapi verifikasi berikutnya."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8R9"
     type: "section-header"

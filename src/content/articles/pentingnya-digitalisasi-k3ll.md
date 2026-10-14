@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8Q4"
     type: "article-lead"
     data:
-      text: "Digitalisasi K3LL bukan sekadar 'paperless' — tapi transformasi cara kerja. Kontraktor yang adopt early memperoleh keunggulan kompetitif: cepat lolos verifikasi, efisien operasional, dan siap menghadapi tantangan industri 4.0."
+      text: "Digitalisasi dokumen K3LL adalah proses pengelolaan dokumen keselamatan dan kesehatan kerja melalui sistem digital untuk mempermudah penyimpanan, pencarian, pengendalian versi, dan akses informasi. Bagi kontraktor yang mengelola banyak dokumen serta proyek, digitalisasi dapat membantu menjaga keteraturan dokumentasi dan mempercepat penyiapan bukti ketika dibutuhkan untuk evaluasi atau audit. Manfaatnya bergantung pada pemilihan sistem, tata kelola dokumen, dan konsistensi penggunaannya."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8Q5"
     type: "section-header"

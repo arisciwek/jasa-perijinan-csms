@@ -16,7 +16,7 @@ contentBlocks:
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8K2"
     type: "article-lead"
     data:
-      text: "Dokumen CSMS yang stagnan adalah risiko besar: tidak mencerminkan realita lapangan, tidak memenuhi persyaratan terbaru, dan berpotensi gagal verifikasi. Review berkala bukan biaya—melainkan investasi kesiapan bisnis."
+      text: "Review dan pembaruan dokumen CSMS perlu dilakukan ketika terdapat perubahan persyaratan perusahaan pemberi kerja, lingkup pekerjaan, risiko operasional, struktur organisasi, atau prosedur keselamatan. Perusahaan juga perlu meninjau dokumen secara berkala untuk memastikan isinya tetap sesuai dengan kondisi aktual dan bukti penerapannya. Dengan mengetahui pemicu review, perusahaan dapat menjaga kesiapan dokumen untuk proses evaluasi dan verifikasi CSMS."
       label: "Inti pembahasan"
   - id: "01K7B8M2Q4R6T9V1W3X5Y7Z8K3"
     type: "section-header"
